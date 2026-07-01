@@ -125,18 +125,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Key Technical Components',
-      items: [
-        'key-components/alkanes',
-        'key-components/brc20-prog',
-        'key-components/frost-and-roast',
-        'key-components/schnorr-signatures',
-        'key-components/keystore-management',
-        'key-components/proof-of-stake',
-      ]
-    },
-    {
-      type: 'category',
       label: 'SUBFROST Networking',
       items: [
         'subfrost-networking/introduction-to-subp2p',

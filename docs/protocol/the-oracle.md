@@ -1,7 +1,7 @@
 ---
 title: The Oracle
 sidebar_label: The Oracle
-sidebar_position: 4
+sidebar_position: 5
 description: How SUBFROST brings outside data on-chain in a decentralized way.
 ---
 
