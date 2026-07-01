@@ -1,0 +1,9 @@
+{
+  "label": "从这里开始",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "从这里开始",
+    "description": "刚接触 SUBFROST？先看这四篇文章：它是什么、为什么存在、如何在几分钟内完成第一笔兑换，以及关键概念的速查表。"
+  }
+}
