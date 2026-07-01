@@ -9,18 +9,16 @@ description: Pick a wallet, add Bitcoin, and make your first swap on SUBFROST.
 
 This guide takes you from zero to your first swap. You will pick how to access SUBFROST, set up a wallet, and swap some Bitcoin.
 
-## Step 1: Choose how to use SUBFROST
+## Step 1: Open SUBFROST
 
-SUBFROST runs on several surfaces:
+The easiest way to start today is the **web app**. Native clients are on the way:
 
-- **Mobile app (Android)** is the most complete and stable client. It is installed from SUBFROST's own app repository rather than the Google Play Store.
-- **iOS app** is on the way and currently in App Store review.
-- **Browser extension (Chrome and Firefox)** exists and works, though it currently trails the mobile app on features.
-- **Web app** runs on desktop and is typically used by connecting a wallet through WalletConnect.
+- **Web app.** Available now, and the recommended way to get started right now.
+- **Android.** Available now through SUBFROST's own F-Droid repository, and it is the most complete client. A Google Play Store listing is coming.
+- **iOS.** Coming soon (in App Store review).
+- **Browser extension (Chrome and Firefox).** Coming soon.
 
-:::info[Which surface should we recommend first for "regular people"?]
-This is a product decision to confirm with the team before publishing. The mobile Android build is the most advanced, but it installs from a self-hosted repository (not the Play Store), and iOS is not yet in the App Store. For a first-time, non-technical reader, we need a clear recommended path (and the exact install link/QR). Sources: `Updates/_index.md` (app launch status, 2026-06-30), `Ferramentas/_index.md`.
-:::
+For this guide we will use the web app. See [Wallets](../using-subfrost/wallets) for details on each option.
 
 ## Step 2: Set up a wallet
 
