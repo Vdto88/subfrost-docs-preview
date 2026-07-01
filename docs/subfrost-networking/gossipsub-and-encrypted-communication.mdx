@@ -16,7 +16,7 @@ In SUBFROST, topics are used to create logical communication channels for differ
 
 ## Encrypted Communication Channels
 
-While all communication on the `subp2p` network is encrypted at the transport layer (using TLS), `gossipsub` itself does not provide end-to-end encryption for messages. This means that any peer that is subscribed to a topic can read all the messages that are published to that topic.
+While all communication on the `subp2p` network is encrypted at the transport layer (using the `noise` protocol for the handshake), `gossipsub` itself does not provide end-to-end encryption for messages. This means that any peer that is subscribed to a topic can read all the messages that are published to that topic.
 
 However, it is possible to build a layer of end-to-end encryption on top of `gossipsub` to create private, encrypted communication channels. This is a powerful pattern that can be used to build secure group chat, private data sharing, and other applications that require confidentiality.
 
