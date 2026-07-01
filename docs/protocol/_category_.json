@@ -1,0 +1,9 @@
+{
+  "label": "Protocol",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Protocol",
+    "description": "How SUBFROST actually works: the decentralized custody model, the Alkanes smart-contract protocol underneath, the frBTC peg, threshold signing, and the oracle."
+  }
+}
