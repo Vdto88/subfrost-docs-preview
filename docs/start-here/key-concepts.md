@@ -1,0 +1,50 @@
+---
+title: Key Concepts
+sidebar_label: Key Concepts
+sidebar_position: 4
+description: A quick glossary of SUBFROST covering frBTC, DIESEL, FIRE, FUEL, dxBTC, the AMM, and the tech underneath.
+---
+
+# Key Concepts
+
+A short glossary to get you oriented. Each item links to a deeper page where one exists. Items marked **Planned** are not live yet.
+
+## The assets
+
+- **frBTC.** Your Bitcoin, made programmable. frBTC is BTC wrapped 1:1 into a token that works with on-chain apps and settles natively on Bitcoin. Wrap BTC to get it; unwrap to get native BTC back. **Live.**
+
+- **DIESEL.** The protocol's native emission. DIESEL is minted in step with Bitcoin miner fees (up to half of the block reward) and follows the same halving schedule as new bitcoin, so its issuance is tied to real Bitcoin block production. **Live.**
+
+- **FIRE.** The rewards and governance token. FIRE rewards people who provide liquidity to the DIESEL/frBTC pool, and it powers staking and bonds. **Live** (staking and bonds are running).
+
+- **dxBTC.** Yield-bearing Bitcoin. You stake BTC and receive dxBTC; behind the scenes your Bitcoin is put to work in yield strategies, and the yield accrues back in Bitcoin terms. **Planned.**
+
+- **FUEL.** The governance token for the protocol's treasury and parameters (for example, wrap/unwrap fees and upgrades). **Planned** (its tokenomics are not yet public).
+
+:::info["FUEL" naming overlap]
+There are two things called "fuel" in this ecosystem: the **FUEL governance token** (planned, described above) and **fuel** as the execution-gas concept in Alkanes contracts (the compute budget a contract call is allowed to use). Confirm with the team how to disambiguate these in public docs so readers do not conflate them.
+:::
+
+## How you move between assets
+
+- **The AMM (automated market maker).** A swap works against a shared liquidity pool instead of matching you with another trader. You always have a counterparty, and the price adjusts with supply and demand. This is what powers swaps in the app. **Live.**
+
+:::info[Swap fee number]
+Do not publish a specific AMM swap fee until confirmed. The reference AMM tutorial (`ab-tutorials-amm.md`, from alkanes.build) shows 0.3% as the example fee, but that is a generic tutorial and is not confirmed as the SUBFROST production pool fee. Separately, wrapping/unwrapping frBTC carries a 0.1% fee (`p-tokens__frBTC-roadmap.md`). The "1% (0.8% LP + 0.2% burn)" figure that circulated internally was not found in any source.
+:::
+
+## What it all runs on
+
+- **Alkanes.** The smart-contract protocol that these tokens live on. Alkanes lets developers run programmable contracts directly on Bitcoin (contracts are written in Rust and compiled to WebAssembly), inheriting Bitcoin's security instead of relying on a separate chain. frBTC, DIESEL, and FIRE are all Alkanes tokens. See the **Protocol** section for the full model.
+
+- **The indexer.** Bitcoin blocks do not "run" contracts on their own. An indexer reads each new block, executes the contract code, and keeps the up-to-date state, which is how balances and other on-chain data are read. When you see your frBTC balance, it comes from the indexer.
+
+:::note[One level deeper]
+The Start Here glossary keeps things simple on purpose. Terms like protostone, cellpack, and the exact contract model are covered in the **Protocol** section, and the developer tooling (CLI, SDK, JSON-RPC) is in **Build on SUBFROST** and the **API & SDK Reference**.
+:::
+
+## Where to go next
+
+- **[Get Started in 5 Minutes](./get-started):** if you have not made your first swap yet.
+- **Tokens & Economics:** the full story on frBTC, DIESEL, FIRE, dxBTC, and FUEL.
+- **Protocol:** how the custody, signing, and Alkanes model actually work.

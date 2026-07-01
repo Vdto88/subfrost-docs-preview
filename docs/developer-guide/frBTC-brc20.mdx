@@ -1,0 +1,377 @@
+---
+title: FR-BTC on BRC2.0
+sidebar_label: FR-BTC on BRC2.0
+sidebar_position: 5
+---
+
+# FR-BTC on BRC2.0
+
+FR-BTC provides two powerful functions for building composable DeFi applications on BRC2.0: `wrapAndExecute` and `wrapAndExecute2`. These functions atomically wrap BTC into FR-BTC and execute custom logic in a single transaction.
+
+## Overview
+
+When a user sends BTC to the FR-BTC contract, they can choose to:
+1. Simply wrap it into FR-BTC tokens (`wrap()`)
+2. Wrap and execute a deployed script (`wrapAndExecute`)
+3. Wrap and execute a script with custom calldata (`wrapAndExecute2`)
+
+The key benefit is **atomic execution**: if your script fails for any reason (including running out of gas), the user still receives their FR-BTC tokens safely.
+
+## Contract Addresses
+
+| Network | Chain ID | FR-BTC Address |
+|---------|----------|---------------|
+| BRC2.0 Mainnet | `0x4252433230` | `0xdBB5b6A1D422fca2813cF486e5F986ADB09D8337` |
+| BRC2.0 Signet | `0x425243323073` | `0x1EB63D0d0e5A86146B4E1Cebc79b1d6e35093288` |
+
+## How It Works
+
+### wrapAndExecute
+
+Wraps BTC and executes a script deployed via CREATE2:
+
+```solidity
+function wrapAndExecute(bytes memory script) public;
+```
+
+- `script`: The bytecode of the contract to deploy and execute
+- The script is deployed using CREATE2 (reuses existing deployment if already deployed)
+- Script must implement `IScript` interface
+
+### wrapAndExecute2
+
+Wraps BTC and calls an already-deployed script with custom calldata:
+
+```solidity
+function wrapAndExecute2(address target, bytes memory data) public;
+```
+
+- `target`: Address of the deployed script contract
+- `data`: Custom calldata passed to the script
+- Script must implement `IScript2` interface
+
+**`wrapAndExecute2` is the recommended approach** for most use cases since scripts can be deployed once and reused.
+
+## Script Interfaces
+
+### IScript
+
+```solidity
+interface IScript {
+    function execute(address sender, uint256 amount) external;
+}
+```
+
+- `sender`: The user who initiated the wrap (use this to send tokens to the user)
+- `amount`: The amount of FR-BTC that was minted
+
+### IScript2
+
+```solidity
+interface IScript2 {
+    function execute(address sender, uint256 amount, bytes calldata data) external;
+}
+```
+
+- `sender`: The user who initiated the wrap
+- `amount`: The amount of FR-BTC that was minted
+- `data`: Custom calldata for flexible script logic
+
+## Gas Safety
+
+FR-BTC implements robust gas safety to ensure users always receive their tokens, even if a script fails or runs out of gas.
+
+### How It Works
+
+```
+User calls wrapAndExecute2(target, data)
+  │
+  ├─ 1. Mint FR-BTC to FrBTC contract
+  ├─ 2. Check gasleft() >= 50,000 (MIN_GAS_FOR_SAFE_RETURN)
+  │     └─ NO → transfer FR-BTC to user, return
+  ├─ 3. Approve script to spend FR-BTC
+  ├─ 4. Calculate gasForScript = gasleft() - 50,000
+  ├─ 5. Low-level call with limited gas:
+  │     target.call{gas: gasForScript}(execute(...))
+  │     │
+  │     ├─ SUCCESS → continue
+  │     └─ FAILURE (revert, OOG, etc.) → transfer FR-BTC to user, return
+  │
+  └─ 6. Transfer remaining FR-BTC to user
+```
+
+### Key Points
+
+1. **OOG Protection**: Scripts run in a subcall with limited gas. Even if a script infinite-loops, FR-BTC retains 50,000 gas to safely return tokens.
+
+2. **Automatic Token Return**: On any failure, FR-BTC tokens are automatically transferred to the user.
+
+3. **No Trust Required**: Scripts don't need special gas handling - FR-BTC handles it at the caller level.
+
+## Building Scripts
+
+### Basic Script (IScript2)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {IScript2} from "frbtc/interfaces/IScript2.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+
+contract MyScript is IScript2 {
+    using SafeERC20 for IERC20;
+
+    address public immutable frbtc;
+
+    constructor(address _frbtc) {
+        frbtc = _frbtc;
+    }
+
+    function execute(
+        address sender,
+        uint256 amount,
+        bytes calldata data
+    ) external override {
+        // Only FR-BTC contract should call this
+        require(msg.sender == frbtc, "only frbtc");
+
+        // Your logic here...
+        // The FR-BTC contract has approved `amount` tokens to this contract
+
+        // Example: transfer FR-BTC to the sender
+        IERC20(frbtc).safeTransferFrom(msg.sender, sender, amount);
+    }
+}
+```
+
+### Swap Script Example
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {IScript2} from "frbtc/interfaces/IScript2.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+
+interface ISwapRouter {
+    function swap(
+        address tokenIn,
+        address tokenOut,
+        uint256 amountIn,
+        uint256 minAmountOut,
+        address recipient
+    ) external returns (uint256 amountOut);
+}
+
+contract FrBTCSwapScript is IScript2 {
+    using SafeERC20 for IERC20;
+
+    address public immutable frbtc;
+    ISwapRouter public immutable router;
+
+    constructor(address _frbtc, address _router) {
+        frbtc = _frbtc;
+        router = ISwapRouter(_router);
+    }
+
+    function execute(
+        address sender,
+        uint256 amount,
+        bytes calldata data
+    ) external override {
+        require(msg.sender == frbtc, "only frbtc");
+
+        // Decode swap parameters from calldata
+        (address tokenOut, uint256 minAmountOut) = abi.decode(data, (address, uint256));
+
+        // Transfer FR-BTC from FR-BTC contract to this script
+        IERC20(frbtc).safeTransferFrom(msg.sender, address(this), amount);
+
+        // Approve router
+        IERC20(frbtc).safeApprove(address(router), amount);
+
+        // Execute swap, sending output directly to user
+        router.swap(frbtc, tokenOut, amount, minAmountOut, sender);
+    }
+}
+```
+
+### Calling from Frontend
+
+```javascript
+// Encode the calldata for the script
+const tokenOut = "0x..."; // Token to swap to
+const minAmountOut = ethers.parseUnits("100", 18);
+const data = ethers.AbiCoder.defaultAbiCoder().encode(
+    ["address", "uint256"],
+    [tokenOut, minAmountOut]
+);
+
+// Call wrapAndExecute2
+const tx = await frbtc.wrapAndExecute2(swapScriptAddress, data);
+```
+
+## Helper Library: FrBTCLib
+
+The `FrBTCLib` library provides chain detection utilities:
+
+```solidity
+import {FrBTCLib} from "frbtc/libraries/FrBTCLib.sol";
+
+// Get FR-BTC address for current chain
+address frbtc = FrBTCLib.FRBTC_ADDRESS();
+
+// Check chain
+bool isMainnet = FrBTCLib.isMainnet();
+bool isSignet = FrBTCLib.isSignet();
+bool isSupported = FrBTCLib.isSupportedChain();
+
+// Chain IDs
+uint256 mainnetId = FrBTCLib.MAINNET_CHAIN_ID;  // 0x4252433230
+uint256 signetId = FrBTCLib.SIGNET_CHAIN_ID;    // 0x425243323073
+```
+
+## CLI Commands
+
+Use the `alkanes` CLI with the `brc20-prog` subcommand to interact with FR-BTC:
+
+### Wrap BTC
+
+```bash
+alkanes brc20-prog wrap-btc <AMOUNT> \
+  --from <ADDRESSES> \
+  -y
+```
+
+### Unwrap FR-BTC
+
+```bash
+alkanes brc20-prog unwrap-btc <AMOUNT> \
+  --vout <OUTPUT_INDEX> \
+  --to <YOUR_BTC_ADDRESS> \
+  -y
+```
+
+### Wrap and Execute
+
+Atomically wrap BTC and call a contract:
+
+```bash
+alkanes brc20-prog wrap-and-execute2 <AMOUNT> \
+  --target 0x<CONTRACT_ADDRESS> \
+  --signature "deposit()" \
+  -y
+```
+
+### Check Balance
+
+```bash
+alkanes brc20-prog get-balance --address <ADDRESS>
+```
+
+### Get Signer Address
+
+```bash
+alkanes brc20-prog signer-address
+```
+
+### View Pending Unwraps
+
+```bash
+alkanes brc20-prog unwrap
+```
+
+## Security Considerations
+
+### Caller Validation
+
+Always verify that only the FR-BTC contract can call your script's `execute` function:
+
+```solidity
+require(msg.sender == frbtc, "only frbtc");
+```
+
+Or using FrBTCLib for multi-chain deployments:
+
+```solidity
+require(msg.sender == FrBTCLib.FRBTC_ADDRESS(), "only frbtc");
+```
+
+### Token Handling
+
+The FR-BTC contract approves your script to spend the minted tokens before calling `execute`. You must:
+1. Transfer tokens from FR-BTC contract using `transferFrom`
+2. Use the tokens in your logic
+3. Send any remaining tokens to the `sender`
+
+If your script reverts or runs out of gas, FR-BTC automatically returns the tokens to the user.
+
+### Reentrancy
+
+FR-BTC uses `nonReentrant` modifier on `wrapAndExecute` and `wrapAndExecute2`. Your scripts cannot re-enter these functions.
+
+## Testing
+
+Use Foundry to test your scripts:
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.19;
+
+import {Test} from "forge-std/Test.sol";
+import {MyScript} from "../src/MyScript.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract MyScriptTest is Test {
+    MyScript public script;
+    address public frbtc;
+    address public user = address(0x1234);
+
+    function setUp() public {
+        // Deploy or mock FR-BTC
+        frbtc = address(new MockFrBTC());
+        script = new MyScript(frbtc);
+    }
+
+    function testExecute() public {
+        uint256 amount = 1e8; // 1 BTC
+
+        // Mint tokens to FR-BTC contract (simulating wrap)
+        MockFrBTC(frbtc).mint(frbtc, amount);
+
+        // Approve script
+        vm.prank(frbtc);
+        IERC20(frbtc).approve(address(script), amount);
+
+        // Execute as FR-BTC contract
+        bytes memory data = abi.encode(/* your params */);
+        vm.prank(frbtc);
+        script.execute(user, amount, data);
+
+        // Verify results
+        // ...
+    }
+
+    function testOnlyFrBTCCanCall() public {
+        vm.expectRevert("only frbtc");
+        script.execute(user, 1e8, "");
+    }
+}
+```
+
+## Best Practices
+
+1. **Keep scripts simple**: Complex logic increases gas costs and failure risk
+2. **Validate inputs**: Always check calldata parameters are valid
+3. **Use SafeERC20**: For safe token transfers
+4. **Test thoroughly**: Test success cases, failure cases, and edge cases
+5. **Consider gas costs**: Users pay for script execution gas
+6. **Handle dust amounts**: Account for rounding in swaps/calculations
+
+## See Also
+
+- [BRC2.0 Integration](./brc20-prog) — Deploy and call BRC2.0 contracts
+- [frBTC - Alkanes](./wrapping-frBTC) — frBTC on the Alkanes protocol
