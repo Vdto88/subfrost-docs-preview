@@ -2,7 +2,7 @@
 title: Wallets
 sidebar_label: Wallets
 sidebar_position: 1
-description: How to set up a wallet for SUBFROST: the web app today, with mobile and browser extension on the way.
+description: How to set up a wallet for SUBFROST, from the web app today to mobile and browser extension soon.
 ---
 
 # Wallets
