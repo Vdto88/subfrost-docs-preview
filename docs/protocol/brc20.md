@@ -22,8 +22,8 @@ Because the execution environment is the EVM, BRC2.0 reuses Ethereum's conventio
 
 A deploy or a call is carried by a Bitcoin inscription, which uses a commit-then-reveal flow. Naively, an inscription flow is exposed to front-running: someone watching the mempool could try to publish a competing reveal first. BRC2.0 guards against this by pre-building and pre-signing the transactions and broadcasting them together, so the reveal is already committed to its rightful creator by the time anything is public.
 
-:::info[Confirm the exact inscription and transaction flow before publishing]
-The older docs described a three-transaction deploy flow (commit, reveal, activation) and specific reveal-script details, plus hard-coded contract addresses and a `wrapAndExecute2` entry point whose signature differed between two pages. The ord-canonical inscription flow is commit then reveal. Confirm the real transaction pattern, entry points, and any addresses against the brc20-prog / frBTC contract source, and keep dev-level specifics in the developer guides where they can be verified against the repo. Source: `Diagnostico-docs.md` §10 C.
+:::info[Confirm the contract-level signatures before publishing]
+The inscription flow is settled: BRC2.0 uses a commit-then-reveal Bitcoin inscription (a taproot envelope, protocol tag "BIN", verified in `alkanes-rs`), and the developer workflow, including the optional third activation transaction (`--use-activation`), is on the [BRC2.0 Integration](../build/brc20-integration) page. What still needs a source-of-truth check is the Solidity-level entry point: the `wrapAndExecute2` signature (the function ships, but its exact parameters live in a non-public build, `alkanes-web-sys`), the signet contract address, and the chain-id values. Confirm these against the frBTC-on-BRC2.0 contract source before any page states them.
 :::
 
 ## frBTC on BRC2.0

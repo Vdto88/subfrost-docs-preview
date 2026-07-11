@@ -155,9 +155,3 @@ See [Lua Scripting](../lua/overview) for more details.
 - [ord_* Methods](./ord): Ordinals protocol
 - [Bitcoin Core RPC](./bitcoind): Full node methods
 - [Lua Scripting](../lua/overview): Server-side scripts
-
----
-
-:::info[`subfrost_*` reference page not in this migration batch]
-The original overview links to a `subfrost_*` Methods page (FROST threshold wallet, regtest) at `/docs/jsonrpc/subfrost`. That page is not part of the seven files handed off for this migration batch, so the "Next Steps" link to it was dropped here rather than left dangling. Confirm whether `subfrost_*` should be migrated separately, and if so, re-add the link once that page exists. Source: `apidoc-jsonrpc-overview.md`.
-:::

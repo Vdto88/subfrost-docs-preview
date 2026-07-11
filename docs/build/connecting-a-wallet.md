@@ -37,8 +37,8 @@ const signedPsbtHex = await subfrost.signPsbt(unsignedPsbtHex);
 const signature = await subfrost.signMessage('Authorize this action', accounts[0]);
 ```
 
-:::info[Confirm the injected provider surface before publishing]
-Confirm the exact global name and method names of the injected provider (`window.subfrost` shown here is provisional), whether it exposes network and account-change events, and how it advertises which addresses are available. The remote-signing (WalletConnect) surface is documented and stable; the injected-provider API should be confirmed against the extension and mobile in-app browser. Source: vault notes on the injected provider, pending confirmation.
+:::info[Injected provider surface is being finalized]
+This page shows the conceptual shape of the injected provider. The exact global name and method set will be documented once the team confirms what is public. Until then, treat the `window.subfrost` example here as illustrative, and rely on the remote-signing (WalletConnect) surface, which is documented and stable, for a firm integration target.
 :::
 
 ## Remote signing (QR pairing)

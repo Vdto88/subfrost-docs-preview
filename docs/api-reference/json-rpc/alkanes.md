@@ -336,6 +336,8 @@ For Alkanes, the protocol tag is always `"1"`:
 { "protocolTag": "1" }
 ```
 
-:::info[Confirm the gateway's on-the-wire encoding]
-The request/response fields above come from the Rust structs (`SimulateProtostonesRequest`, `SimulateTransactionRequest`, `SimulateBlockRequest`, and the response types). They are protobuf messages passed as hex through `metashrew_view`. Before publishing, confirm whether the SUBFROST API gateway also exposes a JSON convenience form (for example an `alkanes_simulateblock` wrapper) and, if so, document that JSON shape alongside the protobuf field tables.
+---
+
+:::note[JSON convenience form vs raw metashrew_view]
+The gateway exposes one JSON convenience method, `alkanes_simulate`, which takes a single object parameter (`alkaneId`, `inputs`, `target`, `pointer`, `refundPointer`, `vout`, `data`) and wraps the `simulate` view. There is no `alkanes_simulateblock` convenience method: `simulateprotostones`, `simulatetransaction`, and `simulateblock` are reached through `metashrew_view` with a hex-encoded protobuf input, using the field tables above. For new integrations the canonical path is `metashrew_view` directly, since the `alkanes_*` methods are documented as thin convenience wrappers over it. Source: `api.subfrost.io/docs/jsonrpc/alkanes`.
 :::

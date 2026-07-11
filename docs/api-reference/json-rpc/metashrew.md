@@ -17,18 +17,14 @@ Metashrew is a flexible indexer that runs WebAssembly programs against Bitcoin b
 - Efficient state queries
 - Protocol-specific views (Alkanes, Protorunes, etc.)
 
-## Architecture: v10, subshrew, and TiKV
+## Runtime and architecture
 
-The indexer runtime (v10) uses a decoupled, horizontally scalable design rather than a single per-instance database. The three layers scale independently:
+metashrew runs as a single binary, `rockshrew-mono`, that bundles the indexer with a local RocksDB database and serves the JSON-RPC view layer from the same process. One binary indexes the chain and answers reads, so the reads are a faithful projection of consensus state rather than a separate database that could drift.
 
-- **State (TiKV).** Instead of each indexer instance carrying its own local RocksDB, state lives in TiKV, a distributed key-value store queried over the network, so many instances share one backend and adding read capacity does not mean duplicating the whole state on disk. The v10 runtime supports a batch `__get`, so a view can fetch many storage keys in a single round trip.
-- **Indexer (subshrew).** subshrew runs the indexing process on its own, decoupled from the state layer, and scales as an independent statefulset. The same v10 runtime also runs under rockshrew-mono.
-- **View / RPC layer.** The JSON-RPC process that runs the view functions is separate and can scale to many replicas. Each replica loads the contract WASM directly and evaluates it against the shared TiKV backend, so read throughput scales without replicating the state layer.
+The runtime is async (wasmtime) and times out long-running requests, and new host functions can be added without changing the host ABI. A newer, unreleased line of work adds Block-STM style parallel block execution to speed up indexing, on the same RocksDB model. Ordering guarantees still hold, but the general "same WASM, same index" property no longer holds automatically under parallel execution, so if you write an indexer that relies on execution order, use serializable semantics.
 
-Runtime changes in v10: the runtime is async (wasmtime) and times out long-running requests; new host functions can be added without changing the host ABI, through a syscall vector passed to `__flush`; and the runtime introduces parallelization with protostone sharding. Ordering is still guaranteed, but the general "same WASM, same index" property no longer holds automatically under parallel execution, so a contract author who relies on it must write serializable semantics.
-
-:::info[Version and rollout status]
-Confirm the current production runtime version and the v10 rollout status before publishing. Per the source notes, production ran metashrew v9.0.5-rc13 while v10 (paired with alkanes-rs v3) was still on the `develop` branch. Also confirm whether `protorunesbyaddress` remains exposed as a view function in v3 or only behind a feature flag (it was slated to be dropped as a view in favor of the esplora UTXO API plus per-outpoint lookups). Source: vault notes on metashrew v10 (subshrew/TiKV).
+:::info[Confirm the private v10/TiKV story and protorunesbyaddress]
+The public `metashrew` repo shows the current runtime as v9.0.5-rc.x under a monolithic `rockshrew-mono` (indexer and view over one RocksDB), with an unreleased v10 line that adds Block-STM parallel execution on the same RocksDB model. A TiKV-backed, `subshrew`-based decoupled architecture is not present in any public repo. Confirm with the team whether that decoupled/TiKV design exists in a private repo and should be documented, and whether `protorunesbyaddress` stays a view in alkanes v3 or is dropped in favor of the esplora UTXO API plus per-outpoint lookups.
 :::
 
 ## Methods

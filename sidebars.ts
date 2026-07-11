@@ -118,9 +118,6 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Reference',
       items: [
-        'reference/subfrost-node-cli-reference',
-        'reference/subfrost-cli-reference',
-        'reference/subrail-cli-reference',
         'reference/glossary',
       ]
     },
