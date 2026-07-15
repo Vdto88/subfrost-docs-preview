@@ -21,10 +21,14 @@ Metashrew is a flexible indexer that runs WebAssembly programs against Bitcoin b
 
 metashrew runs as a single binary, `rockshrew-mono`, that bundles the indexer with a local RocksDB database and serves the JSON-RPC view layer from the same process. One binary indexes the chain and answers reads, so the reads are a faithful projection of consensus state rather than a separate database that could drift.
 
+metashrew is the source of truth for on-chain reads. Every value this API returns comes from a view function that the indexer evaluated against the chain, so there is no secondary store to reconcile and no separate read model to fall behind.
+
+The current release line is metashrew `v9.0.5-rc.13`, running the Alkanes indexer from alkanes-rs `v2.2.1-rc.5`.
+
 The runtime is async (wasmtime) and times out long-running requests, and new host functions can be added without changing the host ABI. A newer, unreleased line of work adds Block-STM style parallel block execution to speed up indexing, on the same RocksDB model. Ordering guarantees still hold, but the general "same WASM, same index" property no longer holds automatically under parallel execution, so if you write an indexer that relies on execution order, use serializable semantics.
 
-:::info[Confirm the private v10/TiKV story and protorunesbyaddress]
-The public `metashrew` repo shows the current runtime as v9.0.5-rc.x under a monolithic `rockshrew-mono` (indexer and view over one RocksDB), with an unreleased v10 line that adds Block-STM parallel execution on the same RocksDB model. A TiKV-backed, `subshrew`-based decoupled architecture is not present in any public repo. Confirm with the team whether that decoupled/TiKV design exists in a private repo and should be documented, and whether `protorunesbyaddress` stays a view in alkanes v3 or is dropped in favor of the esplora UTXO API plus per-outpoint lookups.
+:::info[Confirm protorunesbyaddress in alkanes v3]
+Confirm with the team whether `protorunesbyaddress` stays a view in alkanes v3, or is dropped in favor of the esplora UTXO API plus per-outpoint lookups.
 :::
 
 ## Methods

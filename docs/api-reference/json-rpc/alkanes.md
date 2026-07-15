@@ -238,7 +238,7 @@ Get token-shaped metadata about an alkane contract.
 
 ## Simulation view functions (with trace)
 
-Beyond the single `alkanes_simulate` / `simulate` pair above, the indexer exposes three richer simulation view functions (added in alkanes-rs v2.2.0-rc.8). Unlike `simulate`, which returns only the final result, these return a full execution **trace** for every protostone, the fuel used, the storage slots touched, and the final balances per output. They run read-only against indexed state, so you can preview exactly what a transaction or block would do before broadcasting it. They replace the older, slower preview path.
+Beyond the single `alkanes_simulate` / `simulate` pair above, the indexer exposes three richer simulation view functions, available in the current release line (alkanes-rs `v2.2.1-rc.5`, running under metashrew `v9.0.5-rc.13`). Unlike `simulate`, which returns only the final result, these return a full execution **trace** for every protostone, the fuel used, the storage slots touched, and the final balances per output. They run read-only against indexed state, so you can preview exactly what a transaction or block would do before broadcasting it. They replace the older, slower preview path.
 
 Invoke them through [`metashrew_view`](./metashrew) by name, with a protobuf-encoded request (hex) and a block tag; the response is a protobuf-encoded result (hex):
 
