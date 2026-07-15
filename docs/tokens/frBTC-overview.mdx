@@ -18,9 +18,95 @@ SUBFROST launched on Bitcoin mainnet in Q4 2025. Alkanes (October) & BRC2.0 (Dec
 Users can perform a **single** signing process to enter advanced DeFi apps on Bitcoin L1 with native BTC, completely abstracting-away the need to wrap their BTC first.
 :::
 
-The example below illustrates a user swapping native **BTC** to a USD stablecoin (or other token), atomically, in a decentralized, permissionless manner.
+The example below illustrates a user swapping native **BTC** into another Bitcoin-native asset, atomically, in a decentralized, permissionless manner.
 
-![frBTC Example](../Diagrams/frBTC_example.png)
+<figure className="frbtc-flow">
+<svg viewBox="0 0 840 200" role="img" aria-labelledby="frbtc-flow-title frbtc-flow-desc" style={{width: '100%', height: 'auto', maxWidth: '840px', display: 'block', margin: '0 auto'}}>
+  <title id="frbtc-flow-title">Swapping native BTC into a Bitcoin-native asset with one signature</title>
+  <desc id="frbtc-flow-desc">A user signs once. Their BTC is atomically wrapped into frBTC, swapped through an AMM, and the resulting token is returned to the user, all on Bitcoin L1.</desc>
+
+  <g fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+
+    {/* user, left */}
+    <g transform="translate(24,58)">
+      <circle cx="20" cy="14" r="12" fill="currentColor" stroke="none" opacity="0.85"/>
+      <path d="M2 52 a18 20 0 0 1 36 0 z" fill="currentColor" stroke="none" opacity="0.85"/>
+    </g>
+
+    {/* BTC coin */}
+    <g transform="translate(126,44)">
+      <circle cx="18" cy="18" r="18" fill="#F7931A" stroke="none"/>
+      <path d="M13 9 v18 M17 9 v18" stroke="#fff" strokeWidth="1.6"/>
+      <path d="M11 12 h9 a4 4 0 0 1 0 8 h-9 M11 20 h10 a4 4 0 0 1 0 8 h-10" stroke="#fff" strokeWidth="1.6"/>
+      <text x="18" y="-8" textAnchor="middle" fill="currentColor" stroke="none" fontSize="13" fontWeight="500">BTC</text>
+    </g>
+
+    {/* snowflake, atomic wrap */}
+    <g transform="translate(248,42)">
+      <g stroke="#5B9BD5" strokeWidth="2">
+        <path d="M20 0 V40 M2.7 10 L37.3 30 M2.7 30 L37.3 10"/>
+        <path d="M20 8 l-5 -5 M20 8 l5 -5 M20 32 l-5 5 M20 32 l5 5"/>
+        <path d="M9.6 14 l-6.8 -1 M9.6 14 l1 -6.8 M30.4 26 l6.8 1 M30.4 26 l-1 6.8"/>
+        <path d="M9.6 26 l-6.8 1 M9.6 26 l1 6.8 M30.4 14 l6.8 -1 M30.4 14 l-1 -6.8"/>
+      </g>
+    </g>
+
+    {/* frBTC coin */}
+    <g transform="translate(392,44)">
+      <circle cx="18" cy="18" r="18" fill="#A7C6DC" stroke="none"/>
+      <path d="M13 9 v18 M17 9 v18" stroke="#12202E" strokeWidth="1.6"/>
+      <path d="M11 12 h9 a4 4 0 0 1 0 8 h-9 M11 20 h10 a4 4 0 0 1 0 8 h-10" stroke="#12202E" strokeWidth="1.6"/>
+      <text x="18" y="-8" textAnchor="middle" fill="currentColor" stroke="none" fontSize="13" fontWeight="500">frBTC</text>
+    </g>
+
+    {/* AMM swap */}
+    <g transform="translate(524,50)">
+      <g stroke="#2E5E8C" strokeWidth="2.5">
+        <path d="M4 10 H40 l-9 -8 M40 26 H4 l9 8"/>
+      </g>
+    </g>
+
+    {/* resulting token */}
+    <g transform="translate(660,44)">
+      <circle cx="18" cy="18" r="18" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.75"/>
+      <circle cx="18" cy="18" r="7" fill="currentColor" stroke="none" opacity="0.55"/>
+      <text x="18" y="-8" textAnchor="middle" fill="currentColor" stroke="none" fontSize="13" fontWeight="500">token</text>
+    </g>
+
+    {/* user, right */}
+    <g transform="translate(772,58)">
+      <circle cx="20" cy="14" r="12" fill="currentColor" stroke="none" opacity="0.85"/>
+      <path d="M2 52 a18 20 0 0 1 36 0 z" fill="currentColor" stroke="none" opacity="0.85"/>
+    </g>
+
+    {/* connectors */}
+    <g opacity="0.5" strokeWidth="1.4">
+      <path d="M72 62 H118"/>
+      <path d="M172 62 H240"/>
+      <path d="M296 62 H384"/>
+      <path d="M436 62 H518"/>
+      <path d="M576 62 H652"/>
+      <path d="M706 62 H766"/>
+    </g>
+    <g fill="currentColor" stroke="none" opacity="0.65">
+      <path d="M118 62 l-7 -4 v8 z"/>
+      <path d="M240 62 l-7 -4 v8 z"/>
+      <path d="M384 62 l-7 -4 v8 z"/>
+      <path d="M518 62 l-7 -4 v8 z"/>
+      <path d="M652 62 l-7 -4 v8 z"/>
+      <path d="M766 62 l-7 -4 v8 z"/>
+    </g>
+
+    {/* captions */}
+    <g fill="currentColor" stroke="none" textAnchor="middle">
+      <text x="44" y="150" fontSize="13" opacity="0.9">1 User Signature</text>
+      <text x="268" y="150" fontSize="13" opacity="0.9">Atomic Wrap</text>
+      <text x="546" y="150" fontSize="13" opacity="0.9">AMM Swap</text>
+      <text x="546" y="167" fontSize="11" opacity="0.6">frBTC to any Alkanes token</text>
+    </g>
+  </g>
+</svg>
+</figure>
 
 `frBTC` is live on Alkanes and BRC2.0, and we have already begun development to implement it on Arch & MIDL. 
 
