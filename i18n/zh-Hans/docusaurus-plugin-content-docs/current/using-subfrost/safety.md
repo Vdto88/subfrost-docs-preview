@@ -31,7 +31,7 @@ SUBFROST 处理的是 Bitcoin 上的 Alkanes 代币。如果你同时持有 **Or
 如果你刚接触这个平台，建议先进行一笔小额交易，熟悉整个流程后再操作更大的金额。
 
 :::info[确认安全须知的措辞以及应用内提示]
-本页面是全新撰写的内容，并非现有文档的引用。它基于内部产品的设计考量：与 Alkanes 共享同一 UTXO 的铭文有被销毁的风险，且 SUBFROST 并未运行 Ordinals 索引器。请确认团队希望使用的确切措辞，以及是否要提及正在开发中的应用内提示（该提示会建议将 Ordinals 拆分到新钱包）。来源：`Ferramentas/_index.md`（"Ordinals na mesma wallet que alkanes"）。
+本页面是全新撰写的内容，并非现有文档的引用。它基于内部产品的设计考量：与 Alkanes 共享同一 UTXO 的铭文有被销毁的风险，且 SUBFROST 并未运行 Ordinals 索引器。请确认团队希望使用的确切措辞，以及是否要提及正在开发中的应用内提示（该提示会建议将 Ordinals 拆分到新钱包）。
 :::
 
 ## 下一步

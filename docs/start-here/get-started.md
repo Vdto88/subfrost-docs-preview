@@ -35,10 +35,10 @@ You have two paths. Either works.
 
 SUBFROST connects to popular Bitcoin wallets, including **Xverse, OKX, Leather, and Unisat**. Open **Connect Wallet**, pick your provider, and approve the connection.
 
-:::warning[Use a fresh wallet for SUBFROST, separate from your Ordinals]
+:::caution[Use a fresh wallet for SUBFROST, separate from your Ordinals]
 If you own Ordinals or inscriptions, do not use that same wallet here. On Bitcoin, an inscription lives on a specific coin (UTXO), and if that coin is spent in an ordinary transaction it can be lost. SUBFROST does not track Ordinals, so it cannot automatically protect them. The safest approach is to keep a separate wallet for SUBFROST activity and keep your collectibles somewhere else.
 
-> [!question] This safety guidance is new copy, not a quote from the existing docs. It is based on the internal product rationale (UTXO burn risk; SUBFROST does not index `ord`) in `Ferramentas/_index.md`. Confirm the exact wording the team wants, and whether to reference the in-app "split ordinals to a new wallet" prompt that is in development.
+> [!question] This safety guidance is new copy, not a quote from the existing docs. It is based on internal product rationale (UTXO burn risk if an inscription shares a UTXO with alkanes, and the fact that SUBFROST does not index `ord`). Confirm the exact wording the team wants, and whether to reference the in-app "split ordinals to a new wallet" prompt that is in development.
 :::
 
 ## Step 3: Add Bitcoin
@@ -59,7 +59,7 @@ If you are new to the platform, do a small swap first to get comfortable with th
 :::
 
 :::info[Unwrap confirmation delay ("3 blocks")]
-When swapping back to native BTC, the current docs state there is a safety confirmation period ("There is a 3-block confirmation period... before the SUBFROST protocol sends the unwrapped BTC", `p-subfrost-app__swap.md`). This number is not corroborated by any internal note. Confirm the real value before repeating it.
+When swapping back to native BTC, the current docs state there is a safety confirmation period (a 3-block confirmation period before the SUBFROST protocol sends the unwrapped BTC). This number is not corroborated by any internal note. Confirm the real value before repeating it.
 :::
 
 ## Where to go next

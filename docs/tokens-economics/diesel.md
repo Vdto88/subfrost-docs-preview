@@ -21,7 +21,7 @@ What that means in practice:
 This ties the supply side of the SUBFROST economy directly to Bitcoin's own monetary schedule.
 
 :::info[Confirm the exact emission numbers before publishing]
-Source notes state the rule qualitatively (parity with miner fees, up to 50% of the block reward, same schedule as new sats) and mention roughly 900 DIESEL emitted over a year of runtime. There is no explicit DIESEL halving interval in blocks or years written down; it follows Bitcoin's schedule implicitly. Confirm the precise figures against the genesis contract before stating any specific number. Sources: `Protocolo/_index.md` (Emissão do DIESEL), `Updates/_index.md`.
+Source notes state the rule qualitatively (parity with miner fees, up to 50% of the block reward, same schedule as new sats) and mention roughly 900 DIESEL emitted over a year of runtime. There is no explicit DIESEL halving interval in blocks or years written down; it follows Bitcoin's schedule implicitly. Confirm the precise figures against the genesis contract before stating any specific number.
 :::
 
 ## What DIESEL is for

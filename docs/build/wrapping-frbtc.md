@@ -49,7 +49,7 @@ alkanes-cli -p regtest \
   alkanes getbalance
 ```
 
-`wrap-btc` builds the transaction that sends BTC to the signer, attaches the wrap call on `[32, 0]`, and returns frBTC to your address. On regtest, `--mine` mines the block immediately.
+`wrap-btc` builds the transaction that sends BTC to the signer, attaches the wrap call on `[32, 0]`, and returns frBTC to your address. On regtest, `--mine` mines the block immediately. See [Alkanes Commands](../api-reference/cli-sdk/alkanes) for the full `wrap-btc` flag reference.
 
 ## Unwrapping from the CLI
 
@@ -101,6 +101,8 @@ Wrapping charges a small premium, measured in parts per 100,000,000 (that is, sa
 | 103 | GetSigner | Signer public key |
 | 104 | GetPremium | Current premium |
 | 105 | GetTotalSupply | Total supply |
+
+You do not have to keep this table memorized: any deployed alkane exposes its own names and opcodes through its `__meta` export. See [Reading Alkane Metadata](../api-reference/guides/alkane-metadata) for how to query it directly.
 
 ## From TypeScript
 

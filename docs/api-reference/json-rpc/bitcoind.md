@@ -495,5 +495,5 @@ Estimates the fee per vbyte needed for confirmation within conf_target blocks.
 ---
 
 :::info[Interactive "Try It Live" playground]
-Several methods on the original page (`btc_getblockcount`, `btc_getblockhash`, `btc_getblockchaininfo`, `btc_getdifficulty`, `btc_getmempoolinfo`, `btc_getrawmempool`, `btc_estimatesmartfee`) embedded a live "Run" playground where a reader could fill in parameters and execute the request against mainnet. These were converted to static one-line descriptions above. Decide whether to rebuild an interactive playground in the new docs. Source: `apidoc-jsonrpc-bitcoind.md`.
+Several methods on the original page (`btc_getblockcount`, `btc_getblockhash`, `btc_getblockchaininfo`, `btc_getdifficulty`, `btc_getmempoolinfo`, `btc_getrawmempool`, `btc_estimatesmartfee`) embedded a live "Run" playground where a reader could fill in parameters and execute the request against mainnet. These were converted to static one-line descriptions above. Decide whether to rebuild an interactive playground in the new docs.
 :::

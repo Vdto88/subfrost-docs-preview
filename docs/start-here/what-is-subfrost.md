@@ -35,7 +35,7 @@ With frBTC in hand, you can swap into other Bitcoin assets, provide liquidity, a
 - **Keep your exposure.** The idea is simple in spirit: hold Bitcoin, but use it to earn more Bitcoin, passively.
 
 :::info[Signer set: current status vs. the plan]
-Confirm the honest live-vs-planned wording before publishing. The custody network is currently in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap). The roadmap describes expanding this to a much larger permissionless set of stakers. State clearly that the larger permissionless network is **planned**, so readers do not assume today's decentralization is already at its final scale. Source to reconcile: `p-tokens__frBTC-roadmap.md` (ALPHA vs. Phase 2).
+Confirm the honest live-vs-planned wording before publishing. The custody network is currently in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap). The roadmap describes expanding this to a much larger permissionless set of stakers. State clearly that the larger permissionless network is **planned**, so readers do not assume today's decentralization is already at its final scale. Reconcile the current phase label against the roadmap's own phase names before publishing.
 :::
 
 ## Where to go next

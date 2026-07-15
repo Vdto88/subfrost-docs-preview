@@ -31,7 +31,7 @@ Your 12-word recovery phrase is the only way to restore a self-custodial wallet.
 When you are new to the platform, do a small transaction first to get comfortable with the flow before moving larger amounts.
 
 :::info[Confirm the safety wording and the in-app prompt]
-This page is new copy, not a quote from the existing docs. It is based on the internal product rationale: risk of burning an inscription that shares a UTXO with Alkanes, and the fact that SUBFROST does not run an Ordinals indexer. Confirm the exact wording the team wants, and whether to reference the in-app prompt (in development) that offers to split Ordinals off to a new wallet. Source: `Ferramentas/_index.md` ("Ordinals na mesma wallet que alkanes").
+This page is new copy, not a quote from the existing docs. It is based on the internal product rationale: risk of burning an inscription that shares a UTXO with Alkanes, and the fact that SUBFROST does not run an Ordinals indexer. Confirm the exact wording the team wants, and whether to reference the in-app prompt (in development) that offers to split Ordinals off to a new wallet.
 :::
 
 ## Next steps

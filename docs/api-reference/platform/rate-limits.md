@@ -197,5 +197,5 @@ Contact [sales@subfrost.io](mailto:sales@subfrost.io) for Business pricing.
 ---
 
 :::info[Confirm current plans, quotas, and pricing]
-This page is the canonical source for per-plan numbers (Free 60/min, 1,000/day; Pro 600/min, 50,000/day, $45-$55/mo; Business custom, $90-$120/mo), referenced from the Authentication and Overview pages. Confirm these figures are still current before publishing, since the Authentication page migration deferred to this page as the single source of truth. Source: `apidoc-platform-rate-limits.md`.
+This page is the canonical source for the per-plan numbers referenced from the Authentication and Overview pages. Confirm these figures are still current before publishing, and keep this page as the single source of truth rather than repeating the numbers elsewhere.
 :::

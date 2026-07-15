@@ -209,6 +209,6 @@ never inspects the plaintext.
 
 ---
 
-:::info[Internal repo links and source references]
-The original page linked directly to internal source files (webapp client, mobile crypto crate, mobile FFI, and a headless E2E test) across the `subfrost-app` and `subfrost-mobile` GitHub repos. Those links and the internal crate/module names (`subfrost-mobile-wc`, `subfrost-mobile-ffi::wc`, `lib/wc/client.ts`) were removed from this migrated page since they expose internal implementation details and the repos may not be public. Decide whether to (a) drop the source-linking "See also" section entirely, (b) re-add it with only public-repo links, or (c) keep it as an internal-only appendix. Source: `apidoc-guides-walletconnect.md`.
+:::info[Should this page link to implementation sources]
+The original page ended with a "See also" section linking directly into implementation repositories. Those links were dropped here because the repositories are not public and the paths expose internal structure. Decide whether to (a) leave the section out, (b) re-add it pointing only at public repositories, or (c) keep it as an internal appendix. The specific paths are recorded in the internal migration note below.
 :::

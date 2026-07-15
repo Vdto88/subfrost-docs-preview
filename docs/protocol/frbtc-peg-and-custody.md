@@ -36,7 +36,7 @@ The signers coordinate over a peer-to-peer network built on QUIC and libp2p.
 ## Current phase vs. the plan
 
 :::info[Confirm the signer-set status before publishing]
-Describe the honest state: the custody network today is in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap), and the roadmap expands this toward a much larger permissionless set (the schemes support signing groups of up to 255 participants). Make clear that the larger permissionless network is planned, not the current scale. Source: `p-tokens__frBTC-roadmap.md` (ALPHA vs. Phase 2), `p-key-components__frost-and-roast.md`.
+Describe the honest state: the custody network today is in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap), and the roadmap expands this toward a much larger permissionless set (the schemes support signing groups of up to 255 participants). Make clear that the larger permissionless network is planned, not the current scale.
 :::
 
 ## Where to go next

@@ -28,6 +28,8 @@ Common global options:
 | `--wallet-address <ADDR>` | Watch-only, read-only mode |
 | `--jsonrpc-url <URL>` | Custom JSON-RPC endpoint |
 
+For production traffic, pass an API key through `--jsonrpc-url` for higher rate limits. See [Authentication](../api-reference/getting-started/authentication) and [Rate Limits](../api-reference/platform/rate-limits).
+
 ## Wallet basics
 
 ```bash
@@ -42,6 +44,8 @@ alkanes-cli wallet addresses --range 0:5
 alkanes-cli wallet balance
 alkanes-cli wallet utxos
 ```
+
+See [Wallet Commands](../api-reference/cli-sdk/wallet) for the rest of the namespace: signing, history, backups, and fee rates.
 
 ## Deploying and calling contracts
 
@@ -61,7 +65,7 @@ alkanes-cli -p signet alkanes simulate "2:1:2"
 alkanes-cli -p signet alkanes inspect "2:1" --meta
 ```
 
-The `-y` flag auto-confirms. `execute` produces a Bitcoin transaction and pays a fee; `view` and `simulate` read indexer state and cost nothing.
+The `-y` flag auto-confirms. `execute` produces a Bitcoin transaction and pays a fee; `view` and `simulate` read indexer state and cost nothing. See [Alkanes Commands](../api-reference/cli-sdk/alkanes) for the full flag set on `execute`, `simulate`, and `inspect`.
 
 ## Querying Bitcoin directly
 
@@ -77,6 +81,8 @@ alkanes-cli esplora address <ADDRESS>
 alkanes-cli esplora tx <TXID>
 alkanes-cli esplora fee-estimates
 ```
+
+The `esplora` namespace has its own reference page ([Esplora Commands](../api-reference/cli-sdk/esplora)); the `bitcoind` commands mirror the methods documented on [Bitcoin Core RPC](../api-reference/json-rpc/bitcoind).
 
 ## Broadcasting options
 

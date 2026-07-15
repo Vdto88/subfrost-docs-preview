@@ -92,5 +92,5 @@ See the [Authentication](./authentication) guide for details.
 ---
 
 :::info[Framing and company name]
-Two things to confirm before publishing. (1) The original api docs describe SUBFROST as a "Bitcoin-native L0 extension framework"; the "L0" wording was dropped here to match the reframe decided for the main docs (see the Start Here track). Confirm the neutral wording is acceptable. (2) The original footer credits "Subzero Research Inc." as the operator. Decide whether the merged docs should keep that legal entity name or use "SUBFROST" throughout. Source: `apidoc-index.md`.
+Two things to confirm before publishing. (1) The original api docs describe SUBFROST as a "Bitcoin-native L0 extension framework"; the "L0" wording was dropped here to match the reframe decided for the main docs (see the Start Here track). Confirm the neutral wording is acceptable. (2) The original footer credits "Subzero Research Inc." as the operator. Decide whether the merged docs should keep that legal entity name or use "SUBFROST" throughout.
 :::

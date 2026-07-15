@@ -33,7 +33,7 @@ The intended economics are straightforward:
 ## Where this stands
 
 :::info[Confirm the staking asset and mechanics before publishing]
-Custody today is permissioned: a fixed signer set with a quorum, not open staking. The open, stake-weighted model on this page is planned (Phase 2) and its parameters are not settled. The older docs described staking `FUEL` plus `frBTC`, a liquid-staking receipt token, and slashing, but staking in production today is DIESEL-based. Confirm the real asset, how weight is computed, whether a liquid-staking receipt and slashing apply, and the rollout, against the contracts before publishing. Sources: `Diagnostico-docs.md` §10 C, `p-tokens__frBTC-roadmap.md`.
+Custody today is permissioned: a fixed signer set with a quorum, not open staking. The open, stake-weighted model on this page is planned (Phase 2) and its parameters are not settled. The older docs described staking `FUEL` plus `frBTC`, a liquid-staking receipt token, and slashing, but staking in production today is DIESEL-based. Confirm the real asset, how weight is computed, whether a liquid-staking receipt and slashing apply, and the rollout, against the contracts before publishing.
 :::
 
 ## Where to go next

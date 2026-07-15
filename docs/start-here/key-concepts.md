@@ -30,7 +30,7 @@ There are two things called "fuel" in this ecosystem: the **FUEL governance toke
 - **The AMM (automated market maker).** A swap works against a shared liquidity pool instead of matching you with another trader. You always have a counterparty, and the price adjusts with supply and demand. This is what powers swaps in the app. **Live.**
 
 :::info[Swap fee number]
-Do not publish a specific AMM swap fee until confirmed. The reference AMM tutorial (`ab-tutorials-amm.md`, from alkanes.build) shows 0.3% as the example fee, but that is a generic tutorial and is not confirmed as the SUBFROST production pool fee. Separately, wrapping/unwrapping frBTC carries a 0.1% fee (`p-tokens__frBTC-roadmap.md`). The "1% (0.8% LP + 0.2% burn)" figure that circulated internally was not found in any source.
+Do not publish a specific AMM swap fee until confirmed. A generic reference tutorial shows 0.3% as an example fee, but that is not confirmed as the SUBFROST production pool fee. Separately, wrapping and unwrapping frBTC carries a 0.1% fee, though that figure should also be confirmed as current. The "1% (0.8% LP + 0.2% burn)" figure that circulated internally was not found in any source.
 :::
 
 ## What it all runs on

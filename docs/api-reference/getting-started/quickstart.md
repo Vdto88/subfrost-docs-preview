@@ -136,5 +136,5 @@ Common error codes:
 ---
 
 :::info[Interactive "Try It Live" playground]
-The original Quick Start page embeds a live "Run" playground for each example method. That interactive widget did not carry over in migration. Decide whether to rebuild an interactive API playground in the new docs, or keep the static code examples above. Source: `apidoc-quickstart.md`.
+The original Quick Start page embeds a live "Run" playground for each example method. That interactive widget did not carry over in migration. Decide whether to rebuild an interactive API playground in the new docs, or keep the static code examples above.
 :::

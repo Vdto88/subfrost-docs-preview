@@ -48,7 +48,7 @@ Being honest about status matters. A quick snapshot:
 - **Planned:** a Bitcoin-native stablecoin (frUSD), a yield-bearing Bitcoin vault token (dxBTC), the FUEL governance token, cross-chain swaps to assets like ETH, SOL, and ZEC, and the fully permissionless signer network.
 
 :::info[Confirm the live/planned split against the running app before publishing]
-The current docs describe several planned features in the present tense (cross-chain swaps, vaults). Verify each item's status by opening the live app and checking on-chain, and label anything not yet shipped as **planned**. Sources: `Diagnostico-docs.md` §10, dossier on tokens.
+The current docs describe several planned features in the present tense (cross-chain swaps, vaults). Verify each item's status by opening the live app and checking on-chain, and label anything not yet shipped as **planned**.
 :::
 
 ## Where to go next

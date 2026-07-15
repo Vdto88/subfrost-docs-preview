@@ -20,7 +20,7 @@ Because the value is agreed by a threshold of the group and posted on-chain, con
 - **FIRE bonds.** The bond price is anchored to an oracle-reported reference, with a floor tied to the protocol treasury, so bonds cannot be sold below the value backing them.
 
 :::info[Confirm the oracle detail level for public docs]
-This page is intentionally generic. Confirm how much of the oracle's mechanism to describe publicly (the agreement threshold, the exact signals it reads, how often it posts). Keep internal component and contract names out of the public copy. Sources: `Projetos/Lending/Oracle.md`, `Protocolo/FIRE-bonds-e-governanca.md`.
+This page is intentionally generic. Confirm how much of the oracle's mechanism to describe publicly (the agreement threshold, the exact signals it reads, how often it posts). Keep internal component and contract names out of the public copy.
 :::
 
 ## Where to go next

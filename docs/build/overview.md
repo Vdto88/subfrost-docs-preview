@@ -17,7 +17,7 @@ You will use a small set of tools, all of them public:
 
 - **`alkanes-cli`** for wallets, deployment, and calling contracts from the command line. It is built from source (see [Quickstart](./quickstart)).
 - **`@alkanes/ts-sdk`** for talking to the chain from TypeScript, in a web app or a backend.
-- **A hosted JSON-RPC endpoint**, so you do not have to run your own indexer to get started. Requests go to `https://mainnet.subfrost.io/v4/jsonrpc`. If you want to run the indexer yourself, see [Indexing with metashrew](./indexing-with-metashrew).
+- **A hosted JSON-RPC endpoint**, so you do not have to run your own indexer to get started. Requests go to `https://mainnet.subfrost.io/v4/jsonrpc` (see the [JSON-RPC Overview](../api-reference/json-rpc/overview) for the full method catalog). If you want to run the indexer yourself, see [Indexing with metashrew](./indexing-with-metashrew).
 
 The full command and SDK reference lives in [API & SDK Reference](../api-reference/cli-sdk/overview). This track is the guided path; that section is the lookup table.
 

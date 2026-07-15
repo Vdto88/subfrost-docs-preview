@@ -19,7 +19,7 @@ alkanes-cli -p mainnet \
   brc20-prog block-number
 ```
 
-It speaks standard Ethereum JSON-RPC (`eth_call`, `eth_getBalance`, `eth_getCode`, `eth_getLogs`, `eth_chainId`, and the rest), plus a few `brc20_*` methods for inscription-aware lookups.
+It speaks standard Ethereum JSON-RPC (`eth_call`, `eth_getBalance`, `eth_getCode`, `eth_getLogs`, `eth_chainId`, and the rest, see the [BRC20 Programmable Module (JSON-RPC)](../api-reference/json-rpc/brc20-prog) reference for the full method list), plus a few `brc20_*` methods for inscription-aware lookups.
 
 ## Deploying a contract
 

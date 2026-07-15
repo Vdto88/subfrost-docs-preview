@@ -59,7 +59,7 @@ A keystore never holds secrets in plaintext. When you set it up, you choose a pa
 On mobile, this is backed by the device's secure hardware where available, using **StrongBox** on Android and the **Secure Enclave** on iOS, so the protecting key can be bound to the device and never exposed to the app or the operating system.
 
 :::info[Confirm keystore specifics before publishing]
-Confirm the exact key-derivation function and current on-disk format, and the per-platform hardware backing (StrongBox on Android, Secure Enclave on iOS). Do not reintroduce the old example: the previous keystore page pasted an Ethereum Web3 Secret Storage V3 JSON (`aes-128-ctr`, `version 3`) while its prose claimed AES-256-GCM, a direct contradiction. Sources: `Diagnostico-docs.md` §10 A.8, `Ferramentas/_index`.
+Confirm the exact key-derivation function and current on-disk format, and the per-platform hardware backing (StrongBox on Android, Secure Enclave on iOS). Do not reintroduce the old example: the previous keystore page pasted an Ethereum Web3 Secret Storage V3 JSON (`aes-128-ctr`, `version 3`) while its prose claimed AES-256-GCM, a direct contradiction.
 :::
 
 ## Where to go next

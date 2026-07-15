@@ -31,6 +31,8 @@ cargo build --release -p alkanes-cli
 export PATH="$PWD/target/release:$PATH"
 ```
 
+See [Installation](../api-reference/cli-sdk/installation) for prerequisites, PATH setup, and troubleshooting in more detail.
+
 ## 2. Create a wallet
 
 ```bash
@@ -44,7 +46,7 @@ alkanes-cli wallet import
 alkanes-cli wallet receive
 ```
 
-Fund the address from a signet faucet before deploying.
+Fund the address from a signet faucet before deploying. See [Wallet Commands](../api-reference/cli-sdk/wallet) for the rest of the wallet surface.
 
 ## 3. Write a contract
 
@@ -122,7 +124,7 @@ alkanes-cli -p signet alkanes execute "[3,0,0]" \
   -y
 ```
 
-The output shows your contract's **Alkane ID**, a `[block, tx]` pair such as `[2, 1]` (block 2, transaction index 1). That ID is how you address the contract from now on.
+The output shows your contract's **Alkane ID**, a `[block, tx]` pair such as `[2, 1]` (block 2, transaction index 1). That ID is how you address the contract from now on. `execute` takes more flags than shown here, see [Alkanes Commands](../api-reference/cli-sdk/alkanes) for the full set.
 
 ## 6. Interact
 

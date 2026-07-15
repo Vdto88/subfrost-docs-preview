@@ -44,7 +44,7 @@ rockshrew-mono \
 
 `--start-block 880000` is the Alkanes genesis height, so the node skips the pre-genesis chain. Syncing from there still takes on the order of days.
 
-To skip the full sync, bootstrap from a **published snapshot**: point `--repo` at a snapshot base URL and the node downloads the state and catches up to the tip in hours. SUBFROST serves snapshots from `https://cdn.subfrost.io/snapshots/`.
+To skip the full sync, bootstrap from a **published snapshot**: point `--repo` at a snapshot base URL and the node downloads the state and catches up to the tip in hours. SUBFROST serves snapshots from `https://cdn.subfrost.io/snapshots/`. Business-tier accounts can also pull the raw database directly over [rsync](../api-reference/platform/rsync) instead of `--repo`.
 
 :::info[Confirm the exact snapshot object path]
 The `--repo` snapshot mechanism and the public `cdn.subfrost.io/snapshots/` route are confirmed in source, but the exact snapshot object name (what to point `--repo` at) is not published. Ask the team for the current snapshot path before documenting a copy-paste bootstrap command.

@@ -27,7 +27,7 @@ Every swap on SUBFROST trades against a **liquidity pool**: a shared reserve of 
 The **DIESEL / frBTC** pool is central to the SUBFROST economy: liquidity providers in this pool are also rewarded in **[FIRE](./fire-vault)**, the protocol's rewards token. See the FIRE Vault guide for how staking and bonds build on top of this.
 
 :::info[Confirm the swap fee and the exact LP mechanics]
-Do not publish a specific pool fee until confirmed. Source notes show 0.3% as a generic example fee (`ab-tutorials-amm.md`) and about 1% per hop for multi-hop routing (`Glossario/_index.md`), but the production pool fee is not confirmed. Also confirm the exact LP deposit / withdraw flow in the app before publishing this page. The internal pool implementation name should not appear in public copy.
+Do not publish a specific pool fee until confirmed. Reference notes show 0.3% as a generic example fee and about 1% per hop for multi-hop routing, but the production pool fee is not confirmed. Also confirm the exact LP deposit and withdraw flow in the app before publishing this page. The internal pool implementation name should not appear in public copy.
 :::
 
 ## Next steps

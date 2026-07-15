@@ -89,5 +89,5 @@ Manage your subscription:
 ---
 
 :::info[Confirm current plans and pricing]
-This page lists specific plan tiers and prices (Free, Pro $45-$55/mo, Business $90-$120/mo). These are dashboard-specific figures that may have changed since the cache was captured. Confirm they are still accurate before publishing, and consider keeping plan pricing in one canonical place instead of repeating it across Overview, API Keys, and Rate Limits. Source: `apidoc-platform-overview.md`.
+Verify that the plan tiers and prices listed above are still accurate, and consider keeping plan pricing in one canonical place instead of repeating it across Overview, API Keys, and Rate Limits.
 :::

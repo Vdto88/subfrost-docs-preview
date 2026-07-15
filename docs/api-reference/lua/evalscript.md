@@ -342,5 +342,5 @@ console.log('Runtime:', data.result.runtime, 'ms');
 ---
 
 :::info[Interactive "Try It Live" demo]
-The original page embedded an interactive `lua_evalscript` playground ("Run" button, live script editor) directly below the Error Response section. That widget did not carry over in migration; only the static Request/Response examples and code samples below it are kept. Decide whether to rebuild an interactive playground in the new docs. Source: `apidoc-lua-evalscript.md`.
+The original page embedded an interactive `lua_evalscript` playground ("Run" button, live script editor) directly below the Error Response section. That widget did not carry over in migration; only the static Request/Response examples and code samples below it are kept. Decide whether to rebuild an interactive playground in the new docs.
 :::

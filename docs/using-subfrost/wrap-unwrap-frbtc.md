@@ -22,7 +22,7 @@ Unwrapping burns your frBTC and releases the underlying native BTC back to you. 
 There is a short safety confirmation period before the protocol sends your unwrapped BTC.
 
 :::info[Confirm the unwrap confirmation delay]
-The current docs state a "3-block confirmation period" before the protocol sends the unwrapped BTC. This number is not corroborated by internal notes. Confirm the real value before publishing. Source: `p-subfrost-app__swap.md`.
+The current docs state a "3-block confirmation period" before the protocol sends the unwrapped BTC. This number is not corroborated by internal notes. Confirm the real value before publishing.
 :::
 
 ## Fees
@@ -30,7 +30,7 @@ The current docs state a "3-block confirmation period" before the protocol sends
 A small fee is charged on wrap and unwrap operations.
 
 :::info[Confirm the wrap/unwrap fee]
-Source notes list **0.1%** across wrap and unwrap (`p-tokens__frBTC-roadmap.md`, `p-tokens__FUEL-token.md`). Confirm this is still current before publishing.
+Reference notes list **0.1%** across wrap and unwrap. Confirm this is still current before publishing.
 :::
 
 ## Next steps
