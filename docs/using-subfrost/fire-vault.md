@@ -24,11 +24,7 @@ There is no premine. Every FIRE that exists was emitted by the protocol, and the
 | Activation block | 950,420 |
 | First halving | Block 1,050,000 |
 
-FIRE emission halves over time, on a schedule aligned with Bitcoin's halvings.
-
-:::info[Confirm the FIRE halving interval]
-The current docs state a halving interval of **105,000 blocks (about 2 years)**, "synchronized with Bitcoin halvings," so that every second FIRE halving lands on a Bitcoin halving. Internal notes elsewhere describe FIRE as halving "in sync with Bitcoin" (210,000 blocks). These are reconcilable (105k is twice as fast, so every other FIRE halving coincides with Bitcoin's), but the real deployed value has not been verified against the contract. Confirm `HALVING_INTERVAL` in the FIRE contract before publishing either number.
-:::
+FIRE emission halves every 105,000 blocks, which is half of Bitcoin's own halving interval. Every second FIRE halving therefore lands on a Bitcoin halving.
 
 ## How the vault pays you
 
@@ -58,19 +54,21 @@ Every 105,000 blocks the per-block rate halves. Epoch boundaries align to a glob
 
 ### Why the cap needs no premine
 
-Each epoch emits exactly half of the one before it, so the total emission is an infinite geometric series. It converges on the supply cap:
+Each epoch emits exactly half of the one before it, so the total emission is an infinite geometric series bounded by the supply cap:
 
 ```
 total = epoch_0_emission x sum(1/2^i) for i = 0..infinity
       = epoch_0_emission x 2
       = 1,050,000 x 2
-      = 2,100,000 FIRE = maximum supply
+      = 2,100,000 FIRE
 ```
 
-The schedule itself guarantees the cap. Nothing needs to be held back at genesis to make the numbers work, which is why the premine is 0%.
+The schedule itself is what enforces the cap. Nothing needs to be held back at genesis to make the numbers work, which is why the premine is 0%.
 
-:::info[Confirm the activation block and the first halving against the deployed contract]
-The activation block (950,420) and the first halving (block 1,050,000) come from an older draft with no cited source. They are consistent with a global grid: 1,050,000 is 105,000 x 10, and it is also Bitcoin halving #5 (210,000 x 5), so the grid explanation holds and 950,420 + 105,000 = 1,055,420 is simply the wrong way to compute the boundary. But that makes the first live epoch **99,580 blocks long, not 105,000**, so the very first epoch is truncated and emits about 995,800 FIRE instead of 1,050,000. If that is real, total emission converges near 2,045,800 FIRE rather than exactly 2,100,000, and the cap is never quite reached. Confirm against the deployed contract: (a) the activation block, (b) whether epoch 0 is truncated by activation or the schedule starts a fresh 105,000-block epoch at activation, and (c) whether the geometric-convergence claim should be stated as an exact identity or as an upper bound.
+Worth being precise about: a halving series approaches its total without ever landing on it. Supply gets arbitrarily close to 2,100,000 FIRE and is always slightly under it, in the same way Bitcoin's own 21 million is a ceiling rather than a figure that ever gets minted. The cap is a limit, not a milestone.
+
+:::info[Which is right for epoch 0, block 1,050,000 or 1,055,420?]
+Two internal sources disagree. The written schedule says epoch boundaries follow a fixed grid anchored at block 0, which puts the first halving at block **1,050,000** and makes the first epoch shorter than the rest (99,580 blocks instead of 105,000), since FIRE activated at block 950,420 partway through a grid slot. The deployment record instead lists epoch 0 as covering **950,420 to 1,055,420**, which is a full 105,000 blocks and would put the first halving 5,420 blocks later. A note in the app says the value read from the contract itself is 1,049,999, checked a couple of days after that deployment record was written, which favours the first reading. This matters beyond trivia: if the first epoch is short, it emits about 995,800 FIRE rather than 1,050,000, and the series then approaches roughly 2,045,800 rather than 2,100,000. Please confirm which is live, and whether the first epoch is meant to be truncated.
 :::
 
 ## Lock multipliers
@@ -89,7 +87,7 @@ You can lock your stake for longer to earn more. A longer lock applies a higher 
 The longer you commit, the larger your share of the staking emissions.
 
 :::info[Only long locks move the bond price]
-The bond price oracle counts **only LP staked with a lock of 6 months or longer**. Short-term stakers still earn FIRE, but they do not move the oracle. What bonders pay is set by the people who committed for the long term.
+The bond price oracle counts **only LP staked with a lock of 6 months or longer**, and it counts the raw amount rather than the multiplied weight. Short-term stakers still earn FIRE, but they do not move the oracle. What bonders pay is set by the people who committed for the long term.
 :::
 
 ## Staking your LP
@@ -115,6 +113,8 @@ Wait for the lock to expire, then unstake the NFT. You get your LP back plus all
 Unstake(NFT) -> LP + FIRE
 ```
 
+Once the lock has expired, claiming your rewards does this for you: on a position you have not split, a claim after expiry returns the FIRE **and** the LP and closes the position out. You do not need to unstake separately.
+
 ### Split into wLP
 
 Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
@@ -136,12 +136,12 @@ RedeemExpired(wLP) -> LP
 
 ## Bonding
 
-Bonding is for people who want FIRE **now** instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a **10% discount** to the staking oracle price, vested over about **7 days** (1,050 blocks).
+Bonding is for people who want FIRE **now** instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a **10% discount** to the staking oracle price, vested over about **7 days** (1,050 blocks). The discount is a setting the protocol can adjust, so treat 10% as the current rate rather than a fixed rule.
 
 The pricing is fully transparent:
 
 ```
-oracle_price    = LP_locked_6mo_or_more x 10^8 / annual_FIRE_emission
+oracle_price    = max(LP_locked_6mo_or_more, 1 LP) x 10^8 / annual_FIRE_emission
 
 effective_price = oracle_price x (10000 - discount_bps) / 10000
 
@@ -149,6 +149,8 @@ bond_price      = max(effective_price, floor_price)
 
 FIRE_out        = LP_in x 10^8 / bond_price
 ```
+
+The `max(..., 1 LP)` in the oracle price is a bootstrap guard: before anyone has locked LP for six months or more, it keeps the price defined instead of dividing into zero.
 
 Bond LP goes directly to the treasury and stays there. It is not returned, and it permanently backs the redemption floor.
 
@@ -168,6 +170,10 @@ Redeem X FIRE at floor -> burn for LP  (LP comes out of treasury)
 
 A bonder who redeems immediately nets zero. The 7-day vest means a bonder is betting on price appreciation, not extracting value from the protocol.
 
+### Bonding capacity builds up over time
+
+Bonding is metered rather than unlimited. Capacity accrues block by block from the moment the contract goes live, so shortly after launch there is little of it and a large bond may not fit. If a bond is rejected for capacity, it is not broken: wait and try again, or bond a smaller amount.
+
 ## Redemption and the price floor
 
 Any FIRE holder can burn FIRE for a proportional share of the treasury's LP backing:
@@ -176,19 +182,17 @@ Any FIRE holder can burn FIRE for a proportional share of the treasury's LP back
 floor_price = total_treasury_LP / total_FIRE_supply
 ```
 
+**Redeeming charges a 1% fee**, which is not paid to anyone: it stays in the treasury. So you receive about 99% of your proportional share, and the LP you leave behind raises the floor slightly for everyone still holding FIRE.
+
 This is a hard floor, and it scales with the treasury. Every bond deposits LP that never leaves, so the floor only moves in one direction over time as bonding activity grows.
 
-### Where the market price sits
+### There is no FIRE market to arbitrage
 
-Any off-platform price (an AMM swap, an OTC trade) is bounded on both sides by protocol activity:
+FIRE has **no AMM pool, no exchange listing, and no swap path**. You cannot buy or sell it the way you trade other Bitcoin assets. The only ways to acquire FIRE are to **stake** LP and earn it, or to **bond** LP and receive it at a discount. The only way to dispose of it is to **redeem** it against the treasury.
 
-| If the market price is | Then | So the price |
-| --- | --- | --- |
-| Below the year-equivalent staking yield | Buying is cheaper than earning, so staking slows and dilution drops | Rises |
-| Above the year-equivalent staking yield | Staking LP and selling FIRE is profitable, so emission gets absorbed | Falls toward equilibrium |
-| Below the floor | Buy FIRE, redeem for treasury LP at the floor, take the difference | Rises to at least the floor |
+That is why the two prices below are not market quotes. They are protocol-computed figures, and the "price" of FIRE means one of them.
 
-The floor is a hard lower bound. The staking yield is a soft upper bound.
+If a price does appear somewhere off-platform, the same forces still bound it: below the floor, anyone can buy and redeem for treasury LP at a profit, which pushes it back up. Above the year-equivalent staking yield, staking and selling becomes the better trade, which absorbs the demand. The floor is a hard lower bound and the staking yield is a soft upper one.
 
 ## The two reference prices
 
@@ -199,9 +203,7 @@ Outside of market quotes, FIRE has two distinct "prices," and they answer differ
 | **Oracle** | `locked_LP / annual_emission` | What a 6-month staker earns in a year |
 | **Floor** | `treasury_LP / total_supply` | What a redeemer gets for burning FIRE |
 
-:::info[A UI that shows a "discount" must say which reference price it is discounting from]
-Oracle and floor are not interchangeable, and a discount against one is not a discount against the other. Label it. We also advise against using the AMM market price as the reference.
-:::
+If you see a "discount" quoted anywhere, check which of the two it is discounting from. Oracle and floor answer different questions, and a discount against one is not a discount against the other.
 
 ## The flywheel
 

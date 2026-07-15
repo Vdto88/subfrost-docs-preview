@@ -29,9 +29,14 @@ There are two things called "fuel" in this ecosystem: the **FUEL governance toke
 
 - **The AMM (automated market maker).** A swap works against a shared liquidity pool instead of matching you with another trader. You always have a counterparty, and the price adjusts with supply and demand. This is what powers swaps in the app. **Live.**
 
-:::info[Swap fee number]
-Do not publish a specific AMM swap fee until confirmed. A generic reference tutorial shows 0.3% as an example fee, but that is not confirmed as the SUBFROST production pool fee. Separately, wrapping and unwrapping frBTC carries a 0.1% fee, though that figure should also be confirmed as current. The "1% (0.8% LP + 0.2% burn)" figure that circulated internally was not found in any source.
-:::
+The two fees worth knowing, both current rates rather than permanent guarantees:
+
+| Action | Fee | Where it goes |
+| --- | --- | --- |
+| Swapping | 1% by default | 0.8% to liquidity providers, 0.2% to the protocol |
+| Wrapping or unwrapping BTC | 0.1% | the protocol |
+
+The swap fee is set per pool and the app quotes the live rate, so 1% is the default rather than a rule. The wrap fee is an on-chain parameter the protocol can change. See [Swap](../using-subfrost/swap), [Pools & Liquidity](../using-subfrost/pools-liquidity) and [Wrap & Unwrap](../using-subfrost/wrap-unwrap-frbtc).
 
 ## What it all runs on
 
