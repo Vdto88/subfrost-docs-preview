@@ -1,25 +1,31 @@
 ---
 title: 关键概念
 sidebar_label: 关键概念
-sidebar_position: 4
+sidebar_position: 3
 description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC、AMM，以及底层技术。
 ---
 
 # 关键概念
 
-一份简短的术语表，帮你快速了解概况。每个条目都会链接到更深入的页面（如果存在的话）。标注为 **规划中** 的项目尚未上线。
+一份简短的术语表，帮你快速了解概况。每个条目都会链接到更深入的页面（如果存在的话）。这些资产分为今天**已上线**和**规划中**两组。
 
 ## 资产
 
-- **frBTC。** 让你的 Bitcoin 变得可编程。frBTC 是将 BTC 按 1:1 包装成的代币，可与链上应用交互，并原生结算在 Bitcoin 上。包装 BTC 即可获得它；解包即可换回原生 BTC。**已上线。**
+### 已上线
 
-- **DIESEL。** 协议的原生发行代币。每个 Bitcoin 区块发行的 DIESEL 数量，与该区块新发行的比特币数量相同（今天是 3.125），并与 Bitcoin 同步减半，因此其发行量锚定于真实的 Bitcoin 出块情况，而不是需求。**已上线。**
+- **frBTC。** 让你的 Bitcoin 变得可编程。frBTC 是将 BTC 按 1:1 包装成的代币，可与链上应用交互，并原生结算在 Bitcoin 上。它是通向其他一切的入口：包装 BTC 即可获得它，随时解包即可换回原生 BTC。
 
-- **FIRE。** 奖励与治理代币。FIRE 奖励为 DIESEL/frBTC 资金池提供流动性的人，并支持质押（staking）与债券（bonds）。**已上线**（质押与债券功能正在运行）。
+- **DIESEL。** 协议的原生发行代币。每个 Bitcoin 区块发行的 DIESEL 数量，与该区块新发行的比特币数量相同（今天是 3.125），并与 Bitcoin 同步减半，因此其发行量锚定于真实的 Bitcoin 出块情况，而不是需求。具体数字与领取对象见 [DIESEL](../tokens-economics/diesel)。
 
-- **dxBTC。** 生息 Bitcoin。你质押 BTC 并收到 dxBTC；在后台，你的 Bitcoin 会被投入到收益策略中运作，收益以 Bitcoin 计价累积。**规划中。**
+- **FIRE。** 奖励与治理代币。FIRE 奖励为 DIESEL/frBTC 资金池提供流动性的人，并支持质押（staking）与债券（bonds）。这是活跃参与者获得协议份额、并随时间推移参与治理的方式。质押与债券功能今天已经在运行。
 
-- **FUEL。** 协议国库与参数（例如包装/解包费用和升级）的治理代币。**规划中**（其代币经济学尚未公开）。这里你会遇到两个"fuel"，区分它们靠的是大小写：大写的 **FUEL** 始终指这个代币，而小写的 **fuel** 指一次 Alkanes 合约调用被允许消耗的计算预算，相当于其他链上的 gas。后者详见 [Alkanes](../protocol/alkanes)。
+### 规划中
+
+- **frUSD。** 一种 Bitcoin 原生稳定币：一个稳定的美元价值，像这里的其他一切一样结算在 Bitcoin 上。
+
+- **dxBTC。** 生息 Bitcoin。你质押 BTC 并收到 dxBTC；在后台，你的 Bitcoin 会被投入到收益策略中运作，收益以 Bitcoin 计价累积。
+
+- **FUEL。** 协议国库与参数（例如包装/解包费用和升级）的治理代币。其代币经济学尚未公开。大小写区分了你会在这里遇到的两个"fuel"：大写的 **FUEL** 始终指这个代币，而小写的 **fuel** 指一次 Alkanes 合约调用被允许消耗的计算预算，相当于其他链上的 gas。后者详见 [Alkanes](../protocol/alkanes)。
 
 ## 资产之间如何流转
 
@@ -43,6 +49,13 @@ description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC
 :::note[更深一层]
 "从这里开始"这份速查表刻意保持简单。protostone、cellpack 等术语，以及具体的合约模型，会在 **Protocol** 章节中介绍；开发者工具（CLI、SDK、JSON-RPC）则在 **在 SUBFROST 上构建** 和 **API 与 SDK 参考** 中介绍。
 :::
+
+## 今天已经上线的内容
+
+诚实面对现状很重要。快速一览：
+
+- **已上线：** frBTC 的包装与解包，以及 Bitcoin 资产之间的兑换（包括 BTC 兑换为美元价值）。
+- **规划中：** Bitcoin 原生稳定币（frUSD）、生息 Bitcoin 金库代币（dxBTC）、FUEL 治理代币、与 ETH、SOL、ZEC 等资产的跨链兑换，以及完全无许可的签名者网络。
 
 ## 接下来去哪里
 

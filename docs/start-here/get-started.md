@@ -1,7 +1,7 @@
 ---
 title: Get Started in 5 Minutes
 sidebar_label: Get Started in 5 Minutes
-sidebar_position: 3
+sidebar_position: 2
 description: Pick a wallet, add Bitcoin, and make your first swap on SUBFROST.
 ---
 
@@ -13,7 +13,7 @@ This guide takes you from zero to your first swap. You will pick how to access S
 
 The easiest way to start today is the **web app**. Native clients are on the way:
 
-- **Web app.** Available now, and the recommended way to get started right now.
+- **<a href="https://app.subfrost.io" target="_blank" rel="noopener noreferrer">Web app</a>.** Available now, and the recommended way to get started right now.
 - **Android.** Coming soon.
 - **iOS.** Coming soon (in App Store review).
 - **Browser extension (Chrome and Firefox).** Coming soon.
@@ -33,7 +33,7 @@ You have two paths. Either works.
 
 ### Or connect a wallet you already have
 
-SUBFROST connects to popular Bitcoin wallets, including **Xverse, OKX, Leather, and Unisat**. Open **Connect Wallet**, pick your provider, and approve the connection.
+SUBFROST connects to popular Bitcoin wallets, including **OKX, Unisat, and Xverse**. Open **Connect Wallet**, pick your provider, and approve the connection.
 
 :::caution[Burn risk: use a separate wallet for Ordinals, Runes and BRC-20]
 SUBFROST does not index `ord` at this time. You must transfer Ordinals, Runes and BRC-20 assets to a different wallet before interacting with our apps. Those assets live on a specific coin (a UTXO) that SUBFROST cannot see, so if it gets spent in the course of ordinary activity, the asset on it is gone. See [Safety](../using-subfrost/safety).
@@ -41,9 +41,9 @@ SUBFROST does not index `ord` at this time. You must transfer Ordinals, Runes an
 
 ## Step 3: Add Bitcoin
 
-You do not have to wrap your BTC by hand. When you swap starting from BTC, the app wraps your Bitcoin into frBTC and performs the swap in a single, atomic step. The wrapping happens behind the scenes.
+You do not have to manually wrap your BTC. When you swap from BTC, the app atomically wraps your Bitcoin into frBTC and performs the swap in a single step. The wrapping is completely abstracted away.
 
-If you just want frBTC directly, wrapping is a 1:1 conversion: 1 BTC in gives you 1 frBTC.
+If you just want frBTC directly, wrapping is a 1:1 conversion.
 
 ## Step 4: Make your first swap
 
