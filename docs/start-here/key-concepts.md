@@ -19,11 +19,7 @@ A short glossary to get you oriented. Each item links to a deeper page where one
 
 - **dxBTC.** Yield-bearing Bitcoin. You stake BTC and receive dxBTC; behind the scenes your Bitcoin is put to work in yield strategies, and the yield accrues back in Bitcoin terms. **Planned.**
 
-- **FUEL.** The governance token for the protocol's treasury and parameters (for example, wrap/unwrap fees and upgrades). **Planned** (its tokenomics are not yet public).
-
-:::info["FUEL" naming overlap]
-There are two things called "fuel" in this ecosystem: the **FUEL governance token** (planned, described above) and **fuel** as the execution-gas concept in Alkanes contracts (the compute budget a contract call is allowed to use). Confirm with the team how to disambiguate these in public docs so readers do not conflate them.
-:::
+- **FUEL.** The governance token for the protocol's treasury and parameters (for example, wrap/unwrap fees and upgrades). **Planned** (its tokenomics are not yet public). Capitalization is what separates the two "fuels" you will meet here: **FUEL** in capitals is always this token, while lowercase **fuel** is the compute budget an Alkanes contract call is allowed to spend, the equivalent of gas elsewhere. See [Alkanes](../protocol/alkanes) for that one.
 
 ## How you move between assets
 

@@ -21,17 +21,13 @@ Unwrapping burns your frBTC and releases the underlying native BTC back to you. 
 
 ### Why there is a wait
 
-Your BTC arrives after **3 to 7 block confirmations**. The exact number moves with fee-rate volatility, and the goal is to make it a consistent 3.
+Your BTC arrives after **3 to 7 block confirmations**. The exact number moves with fee-rate volatility, so treat it as a range rather than a fixed number.
 
 The wait exists to protect the reserve from a **Bitcoin reorg**, and the reason is worth understanding, because it is the kind of thing that sounds like caution and is actually arithmetic:
 
 Suppose there were no wait, and your frBTC became BTC the instant you unwrapped. Now Bitcoin reorgs away the last block. The signers already agreed to the unwrap and paid out, but the burn of your frBTC was undone by the reorg. You would end up holding **both** the frBTC and the BTC, and the reserve would be short.
 
 Waiting a few blocks closes that window. A reorg deep enough to reach past 3 to 7 blocks is prohibitively expensive to pull off, so that depth is enough.
-
-:::info[The app currently says two different things]
-Some screens say 3 to 7 confirmations and others say 3. The 3 to 7 is the accurate one today; the plan is to tighten it to a consistent 3. The app strings that say 3 need correcting.
-:::
 
 ## Fees
 
