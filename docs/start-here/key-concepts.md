@@ -13,7 +13,7 @@ A short glossary to get you oriented. Each item links to a deeper page where one
 
 - **frBTC.** Your Bitcoin, made programmable. frBTC is BTC wrapped 1:1 into a token that works with on-chain apps and settles natively on Bitcoin. Wrap BTC to get it; unwrap to get native BTC back. **Live.**
 
-- **DIESEL.** The protocol's native emission. DIESEL is minted in step with Bitcoin miner fees (up to half of the block reward) and follows the same halving schedule as new bitcoin, so its issuance is tied to real Bitcoin block production. **Live.**
+- **DIESEL.** The protocol's native emission. Every Bitcoin block emits the same amount of DIESEL as it emits new bitcoin (3.125 today), halving alongside Bitcoin, so its issuance is tied to real Bitcoin block production rather than to demand. **Live.**
 
 - **FIRE.** The rewards and governance token. FIRE rewards people who provide liquidity to the DIESEL/frBTC pool, and it powers staking and bonds. **Live** (staking and bonds are running).
 

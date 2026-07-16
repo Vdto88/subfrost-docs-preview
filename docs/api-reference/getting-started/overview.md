@@ -91,6 +91,6 @@ See the [Authentication](./authentication) guide for details.
 
 ---
 
-:::info[Framing and company name]
-Two things to confirm before publishing. (1) The original api docs describe SUBFROST as a "Bitcoin-native L0 extension framework"; the "L0" wording was dropped here to match the reframe decided for the main docs (see the Start Here track). Confirm the neutral wording is acceptable. (2) The original footer credits "Subzero Research Inc." as the operator. Decide whether the merged docs should keep that legal entity name or use "SUBFROST" throughout.
+:::info[The "L0" wording needs one more voice]
+You told us "Bitcoin-native L0 extension framework" is accurate, while noting you were not sure what the reframe in the main docs was. Here is that context, because it makes this a three-way question rather than a yes/no. In the old docs the "L0" framing travelled together with **ZK fraud proofs**, a claim we could not trace to any source written by the protocol lead. Our review dropped that framing as a package, which is why this page reads neutrally today. That call was ours, not his, and he has not weighed in. So we have two of the three views: yours (accurate, keep it) and ours (dropped, pending). Before we put "L0" back on your word alone, we would like his. If the answer is **"L0 extension" without the ZK claims**, say so and it goes back.
 :::

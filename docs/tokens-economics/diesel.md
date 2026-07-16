@@ -11,18 +11,25 @@ description: DIESEL is SUBFROST's native emission, issued on-chain in step with 
 
 ## How DIESEL is issued
 
-DIESEL is minted in **parity with Bitcoin miner fees**, capped at up to **half of the full block reward**, and it follows the **same halving schedule as new bitcoin**.
+Every Bitcoin block emits **the same amount of DIESEL as it emits new bitcoin**. Today that is **3.125 per block**, and it **halves alongside Bitcoin**, on the same 210,000-block schedule. When Bitcoin's subsidy drops to 1.5625, DIESEL's does too.
 
-What that means in practice:
+| | |
+| --- | --- |
+| Per block | 3.125 DIESEL |
+| Per day | about 450 DIESEL |
+| Per year | about 164,000 DIESEL |
+| Halving | every 210,000 blocks, with Bitcoin |
 
-- DIESEL's supply is **anchored to real Bitcoin block production**, not printed on demand. As Bitcoin issues new coins and collects fees, DIESEL is issued alongside, within that cap.
-- Because it shares Bitcoin's halving schedule, DIESEL's emission rate falls over time in step with Bitcoin's.
+DIESEL is not printed on demand. There is no faucet and no way to issue it faster: it appears only as Bitcoin blocks appear, which ties the supply side of the SUBFROST economy directly to Bitcoin's own monetary schedule.
 
-This ties the supply side of the SUBFROST economy directly to Bitcoin's own monetary schedule.
+### Who receives it
 
-:::info[Confirm the exact emission numbers before publishing]
-Source notes state the rule qualitatively (parity with miner fees, up to 50% of the block reward, same schedule as new sats) and mention roughly 900 DIESEL emitted over a year of runtime. There is no explicit DIESEL halving interval in blocks or years written down; it follows Bitcoin's schedule implicitly. Confirm the precise figures against the genesis contract before stating any specific number.
-:::
+A block's DIESEL is split two ways:
+
+- A share goes to the **protocol**, sized in parity with the miner fees in that block and **capped at half** of the block's DIESEL. A block with heavy fee activity sends more to the protocol, up to that ceiling.
+- **The rest is divided among everyone who minted in that block**, evenly.
+
+So your share depends on how many others minted at the same height. This is the part worth internalising before you mint: the block's emission is fixed, so a crowded block pays each participant proportionally less.
 
 ## What DIESEL is for
 

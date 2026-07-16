@@ -164,10 +164,6 @@ curl -X POST https://mainnet.subfrost.io/v4/api/get-bitcoin-market-weekly \
   -d '{}'
 ```
 
-:::info[Interactive "Try It Live" widgets]
-The original page had "Try It Live" runnable panels for `get-bitcoin-price` and `get-bitcoin-market-weekly`. Converted to static curl examples above since Docusaurus has no built-in equivalent. Confirm whether the new docs need a real interactive request runner, or if static examples are sufficient.
-:::
-
 ## JavaScript Example
 
 ```javascript

@@ -664,9 +664,3 @@ return {
 ```
 
 Gets recommended fee rates (sat/vB) for various block targets.
-
----
-
-:::info[Interactive "Try It Live" playground]
-Every method on the original page embedded a live "Run" playground where a reader could fill in a parameter (address, txid, hash, height) and execute the request against mainnet. These were converted to static one-line descriptions above. Decide whether to rebuild an interactive playground in the new docs.
-:::

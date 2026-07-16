@@ -540,9 +540,3 @@ Get inscriptions owned by an address.
 > **Note:** This method is available via JSON-RPC but not in Lua scripts.
 
 Lists all inscriptions held by an address.
-
----
-
-:::info[Interactive "Try It Live" playground]
-Every method on the original page embedded a live "Run" playground where a reader could fill in a parameter (inscription ID, rune name, sat number, outpoint, address, height) and execute the request against mainnet. These were converted to static one-line descriptions above. Decide whether to rebuild an interactive playground in the new docs.
-:::

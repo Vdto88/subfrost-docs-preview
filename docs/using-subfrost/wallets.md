@@ -98,13 +98,9 @@ Every transaction from your wallet, with:
 
 ## Settings
 
-- **Network.** Choose which Bitcoin network your wallet points at (Mainnet, Signet, or Regtest).
+- **Network.** Your wallet points at Bitcoin Mainnet.
 - **HD wallet derivation.** View your active addresses and configure how they are derived.
 - **Security and backup.** Export backups and manage your seed phrase.
-
-:::info[Confirm which networks end users actually see]
-The existing docs present Mainnet, Signet, and Regtest as a user-facing choice in wallet settings. Regtest is a local development network, so offering it to end users looks like a development build that leaked into public docs. Confirm whether end users really see Signet and Regtest, or whether those are staging and internal builds only. If they are staging-only, this section should document Mainnet alone.
-:::
 
 ## Sending Bitcoin
 
@@ -136,15 +132,11 @@ Send only Bitcoin to this address. Verify the address is correct before sending 
 
 SUBFROST is built mobile-first, and native clients are on the way.
 
-- **Android.** Available now through SUBFROST's own F-Droid repository. It is the most complete client today. A Google Play Store listing is coming.
+- **Android.** Coming soon.
 - **iOS.** In review for the App Store.
 - **Browser extension (Chrome and Firefox).** In active development, working toward feature parity with the mobile app.
 
 We will publish full setup guides for each of these when they launch officially. Until then, use the web app above.
-
-:::info[Android install details]
-Confirm the exact, publishable F-Droid install link (and a QR code) before this ships, and the wording the team wants for "available now via F-Droid" vs the store launches.
-:::
 
 ## Next steps
 

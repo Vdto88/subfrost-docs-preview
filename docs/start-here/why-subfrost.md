@@ -32,13 +32,11 @@ SUBFROST is built around a few native assets. Here is the short version. The ful
 
 - **frBTC: your Bitcoin, made programmable.** frBTC is BTC wrapped 1:1 into a token that works with on-chain apps. It is the entry point to everything else: you wrap BTC to get frBTC, and you can unwrap back to native BTC at any time. It is live today.
 
-- **DIESEL: issuance tied to real Bitcoin.** DIESEL is the protocol's native emission. It is minted in step with Bitcoin miner fees (up to half of the block reward), following the same halving schedule as new bitcoin. In other words, DIESEL's supply is anchored to real Bitcoin block production rather than being printed on a whim.
+- **DIESEL: issuance tied to real Bitcoin.** DIESEL is the protocol's native emission. Every Bitcoin block emits the same amount of DIESEL as it emits new bitcoin, and it halves alongside Bitcoin. In other words, DIESEL's supply is anchored to real Bitcoin block production rather than being printed on a whim. See [DIESEL](../tokens-economics/diesel) for the numbers and for who receives it.
 
 - **FIRE: rewards and governance.** FIRE rewards the people who provide liquidity to the DIESEL/frBTC pool, and it powers staking and bonds. It is how active participants earn a share of the protocol and, over time, help govern it.
 
-:::info[The DIESEL, frBTC, and FIRE relationship ("Theory")]
-The project lead asked for a dedicated "Theory" section explaining how these three fit together economically (issuance tied to miner fees, the reserve relationship between frBTC and DIESEL, and why FIRE exists). That full economic thesis is not yet written down in any single source, so it is intentionally left out of this Start Here page and flagged as a page to build under **Tokens & Economics**. Do not invent the reserve-ratio mechanics here.
-:::
+For the full picture of how these three assets fit together economically, see [Tokens & Economics](../tokens-economics/overview).
 
 ## What is live today vs. planned
 
@@ -46,10 +44,6 @@ Being honest about status matters. A quick snapshot:
 
 - **Live:** wrapping and unwrapping frBTC, and swapping between Bitcoin assets (including BTC to a US-dollar value).
 - **Planned:** a Bitcoin-native stablecoin (frUSD), a yield-bearing Bitcoin vault token (dxBTC), the FUEL governance token, cross-chain swaps to assets like ETH, SOL, and ZEC, and the fully permissionless signer network.
-
-:::info[Confirm the live/planned split against the running app before publishing]
-The current docs describe several planned features in the present tense (cross-chain swaps, vaults). Verify each item's status by opening the live app and checking on-chain, and label anything not yet shipped as **planned**.
-:::
 
 ## Where to go next
 

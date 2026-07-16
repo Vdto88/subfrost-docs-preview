@@ -2,25 +2,25 @@
 title: Safety
 sidebar_label: Safety
 sidebar_position: 6
-description: Keep your Ordinals and inscriptions safe when using SUBFROST.
+description: Keep your Ordinals, Runes and BRC-20 assets safe when using SUBFROST.
 ---
 
 # Safety
 
-SUBFROST works with Alkanes tokens on Bitcoin. If you also own **Ordinals or inscriptions**, there is one important precaution to take.
+SUBFROST works with Alkanes tokens on Bitcoin. If you also hold **Ordinals, Runes or BRC-20 assets**, there is one precaution you have to take, and it is not optional.
 
-## Use a separate wallet for your collectibles
+## Move your non-Alkanes assets to a different wallet
 
-**Do not use the same wallet for SUBFROST activity and for valuable Ordinals or inscriptions.**
+> **Burn risk.** SUBFROST does not index `ord` at this time. You must transfer Ordinals, Runes and BRC-20 assets to a different wallet before interacting with our apps.
 
-On Bitcoin, an inscription lives on a specific coin (a UTXO). If that coin is spent in an ordinary transaction, the inscription can be lost. SUBFROST does not track Ordinals, so it cannot see them and cannot automatically protect them for you.
+Here is why. On Bitcoin, these assets live on a specific coin (a UTXO). SUBFROST cannot see them, so it cannot avoid them: if one of those coins gets spent in the course of ordinary activity, **the asset on it is gone**. There is no recovery and no undo.
 
-The safest approach is simple:
+So keep two wallets:
 
-- Keep a **dedicated wallet** for SUBFROST (wrapping, swapping, staking).
-- Keep your **Ordinals and collectibles in a different wallet**, separate from your SUBFROST activity.
+- A **dedicated wallet** for SUBFROST: wrapping, swapping, staking.
+- A **separate wallet** for your Ordinals, Runes and BRC-20 assets.
 
-That way, nothing you do on SUBFROST can ever touch a coin that carries an inscription.
+With them apart, nothing you do on SUBFROST can reach a coin that carries one.
 
 ## Protect your recovery phrase
 
@@ -30,8 +30,8 @@ Your 12-word recovery phrase is the only way to restore a self-custodial wallet.
 
 When you are new to the platform, do a small transaction first to get comfortable with the flow before moving larger amounts.
 
-:::info[Confirm the safety wording and the in-app prompt]
-This page is new copy, not a quote from the existing docs. It is based on the internal product rationale: risk of burning an inscription that shares a UTXO with Alkanes, and the fact that SUBFROST does not run an Ordinals indexer. Confirm the exact wording the team wants, and whether to reference the in-app prompt (in development) that offers to split Ordinals off to a new wallet.
+:::info[Should this page mention the in-app split prompt?]
+There is a prompt in development that offers to split Ordinals off to a new wallet. It is not mentioned here, since it is not shipped. Say the word when it lands and this page will point to it.
 :::
 
 ## Next steps

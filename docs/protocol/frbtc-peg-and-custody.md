@@ -35,9 +35,15 @@ The signers coordinate over a peer-to-peer network built on QUIC and libp2p.
 
 ## Current phase vs. the plan
 
-:::info[Confirm the signer-set status before publishing]
-Describe the honest state: the custody network today is in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap), and the roadmap expands this toward a much larger permissionless set (the schemes support signing groups of up to 255 participants). Make clear that the larger permissionless network is planned, not the current scale.
-:::
+Custody today is held by **nine signers**, and the network is permissioned: a quorum of that fixed group authorizes each unwrap, and the signers are not yet publicly identified.
+
+The path from here has three steps:
+
+1. **Identifiable signers.** The keys move as needed so that every signer is publicly identifiable.
+2. **A larger set.** The signer set expands beyond today's nine.
+3. **Permissionless staking.** Participation opens up, so the set stops being a fixed group.
+
+The schemes underneath support signing groups of up to 255 participants, so the ceiling is far above the current nine. But nine is what is live. The larger permissionless network is planned, and nothing here should be read as saying it already exists.
 
 ## Where to go next
 

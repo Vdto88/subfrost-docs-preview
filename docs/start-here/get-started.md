@@ -14,7 +14,7 @@ This guide takes you from zero to your first swap. You will pick how to access S
 The easiest way to start today is the **web app**. Native clients are on the way:
 
 - **Web app.** Available now, and the recommended way to get started right now.
-- **Android.** Available now through SUBFROST's own F-Droid repository, and it is the most complete client. A Google Play Store listing is coming.
+- **Android.** Coming soon.
 - **iOS.** Coming soon (in App Store review).
 - **Browser extension (Chrome and Firefox).** Coming soon.
 
@@ -35,10 +35,8 @@ You have two paths. Either works.
 
 SUBFROST connects to popular Bitcoin wallets, including **Xverse, OKX, Leather, and Unisat**. Open **Connect Wallet**, pick your provider, and approve the connection.
 
-:::caution[Use a fresh wallet for SUBFROST, separate from your Ordinals]
-If you own Ordinals or inscriptions, do not use that same wallet here. On Bitcoin, an inscription lives on a specific coin (UTXO), and if that coin is spent in an ordinary transaction it can be lost. SUBFROST does not track Ordinals, so it cannot automatically protect them. The safest approach is to keep a separate wallet for SUBFROST activity and keep your collectibles somewhere else.
-
-> [!question] This safety guidance is new copy, not a quote from the existing docs. It is based on internal product rationale (UTXO burn risk if an inscription shares a UTXO with alkanes, and the fact that SUBFROST does not index `ord`). Confirm the exact wording the team wants, and whether to reference the in-app "split ordinals to a new wallet" prompt that is in development.
+:::caution[Burn risk: use a separate wallet for Ordinals, Runes and BRC-20]
+SUBFROST does not index `ord` at this time. You must transfer Ordinals, Runes and BRC-20 assets to a different wallet before interacting with our apps. Those assets live on a specific coin (a UTXO) that SUBFROST cannot see, so if it gets spent in the course of ordinary activity, the asset on it is gone. See [Safety](../using-subfrost/safety).
 :::
 
 ## Step 3: Add Bitcoin
@@ -58,8 +56,8 @@ If you just want frBTC directly, wrapping is a 1:1 conversion: 1 BTC in gives yo
 If you are new to the platform, do a small swap first to get comfortable with the flow before moving larger amounts.
 :::
 
-:::info[Unwrap confirmation delay ("3 blocks")]
-When swapping back to native BTC, the current docs state there is a safety confirmation period (a 3-block confirmation period before the SUBFROST protocol sends the unwrapped BTC). This number is not corroborated by any internal note. Confirm the real value before repeating it.
+:::info[Swapping back to BTC takes a few blocks]
+When you swap into native BTC, the protocol waits **3 to 7 block confirmations** before sending it. That wait protects the Bitcoin reserve against a chain reorg. See [Wrap & Unwrap](../using-subfrost/wrap-unwrap-frbtc) for why.
 :::
 
 ## Where to go next

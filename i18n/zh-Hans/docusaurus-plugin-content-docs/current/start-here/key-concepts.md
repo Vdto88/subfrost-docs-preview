@@ -13,7 +13,7 @@ description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC
 
 - **frBTC。** 让你的 Bitcoin 变得可编程。frBTC 是将 BTC 按 1:1 包装成的代币，可与链上应用交互，并原生结算在 Bitcoin 上。包装 BTC 即可获得它；解包即可换回原生 BTC。**已上线。**
 
-- **DIESEL。** 协议的原生发行代币。DIESEL 的铸造与 Bitcoin 矿工费同步（最多为区块奖励的一半），并遵循与新增比特币相同的减半时间表，因此其发行量与真实的 Bitcoin 出块情况挂钩。**已上线。**
+- **DIESEL。** 协议的原生发行代币。每个 Bitcoin 区块发行的 DIESEL 数量，与该区块新发行的比特币数量相同（今天是 3.125），并与 Bitcoin 同步减半，因此其发行量锚定于真实的 Bitcoin 出块情况，而不是需求。**已上线。**
 
 - **FIRE。** 奖励与治理代币。FIRE 奖励为 DIESEL/frBTC 资金池提供流动性的人，并支持质押（staking）与债券（bonds）。**已上线**（质押与债券功能正在运行）。
 

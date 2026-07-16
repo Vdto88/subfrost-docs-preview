@@ -132,9 +132,3 @@ Common error codes:
 - [Authentication](./authentication): set up API keys and CORS.
 - [JSON-RPC Reference](../json-rpc/overview): full method documentation.
 - [Lua Scripting](../lua/overview): custom server-side scripts.
-
----
-
-:::info[Interactive "Try It Live" playground]
-The original Quick Start page embeds a live "Run" playground for each example method. That interactive widget did not carry over in migration. Decide whether to rebuild an interactive API playground in the new docs, or keep the static code examples above.
-:::

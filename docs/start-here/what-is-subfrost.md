@@ -34,9 +34,15 @@ With frBTC in hand, you can swap into other Bitcoin assets, provide liquidity, a
 - **No single custodian.** The Bitcoin that backs frBTC is held by a whole set of signers together, not by one company holding your coins.
 - **Keep your exposure.** The idea is simple in spirit: hold Bitcoin, but use it to earn more Bitcoin, passively.
 
-:::info[Signer set: current status vs. the plan]
-Confirm the honest live-vs-planned wording before publishing. The custody network is currently in an early, permissioned phase (a fixed group of signers, with a quorum required to authorize each unwrap). The roadmap describes expanding this to a much larger permissionless set of stakers. State clearly that the larger permissionless network is **planned**, so readers do not assume today's decentralization is already at its final scale. Reconcile the current phase label against the roadmap's own phase names before publishing.
-:::
+### Where the signer set stands today
+
+Custody is currently held by **nine signers**, and they are not yet publicly identified. That is the starting point, not the destination. Three steps are planned from here:
+
+1. The keys move as needed so that **every signer is publicly identifiable**.
+2. The **signer set expands** beyond today's nine.
+3. It opens into a **permissionless staking network**, where taking part is not gated.
+
+So when you read that no single custodian holds your Bitcoin, that is true today. The larger, open network is planned, and worth judging on its own timeline. See [frBTC Peg & Custody](../protocol/frbtc-peg-and-custody) for how the signing itself works.
 
 ## Where to go next
 

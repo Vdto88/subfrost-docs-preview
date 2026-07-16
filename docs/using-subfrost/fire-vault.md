@@ -26,6 +26,10 @@ There is no premine. Every FIRE that exists was emitted by the protocol, and the
 
 FIRE emission halves every 105,000 blocks, which is half of Bitcoin's own halving interval. Every second FIRE halving therefore lands on a Bitcoin halving.
 
+:::info[One halving interval, or a different first one?]
+This page says the interval is a constant **105,000 blocks**, which is what the FIRE spec states and what the app's own calculations use, in five separate places. A different account has reached us: that the **first** halving is special and that FIRE then falls in sync with Bitcoin's 210,000, which would be a different schedule entirely. The two cannot both be right, and the answer changes every emission figure below. Please settle it against the deployed contract. Related, and probably the same question: the epoch 0 boundary below.
+:::
+
 ## How the vault pays you
 
 The vault accepts **DIESEL / frBTC LP tokens**. It pays out FIRE with a reward accumulator (the standard Synthetix staking model): every block, a fixed amount of FIRE is divided pro-rata across all weighted stake. Your share of a block's emission is your weighted stake divided by the total weighted stake in the vault, so rewards accrue continuously rather than in discrete payouts.
@@ -183,6 +187,10 @@ floor_price = total_treasury_LP / total_FIRE_supply
 ```
 
 **Redeeming charges a 1% fee**, which is not paid to anyone: it stays in the treasury. So you receive about 99% of your proportional share, and the LP you leave behind raises the floor slightly for everyone still holding FIRE.
+
+:::info[Is the 1% redemption fee current?]
+When you described redemption to us, you gave the formula above and said the holder gets a proportional share of the treasury's LP, without mentioning any fee. The FIRE spec is explicit that redeeming keeps **1% of the returned LP in the treasury** (default, with a documented maximum of 10%), and that this is deliberate, because it strengthens the floor. We have documented the 1%. Confirm it is still live and that we should state it, since it is the difference between getting your full share and getting 99% of it.
+:::
 
 This is a hard floor, and it scales with the treasury. Every bond deposits LP that never leaves, so the floor only moves in one direction over time as bonding activity grows.
 

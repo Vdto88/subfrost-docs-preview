@@ -338,9 +338,3 @@ console.log('Runtime:', data.result.runtime, 'ms');
 3. **Return only needed data**: Smaller response = faster transfer
 4. **Use pcall for error handling**: Prevents script termination on RPC errors
 5. **Batch related queries**: Combine multiple checks into one script
-
----
-
-:::info[Interactive "Try It Live" demo]
-The original page embedded an interactive `lua_evalscript` playground ("Run" button, live script editor) directly below the Error Response section. That widget did not carry over in migration; only the static Request/Response examples and code samples below it are kept. Decide whether to rebuild an interactive playground in the new docs.
-:::
