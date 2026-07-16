@@ -52,24 +52,34 @@ const sidebars: SidebarsConfig = {
         },
         ]
     },
-    {
-      type: 'category',
-      label: 'SUBFROST APP',
-      items: [
-        'subfrost-app/overview',
-        'subfrost-app/swap',
-        {
-          type: 'category',
-          label: 'DeFi Vaults on Bitcoin',
-          link: { type: 'doc', id: 'subfrost-app/vaults' },
-          items: [
-            'subfrost-app/fire-vault',
-          ],
-        },
-        'subfrost-app/futures',
-        'subfrost-app/wallet',
-      ]
-    },
+    // SUBFROST APP: hidden from the nav on 2026-07-15, NOT deleted. The pages and their URLs are
+    // untouched; only the sidebar entry is commented out. Restoring is uncommenting this block.
+    //
+    // Why: these are the originals of the pages now merged into Using SUBFROST, and Gabe asked
+    // whether this section should go. Until he decides (and until the redirect question is settled),
+    // serving both meant serving two answers to the same question, and the old ones are now the
+    // wrong answer: subfrost-app/swap says "3-block confirmation period" where the team has since
+    // told us 3 to 7, and subfrost-app/wallet offers Signet and Regtest to end users, which Vitor
+    // removed on 2026-07-15. A reader with the link cannot tell which page is canon.
+    //
+    // {
+    //   type: 'category',
+    //   label: 'SUBFROST APP',
+    //   items: [
+    //     'subfrost-app/overview',
+    //     'subfrost-app/swap',
+    //     {
+    //       type: 'category',
+    //       label: 'DeFi Vaults on Bitcoin',
+    //       link: { type: 'doc', id: 'subfrost-app/vaults' },
+    //       items: [
+    //         'subfrost-app/fire-vault',
+    //       ],
+    //     },
+    //     'subfrost-app/futures',
+    //     'subfrost-app/wallet',
+    //   ]
+    // },
     {
       type: 'category',
       label: 'Tokens (frBTC, dxBTC, FUEL)',
