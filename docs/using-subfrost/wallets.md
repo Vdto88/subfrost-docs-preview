@@ -9,18 +9,11 @@ description: Create or connect a Bitcoin wallet for SUBFROST, manage your balanc
 
 To use SUBFROST you need a Bitcoin wallet. Today the **web app** is the way in, with mobile apps and a browser extension arriving soon.
 
-Your wallet is where you view your assets, manage UTXOs, track transactions, and send and receive BTC.
+Your wallet is where you view your assets, interact with smart contracts, manage UTXOs, track transactions, and send and receive BTC.
 
 ## Create a new wallet
 
-The web app has a built-in wallet that lives in your browser, so you do not need an extension to get started.
-
-1. Open the **Connect Wallet** menu and choose **Create New Wallet**.
-2. Set a strong password (at least 8 characters). You can add a password hint if you plan to back up to Google Drive.
-3. **Write down your 12-word recovery phrase** and store it somewhere safe and offline. This phrase is the only way to recover your funds if you lose access.
-4. Optionally, back up to Google Drive for convenience.
-
-This wallet is **self-custodial**: the keys live in your browser, and no one else can move your funds.
+To create a new wallet, view Step 2 in **[Get Started in 5 Minutes](../start-here/get-started)**.
 
 ## Restore an existing wallet
 
@@ -31,10 +24,6 @@ Choose **Restore Wallet** from the **Connect Wallet** menu. You can restore thre
 - A **Google Drive backup**, if you made one.
 
 You then set a new password, and your wallet comes back with all of its addresses.
-
-## Connect a wallet you already have
-
-SUBFROST also connects to popular Bitcoin wallets, including **Xverse, OKX, Leather, and Unisat**. Open **Connect Wallet**, pick your provider, and approve the connection in your extension. Your addresses then appear in the app header.
 
 ## Keeping your wallet secure
 
@@ -80,7 +69,7 @@ You can filter your UTXOs by address type (Native SegWit or Taproot) or by asset
 |---|---|
 | **Freeze** | Marks a UTXO as off limits so it is never spent by accident |
 | **Unfreeze** | Makes a frozen UTXO spendable again |
-| **Split** | Separates an inscription from the BTC attached to it, so you can spend the BTC and keep the inscription |
+| **Split** | Separates Alkanes assets from the BTC attached to them, so you can spend the BTC and keep the Alkanes |
 
 :::tip[Protect your valuables]
 If you are using your Taproot address for collectibles, freeze the UTXOs holding rare inscriptions so you never spend them as transaction fees. See [Safety](./safety) for the fuller picture.
@@ -116,16 +105,12 @@ Review the details, then confirm. Your wallet signs the transaction and broadcas
 The app warns you when your fee looks unusually high. Always double-check before confirming a large transaction.
 :::
 
-### Advanced: manual UTXO selection
+## Receiving Bitcoin or Alkanes
 
-By default, SUBFROST picks the UTXOs to spend from your Native SegWit address. You can turn auto-select off and choose the inputs yourself, from either your SegWit or your Taproot address. This is worth doing when you want to protect your privacy, consolidate small coins, or avoid spending a specific coin.
-
-## Receiving Bitcoin
-
-The receive screen gives you a **QR code** to scan with any mobile wallet, your **full address** with a copy button, and a **Bitcoin URL** that opens the payment directly in a mobile wallet.
+The receive screen gives you a **QR code** to scan with any mobile wallet and your **full address** with a copy button.
 
 :::warning[Before you share your address]
-Send only Bitcoin to this address. Verify the address is correct before sending anything to it, and be aware that the address can be reused, so an old copy of it still works.
+Send only Bitcoin or Alkanes tokens to this address. Verify the address is correct before sending anything to it.
 :::
 
 ## Mobile and browser extension (coming soon)
@@ -134,7 +119,7 @@ SUBFROST is built mobile-first, and native clients are on the way.
 
 - **Android.** Coming soon.
 - **iOS.** In review for the App Store.
-- **Browser extension (Chrome and Firefox).** In active development, working toward feature parity with the mobile app.
+- **Chrome browser extension.** In active development, working toward feature parity with the mobile app.
 
 We will publish full setup guides for each of these when they launch officially. Until then, use the web app above.
 

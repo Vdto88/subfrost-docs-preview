@@ -16,7 +16,7 @@ The easiest way to start today is the **web app**. Native clients are on the way
 - **<a href="https://app.subfrost.io" target="_blank" rel="noopener noreferrer">Web app</a>.** Available now, and the recommended way to get started right now.
 - **Android.** Coming soon.
 - **iOS.** Coming soon (in App Store review).
-- **Browser extension (Chrome and Firefox).** Coming soon.
+- **Chrome Browser extension.** Coming soon.
 
 For this guide we will use the web app. See [Wallets](../using-subfrost/wallets) for details on each option.
 

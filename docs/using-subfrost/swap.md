@@ -7,7 +7,7 @@ description: Trade Bitcoin assets on SUBFROST, settled natively on Bitcoin.
 
 # Swap
 
-Swapping lets you trade between Bitcoin assets (BTC, frBTC, and other Alkanes tokens) against a shared liquidity pool, all settled on Bitcoin L1. If you start from BTC, the app wraps it to frBTC for you automatically (see [Wrap & Unwrap](./wrap-unwrap-frbtc)). If you swap into BTC, the reverse happens: the app unwraps the resulting frBTC back to native BTC for you, with a brief confirmation step before it lands in your wallet (details on that page too).
+Swapping lets you trade between Bitcoin assets (BTC, frBTC, and other Alkanes tokens) against a shared liquidity pool, all settled on Bitcoin L1.
 
 ## Make a swap
 
@@ -25,15 +25,12 @@ Swapping lets you trade between Bitcoin assets (BTC, frBTC, and other Alkanes to
 
 - **Direct.** Both tokens share a pool, so the swap is a single hop.
 - **Multi-hop.** No direct pool exists, so the swap routes through an intermediate token (for example through frBTC or DIESEL) for the best price.
-- **Wrap / Unwrap.** BTC to frBTC and back is a 1:1 conversion, not a market trade.
 
 ## What you can swap
 
-Today you can swap **between BTC and Bitcoin-native assets** (frBTC and other Alkanes tokens), including converting to a US-dollar value.
+Today you can swap **between BTC and Bitcoin-native Alkanes assets**.
 
-:::info[Cross-chain swaps are planned, not live]
-Some older material lists cross-chain swaps to assets like USDT, SOL, ZEC, and ETH as if already available. In reality, only Bitcoin-native swaps (including BTC to a US-dollar value) are confirmed live. The Bitcoin-native stablecoin (frUSD) and cross-chain routes are **planned**, not shipped. Confirm the current live set against the app before publishing.
-:::
+Bitcoin-native swaps are live, while the Bitcoin-native stablecoin (frUSD) is nearing launch with cross-chain swaps from-and-to USDT and USDC. From there, SUBFROST will consider adding support to other high-volume cross-chain assets such as ETH, SOL, and ADA.
 
 ## Next steps
 

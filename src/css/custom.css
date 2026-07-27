@@ -709,3 +709,34 @@ html[data-theme='dark'] {
   --ifm-menu-link-sublist-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%230a0a0a' d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/></svg>");
 }
 
+
+/* ---------------------------------------------------------------------------
+ * Gabe, 2026-07-27: "increase the brightness of the background by 4%".
+ *
+ * Applied as +4 PERCENTAGE POINTS of HSL lightness, not a 4% relative bump.
+ * The dark page background is #212121, which is L=12.9%; a relative 4% would
+ * land on #222222 and be invisible. +4pp lands on L=16.9% = #2B2B2B, which is
+ * the smallest change that actually reads as lighter. If Gabe wanted the
+ * subtler one, drop this block to one value.
+ *
+ * Scoped to BACKGROUNDS ONLY, deliberately. #212121 is also the body TEXT
+ * colour in the light theme (21 usages, most of them `color:`), so a global
+ * find-and-replace would wash out light-theme text. Only the three background
+ * declarations are lifted here.
+ *
+ * Kept as an append-only override rather than edits in place so it reverts by
+ * deleting this block.
+ * ------------------------------------------------------------------------- */
+html[data-theme='dark'] .gradient-background,
+html[data-theme='dark'] body {
+  background: #2B2B2B;
+}
+
+html[data-theme='dark'] .navbar {
+  --ifm-navbar-background-color: #2B2B2B;
+  background-color: #2B2B2B !important;
+}
+
+html[data-theme='dark'] .DocSearch-Button .DocSearch-Button-Key {
+  background: #2B2B2B;
+}

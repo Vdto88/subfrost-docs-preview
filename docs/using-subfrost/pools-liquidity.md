@@ -7,7 +7,7 @@ description: Provide liquidity to SUBFROST pools and earn a share of swap fees.
 
 # Pools & Liquidity
 
-Every swap on SUBFROST trades against a **liquidity pool**: a shared reserve of two tokens that anyone can contribute to. When you provide liquidity, you deposit a pair of tokens into a pool and earn a share of the fees that swaps through that pool generate.
+Every swap on SUBFROST trades against a **liquidity pool**: a shared reserve of two tokens that anyone can contribute to. When you provide liquidity to a pool, you deposit a pair of tokens and earn a share of the fees that the pool generates (from people swapping through it).
 
 ## How it works
 
@@ -23,15 +23,9 @@ A swap pays **1% by default**, split two ways:
 | Share | Rate | Goes to |
 | --- | --- | --- |
 | Liquidity providers | 0.8% | the pool, so it accrues to your position |
-| Protocol | 0.2% | the protocol |
+| Protocol | 0.2% | permanently to the AMM protocol |
 
 So **as a liquidity provider you earn 0.8% of the volume that trades through your pool**, in proportion to your share of it.
-
-The 1% is a default rather than a law: the fee is set per pool, and the app reads the live rate from the pool itself when it quotes you. A given pool can be configured differently, so the rate you see quoted is the one that applies.
-
-:::info[Confirm 1% (0.8% LP / 0.2% protocol) is the intended public rate]
-These are the defaults in the pool contract, and the app mirrors them exactly. Two things to confirm: that this is the rate you want documented, and whether any production pool is configured away from the 1% default. Note the older docs attached "1%, 0.8%, 0.2%" to wrap and unwrap instead, which is wrong: wrap and unwrap charge 0.1%. The figure was right, the product was not.
-:::
 
 ## Providing liquidity
 
