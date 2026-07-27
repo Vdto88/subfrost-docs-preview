@@ -52,15 +52,21 @@ SUBFROST 会给你两种地址类型，因为不同的资产和不同的应用�
 
 钱包页面标题为 **Your Portfolio（你的投资组合）**。页面顶部的汇总卡片以 BTC 显示你的 **Est. Total Value（估计总价值）**，下方附有约合美元的数值，以及 **Send** 和 **Receive** 按钮。
 
+:::note[总价值包含什么，不包含什么]
+Est. Total Value 是你所有资产**不含轨道体（orbitals）**的累计估计价值。如果你持有轨道体，这张卡片上的数字会低于你实际持有的全部资产。
+:::
+
 你持有的一切随后会分布在多个标签页中：
 
 | Tab | 显示内容 |
 |---|---|
 | **Tokens** | 你的可替代余额：BTC 以及 Alkanes 代币，例如 frBTC 和 DIESEL |
-| **Positions** | 你持有的仓位，例如 LP 和 FIRE 仓位，而非普通代币 |
-| **NFTs** | 你的非同质化 Alkanes 资产 |
+| **Positions** | LP tokens and staked positions（LP 代币与质押仓位） |
+| **NFTs** | Your Alkanes NFTs（你的 Alkanes NFT） |
 | **Activity** | 你的交易历史 |
 | **UTXOs** | 构成你余额的各个 coin，以及管理它们的工具 |
+
+空标签页会明确提示为空，而不是什么都不显示，因此 "No positions found" 意味着你确实没有持仓，而不是加载失败。
 
 第六个标签页 **FUEL** 只有在你的地址符合 FUEL 分配资格时才会出现。如果你没有看到它，说明你不符合资格。
 

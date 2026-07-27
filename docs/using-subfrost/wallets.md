@@ -52,15 +52,21 @@ Both appear in the wallet header with copy buttons. Some exchanges and apps acce
 
 The wallet page is titled **Your Portfolio**. A summary card at the top shows your **Est. Total Value** in BTC with the approximate US-dollar equivalent underneath, and the **Send** and **Receive** buttons.
 
+:::note[What the total does and does not include]
+Est. Total Value is the cumulative estimated value of all your assets **excluding orbitals**. If you hold orbitals, the figure on this card is lower than everything you actually own.
+:::
+
 Everything you hold is then split across tabs:
 
 | Tab | What it shows |
 |---|---|
 | **Tokens** | Your fungible balances: BTC and Alkanes tokens such as frBTC and DIESEL |
-| **Positions** | Positions you hold, such as LP and FIRE positions, rather than plain tokens |
-| **NFTs** | Your non-fungible Alkanes assets |
+| **Positions** | LP tokens and staked positions |
+| **NFTs** | Your Alkanes NFTs |
 | **Activity** | Your transaction history |
 | **UTXOs** | The individual coins behind your balance, and the tools to manage them |
+
+An empty tab says so rather than showing nothing, so "No positions found" means you hold none, not that something failed to load.
 
 A sixth tab, **FUEL**, appears only when your address is eligible for a FUEL allocation. If you do not see it, you are not eligible.
 
