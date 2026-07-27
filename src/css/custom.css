@@ -761,3 +761,39 @@ html[data-theme='dark'] .navbar {
 html[data-theme='dark'] .DocSearch-Button .DocSearch-Button-Key {
   background: #2B2B2B;
 }
+
+/* ---------------------------------------------------------------------------
+ * Gabe, 2026-07-27: "anything that should link to a different page should
+ * actually be underlined, such as Safety on the Wallets page. NOT bolded."
+ *
+ * The underline was already there. `.markdown a` has had
+ * `text-decoration: underline` all along, and "Safety" was already a real
+ * link in both places it appears on that page. The actual defect is COLOUR:
+ * the global `a { color: #212121 }` paints links in exactly the body text
+ * colour, so an underlined link reads as emphasis rather than as a link.
+ * Adding more underline would not have fixed what he was reacting to.
+ *
+ * So content links now take the SUBFROST blue already used in the frBTC
+ * diagram. Contrast against the new #F8FAFC background is 6.5:1, which clears
+ * WCAG AA for body text.
+ *
+ * Scoped to `.markdown a` only: navbar, sidebar, footer and pagination links
+ * have their own colours and are deliberately untouched. Anchor links on
+ * headings are excluded too, since they are an icon rather than prose.
+ * ------------------------------------------------------------------------- */
+.markdown a:not(.hash-link) {
+  color: #2E5E8C;
+}
+
+.markdown a:not(.hash-link):hover {
+  color: #1E3E5C;
+  text-decoration: underline;
+}
+
+html[data-theme='dark'] .markdown a:not(.hash-link) {
+  color: #A7C6DC;
+}
+
+html[data-theme='dark'] .markdown a:not(.hash-link):hover {
+  color: #C9DEEC;
+}

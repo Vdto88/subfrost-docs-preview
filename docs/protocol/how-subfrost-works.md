@@ -20,10 +20,10 @@ It works by combining two things that already run on Bitcoin:
 
 **The signer group handles custody.** The BTC that backs frBTC is held at a single Bitcoin address whose key is split across the whole signer set using the FROST and ROAST threshold-signature schemes. No individual signer ever holds the full key. To authorize a withdrawal, a threshold of signers must cooperate. This is covered in [frBTC Peg & Custody](./frbtc-peg-and-custody).
 
-## Wrapping and unwrapping
+## Minting and redeeming
 
-- **Wrapping (BTC to frBTC) is instant.** When you lock BTC, the metaprotocol mints an equal amount of frBTC to you, 1:1.
-- **Unwrapping (frBTC to BTC) goes through the signer group.** When you burn frBTC to redeem, the signers read the contract state directly to see who burned synthetics and should receive Bitcoin, then collectively sign the payout. No single party can move the funds alone.
+- **Minting frBTC (wrapping BTC) is instant.** When you lock BTC, the metaprotocol mints an equal amount of frBTC to you, 1:1.
+- **Redeeming BTC (unwrapping frBTC) goes through the signer group.** When you burn frBTC to redeem, the signers read the contract state directly to see who burned synthetics and should receive Bitcoin, then collectively sign the payout. No single party can move the funds alone.
 
 ## Why it stays on Bitcoin
 

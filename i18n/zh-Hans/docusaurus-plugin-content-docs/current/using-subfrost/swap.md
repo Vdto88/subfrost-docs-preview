@@ -7,7 +7,7 @@ description: 在 SUBFROST 上交易 Bitcoin 资产，原生结算于 Bitcoin。
 
 # 交换
 
-交换（Swapping）让你可以针对一个共享流动性池，在 Bitcoin 资产（BTC、frBTC 以及其他 Alkanes 代币）之间进行交易，全部原生结算在 Bitcoin L1 上。如果你从 BTC 开始交换，应用会自动为你将其包装（wrap）为 frBTC（参见 [Wrap & Unwrap（包装与解包）](./wrap-unwrap-frbtc)）。如果你交换成 BTC，则会发生相反的过程：应用会将得到的 frBTC 为你解包（unwrap）回原生 BTC，中间会有一个简短的确认步骤，之后资金才会到达你的钱包（该流程的详情同样在那个页面中）。
+交换（Swapping）让你可以针对一个共享流动性池，在 Bitcoin 资产（BTC、frBTC 以及其他 Alkanes 代币）之间进行交易，全部原生结算在 Bitcoin L1 上。
 
 ## 发起一笔交换
 
@@ -25,15 +25,12 @@ description: 在 SUBFROST 上交易 Bitcoin 资产，原生结算于 Bitcoin。
 
 - **直接路径（Direct）。** 两种代币共享同一个资金池，交换只需一跳。
 - **多跳路径（Multi-hop）。** 不存在直接资金池时，交换会通过一个中间代币（例如 frBTC 或 DIESEL）路由，以获得最优价格。
-- **包装 / 解包（Wrap / Unwrap）。** BTC 与 frBTC 之间是 1:1 转换，而非市场交易。
 
 ## 目前可交换的资产
 
-目前你可以在 **BTC 与 Bitcoin 原生资产**（frBTC 及其他 Alkanes 代币）之间进行交换，包括换算为美元价值。
+目前你可以在 **BTC 与 Bitcoin 原生 Alkanes 资产**之间进行交换。
 
-:::info[跨链交换为规划中功能，尚未上线]
-一些较旧的资料将跨链交换到 USDT、SOL、ZEC、ETH 等资产列为已可用功能。但实际上，目前只有 Bitcoin 原生交换（包括 BTC 兑换为美元价值）已确认上线；Bitcoin 原生稳定币（frUSD）与跨链路径仍处于**规划中**，尚未上线。发布前请对照应用核实当前实际已上线的资产范围。
-:::
+Bitcoin 原生交换已经上线，而 Bitcoin 原生稳定币（frUSD）即将推出，届时将支持与 USDT、USDC 之间的跨链双向交换。在此基础上，SUBFROST 还将考虑加入对其他高交易量跨链资产的支持，例如 ETH、SOL 和 ADA。
 
 ## 下一步
 
