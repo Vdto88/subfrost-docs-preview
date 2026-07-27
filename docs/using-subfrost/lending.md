@@ -32,12 +32,12 @@ Lending has two sides, and you can be either one:
 
 Whoever publishes the offer is the **maker**. Whoever accepts it is the **taker**. When someone takes the other side of your offer, the loan is created on chain in one transaction and becomes active immediately.
 
-### Posting an offer is free and instant
+### Posting an offer is instant
 
-When you post an offer, your wallet **signs it, but nothing is sent to the Bitcoin network**. So:
+When you post an offer, your wallet **signs it, but the loan itself is not settled on the Bitcoin network**. So:
 
-- **No network fee** to post.
-- **No on-chain footprint** and no waiting for a block. Your offer shows up in the order book instantly.
+- You pay a **small network fee** to post, and nothing more.
+- **No waiting for a block** before your offer is usable. It shows up in the order book instantly.
 - **Your funds stay in your wallet.** A posted offer is a pre-signed instruction that, by design, **cannot be broadcast on its own**. It only becomes a real transaction once a taker accepts and adds their side.
 
 This means **only the taker pays to settle**. As a maker, posting, editing and cancelling offers cost nothing.
@@ -59,8 +59,7 @@ For the mechanics of how a pre-signed offer stays inert until a taker funds it, 
 | Cost | Who pays | When |
 | --- | --- | --- |
 | Protocol fee, 3,000 sats | The taker | At settlement, built into the transaction |
-| Bitcoin network fee | The taker | At settlement, varies with the fee rate you choose |
-| Posting, editing, cancelling an offer | Nobody | Free, nothing is broadcast |
+| Bitcoin network fee | Taker (settlement), maker (offer post) | At settlement, varies with the fee rate the taker chooses |
 
 ## The interest you will pay
 
@@ -81,10 +80,6 @@ repayment = 1.00239726 DIESEL
 ```
 
 Because the number comes straight from the terms, both sides can compute it up front, and it never changes.
-
-:::warning[Terms that round to zero interest are rejected]
-Interest is computed with integer math and rounded down. If your loan amount, APR and duration are small enough that the interest rounds to **zero**, the contract refuses to create the loan. If a loan will not go through, raise the amount, the APR, or the duration.
-:::
 
 ## Collateral limits
 
@@ -109,10 +104,6 @@ This applies only to **open offers that nobody has taken yet**. An **active loan
 
 :::info[When prices are unavailable, the limits stand down]
 The LTV check needs a USD price for both tokens. If either one has no price the app can resolve, the check cannot be applied, and the app will let you set any values while warning you that you are on your own. Take that warning seriously: it means nothing is checking your collateral for you.
-:::
-
-:::info[Confirm the LTV maxima and what the offer form pre-fills]
-The maxima above (frBTC 80%, DIESEL 50%, everything else 30%) and the removal threshold (an open offer is dropped once what is owed on it exceeds the collateral's value) were read from the app's lending policy, which was added after the original lending documentation was written. Neither of the earlier lending pages mentioned LTV enforcement at all. Two things need confirming: that these are the intended published values, and what the offer form pre-fills as the collateral amount, since it carries a default ratio of 150% that clears the frBTC minimum but sits below the DIESEL one.
 :::
 
 ## Choosing your collateral
@@ -163,7 +154,7 @@ Once a loan is active, here is what can happen.
 A loan cannot be repaid after it defaults. Once the deadline passes, the lender's path is to claim the collateral.
 
 :::info[The app shows a loan as defaulted the moment its deadline passes]
-On chain, a loan only becomes `DEFAULTED` when someone actually triggers it. The app is stricter: it shows an overdue loan as **Defaulted** as soon as the deadline is behind the current block, and withdraws the borrower's repay button. Do not count on a grace period between the deadline and someone triggering the default.
+On chain, a loan only becomes `DEFAULTED` when someone actually triggers it. The app is stricter: it shows an overdue loan as **Defaulted** as soon as the deadline is behind the current block, and withdraws the borrower's repay button.
 :::
 
 You can always see your loans and their status (**Active Loans**, **Closed Loans**, and your open **My Offers**) at the bottom of the Lending page.

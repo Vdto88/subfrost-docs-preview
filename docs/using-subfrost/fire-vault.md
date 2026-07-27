@@ -7,7 +7,7 @@ description: Stake liquidity to earn FIRE, or buy FIRE at a discount through bon
 
 # FIRE Vault
 
-**FIRE** is the SUBFROST rewards token. It rewards the people who provide liquidity to the [DIESEL / frBTC pool](./pools-liquidity), and it is earned two ways: by **staking** your liquidity, or by **bonding**.
+**FIRE** is the Alkanes governance and rewards token. It rewards the people who provide liquidity to the [DIESEL / frBTC pool](./pools-liquidity), and it is earned two ways: by **staking** your liquidity, or by **bonding**.
 
 There is no premine. Every FIRE that exists was emitted by the protocol, and the only way FIRE leaves circulation is redemption against the treasury.
 
@@ -77,7 +77,7 @@ Two internal sources disagree. The written schedule says epoch boundaries follow
 
 ## Lock multipliers
 
-You can lock your stake for longer to earn more. A longer lock applies a higher reward multiplier to the same amount of LP. Locks cannot extend past the current epoch's expiry.
+You can begin earning FIRE by locking your LP for a flexible period, earning the base rate. Lock your stake for longer to earn more, up to 1 year for a 3x multiplier. A longer lock applies a higher reward multiplier to the same amount of LP. Locks cannot extend past the current epoch's expiry.
 
 | Lock period | Blocks | Reward multiplier |
 | --- | --- | --- |
@@ -89,10 +89,6 @@ You can lock your stake for longer to earn more. A longer lock applies a higher 
 | 1 year | 52,500 | 3.0x |
 
 The longer you commit, the larger your share of the staking emissions.
-
-:::info[Only long locks move the bond price]
-The bond price oracle counts **only LP staked with a lock of 6 months or longer**, and it counts the raw amount rather than the multiplied weight. Short-term stakers still earn FIRE, but they do not move the oracle. What bonders pay is set by the people who committed for the long term.
-:::
 
 ## Staking your LP
 
@@ -121,7 +117,7 @@ Once the lock has expired, claiming your rewards does this for you: on a positio
 
 ### Split into wLP
 
-Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
+Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token, called **FIRE-PT-0**, carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
 
 ```
 Split(NFT)       -> NFT (FIRE yield only) + wLP (fungible LP claim)
@@ -132,7 +128,7 @@ This is how you move the LP liquidity out without giving up the FIRE yield strea
 
 ### Redeem expired wLP
 
-Once the epoch has expired, anyone holding wLP can redeem it straight for LP. No NFT required.
+Once the epoch has expired, anyone holding wLP (FIRE-PT-0) can redeem it straight for LP. No NFT required.
 
 ```
 RedeemExpired(wLP) -> LP
@@ -140,7 +136,7 @@ RedeemExpired(wLP) -> LP
 
 ## Bonding
 
-Bonding is for people who want FIRE **now** instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a **10% discount** to the staking oracle price, vested over about **7 days** (1,050 blocks). The discount is a setting the protocol can adjust, so treat 10% as the current rate rather than a fixed rule.
+Bonding is for people who want FIRE **now** instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a **10% discount from market price**, vested over about **7 days** (1,050 blocks). The discount is a setting the protocol can adjust, so treat 10% as the current rate rather than a fixed rule.
 
 The pricing is fully transparent:
 
@@ -158,7 +154,7 @@ The `max(..., 1 LP)` in the oracle price is a bootstrap guard: before anyone has
 
 Bond LP goes directly to the treasury and stays there. It is not returned, and it permanently backs the redemption floor.
 
-In plain language, a bond is this trade: you give the protocol LP forever, and in exchange you get FIRE at a 10% discount to the year-equivalent staking yield, vested over 7 days.
+In plain language, a bond is this trade: you give the protocol LP forever, and in exchange you get FIRE at a 10% discount from market price, vested over 7 days.
 
 ### The floor guard
 
@@ -188,19 +184,7 @@ floor_price = total_treasury_LP / total_FIRE_supply
 
 **Redeeming charges a 1% fee**, which is not paid to anyone: it stays in the treasury. So you receive about 99% of your proportional share, and the LP you leave behind raises the floor slightly for everyone still holding FIRE.
 
-:::info[Is the 1% redemption fee current?]
-When you described redemption to us, you gave the formula above and said the holder gets a proportional share of the treasury's LP, without mentioning any fee. The FIRE spec is explicit that redeeming keeps **1% of the returned LP in the treasury** (default, with a documented maximum of 10%), and that this is deliberate, because it strengthens the floor. We have documented the 1%. Confirm it is still live and that we should state it, since it is the difference between getting your full share and getting 99% of it.
-:::
-
 This is a hard floor, and it scales with the treasury. Every bond deposits LP that never leaves, so the floor only moves in one direction over time as bonding activity grows.
-
-### There is no FIRE market to arbitrage
-
-FIRE has **no AMM pool, no exchange listing, and no swap path**. You cannot buy or sell it the way you trade other Bitcoin assets. The only ways to acquire FIRE are to **stake** LP and earn it, or to **bond** LP and receive it at a discount. The only way to dispose of it is to **redeem** it against the treasury.
-
-That is why the two prices below are not market quotes. They are protocol-computed figures, and the "price" of FIRE means one of them.
-
-If a price does appear somewhere off-platform, the same forces still bound it: below the floor, anyone can buy and redeem for treasury LP at a profit, which pushes it back up. Above the year-equivalent staking yield, staking and selling becomes the better trade, which absorbs the demand. The floor is a hard lower bound and the staking yield is a soft upper one.
 
 ## The two reference prices
 
@@ -220,7 +204,7 @@ Staking, bonding, and redemption are not three separate features. They feed each
 | Who | Does | Which causes |
 | --- | --- | --- |
 | LP providers | Stake DIESEL / frBTC LP, locking longer for more FIRE | Long locks raise the oracle price |
-| Bonders | Pay LP for discounted FIRE at the oracle price | A higher oracle means bonders pay more LP per FIRE, so the treasury fills faster |
+| Bonders | Pay LP for FIRE at a discount from market price | More bonding fills the treasury faster |
 | Treasury | Keeps every bonded LP permanently | A bigger treasury raises the floor price |
 | Redeemers | Burn FIRE for a proportional slice of treasury LP | The floor guard kicks in, so bonding cheaply gets harder |
 

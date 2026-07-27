@@ -10,5 +10,3 @@ description: Futures on SUBFROST are coming soon.
 :::info[Coming soon]
 Futures on SUBFROST are on the way. A full guide will land here when they launch officially.
 :::
-
-Want to be notified? Follow SUBFROST on [X](https://x.com/subfrost) or check back here.

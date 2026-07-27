@@ -66,5 +66,5 @@ Being honest about status matters. A quick snapshot:
 ## Where to go next
 
 - **[Get Started in 5 Minutes](./get-started):** if you have not made your first swap yet.
-- **Tokens & Economics:** the full story on frBTC, DIESEL, FIRE, dxBTC, and FUEL.
-- **Protocol:** how the custody, signing, and Alkanes model actually work.
+- **[Tokens & Economics](../tokens-economics/overview):** the full story on frBTC, DIESEL, FIRE, dxBTC, and FUEL.
+- **[Protocol](../protocol/how-subfrost-works):** how the custody, signing, and Alkanes model actually work.

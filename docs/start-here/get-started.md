@@ -63,4 +63,4 @@ When you swap into native BTC, the protocol waits **3 to 7 block confirmations**
 ## Where to go next
 
 - **[Key Concepts](./key-concepts):** understand frBTC, DIESEL, FIRE, and the rest.
-- Explore pools, the FIRE vault, and more in the **Using SUBFROST** guides.
+- Explore pools, the FIRE vault, and more in the **[Using SUBFROST](../using-subfrost/wallets)** guides.

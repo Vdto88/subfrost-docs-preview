@@ -30,10 +30,6 @@ Your 12-word recovery phrase is the only way to restore a self-custodial wallet.
 
 When you are new to the platform, do a small transaction first to get comfortable with the flow before moving larger amounts.
 
-:::info[Should this page mention the in-app split prompt?]
-There is a prompt in development that offers to split Ordinals off to a new wallet. It is not mentioned here, since it is not shipped. Say the word when it lands and this page will point to it.
-:::
-
 ## Next steps
 
 - [Wallets](./wallets): set up your SUBFROST wallet.

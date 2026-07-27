@@ -29,17 +29,17 @@ So **as a liquidity provider you earn 0.8% of the volume that trades through you
 
 ## Providing liquidity
 
-1. Open the **Pools** section and choose a pool (or create a position in one).
-2. Deposit the two tokens in the pool's ratio.
-3. Confirm and sign. You now hold an LP position and start earning a share of that pool's swap fees.
+1. Click **Liquidity** on the swap page to add positions to a pool.
+2. On the **Add** tab, choose the pair you want to provide.
+3. Deposit the two tokens in the pool's ratio. The app fills in the paired amount for you and shows the **Minimum Deposit**.
+4. Confirm and sign. You now hold an LP position and start earning a share of that pool's swap fees.
 
-## The DIESEL / frBTC pool
+## Removing liquidity
 
-The **DIESEL / frBTC** pool is central to the SUBFROST economy: liquidity providers in this pool are also rewarded in **[FIRE](./fire-vault)**, the protocol's rewards token. See the FIRE Vault guide for how staking and bonds build on top of this.
-
-:::info[Confirm the add and withdraw flow against the app]
-The swap fee is now documented above. What is still generic here is the step-by-step: confirm the exact deposit and withdraw flow in the app, and whether an LP position is represented in a way the user needs to know about.
-:::
+1. Click **Liquidity** on the swap page and switch to the **Remove** tab.
+2. Choose the **LP position** you want to remove.
+3. Set the **Amount to Remove**. The app shows the **Minimum Received** for each of the two tokens, quoted against current reserves.
+4. Confirm and sign. Your share of the pool, plus the fees it accrued, returns to your wallet.
 
 ## Next steps
 
