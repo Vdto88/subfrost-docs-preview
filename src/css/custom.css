@@ -713,20 +713,41 @@ html[data-theme='dark'] {
 /* ---------------------------------------------------------------------------
  * Gabe, 2026-07-27: "increase the brightness of the background by 4%".
  *
- * Applied as +4 PERCENTAGE POINTS of HSL lightness, not a 4% relative bump.
- * The dark page background is #212121, which is L=12.9%; a relative 4% would
- * land on #222222 and be invisible. +4pp lands on L=16.9% = #2B2B2B, which is
- * the smallest change that actually reads as lighter. If Gabe wanted the
- * subtler one, drop this block to one value.
+ * THE LIGHT THEME IS THE ONE THAT MATTERS HERE. docusaurus.config.ts sets
+ * `defaultMode: 'light'`, `disableSwitch: true` and
+ * `respectPrefersColorScheme: false`, so the dark theme is currently
+ * unreachable: there is no toggle and the OS preference is ignored. Whatever
+ * Gabe was looking at was the light background, #E9F0F7. A dark-only change
+ * would have been invisible to him and to every reader.
  *
- * Scoped to BACKGROUNDS ONLY, deliberately. #212121 is also the body TEXT
- * colour in the light theme (21 usages, most of them `color:`), so a global
- * find-and-replace would wash out light-theme text. Only the three background
- * declarations are lifted here.
+ * Applied as +4 PERCENTAGE POINTS of HSL lightness, not a 4% relative bump,
+ * preserving hue and saturation:
+ *   light  #E9F0F7  H=210 S=0.47 L=94.1%  ->  #F8FAFC  L=98.1%
+ *   dark   #212121  H=0   S=0    L=12.9%  ->  #2B2B2B  L=16.9%
+ * The dark values are kept only so the two themes stay consistent if the
+ * toggle is ever re-enabled. They change nothing today.
+ *
+ * Scoped to BACKGROUNDS ONLY, deliberately. Both #E9F0F7 and #212121 are also
+ * TEXT colours elsewhere in this file (they are swapped between the themes),
+ * so a global find-and-replace would wash out text in one theme or the other.
  *
  * Kept as an append-only override rather than edits in place so it reverts by
  * deleting this block.
  * ------------------------------------------------------------------------- */
+.gradient-background,
+body {
+  background: #F8FAFC;
+}
+
+.navbar {
+  --ifm-navbar-background-color: #F8FAFC;
+  background-color: #F8FAFC !important;
+}
+
+.DocSearch-Button .DocSearch-Button-Key {
+  background: #F8FAFC;
+}
+
 html[data-theme='dark'] .gradient-background,
 html[data-theme='dark'] body {
   background: #2B2B2B;
