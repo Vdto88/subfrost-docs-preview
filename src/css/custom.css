@@ -790,6 +790,31 @@ html[data-theme='dark'] .DocSearch-Button .DocSearch-Button-Key {
   text-decoration: underline;
 }
 
+/* Links inside admonitions need their own rule, and this is not a detail:
+ * the "Safety" link Gabe named as his example lives inside a `:::tip`, and it
+ * was the ONE link on that page still rendering in the body text colour after
+ * the rule above shipped.
+ *
+ * Cause: `.theme-admonition *` sets `color: #212121 !important`. The universal
+ * selector plus !important beats any plain rule, so every link inside every
+ * callout was forced back to text colour. Matching that with !important is the
+ * only way short of rewriting the admonition block, which is not this change's
+ * job.
+ *
+ * Contrast of #2E5E8C on the #c5d9e8 admonition background measures 4.7:1,
+ * which clears WCAG AA for body text. It is tighter than the 6.5:1 on the page
+ * background, so if the admonition palette is ever darkened, recheck this.
+ */
+.theme-admonition a:not(.hash-link),
+.alert a:not(.hash-link) {
+  color: #2E5E8C !important;
+}
+
+.theme-admonition a:not(.hash-link):hover,
+.alert a:not(.hash-link):hover {
+  color: #1E3E5C !important;
+}
+
 html[data-theme='dark'] .markdown a:not(.hash-link) {
   color: #A7C6DC;
 }

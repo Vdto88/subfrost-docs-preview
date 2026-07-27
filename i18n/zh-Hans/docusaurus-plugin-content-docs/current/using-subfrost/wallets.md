@@ -48,16 +48,32 @@ SUBFROST 会给你两种地址类型，因为不同的资产和不同的应用�
 
 这两种地址都会显示在钱包页头，并配有复制按钮。有些交易所和应用只接受其中一种格式，因此同时拥有两种地址意味着你总能接收到资金。
 
-你的钱包分为四个标签页。
+## Your Portfolio
 
-## 余额（Balances）
+钱包页面标题为 **Your Portfolio（你的投资组合）**。页面顶部的汇总卡片以 BTC 显示你的 **Est. Total Value（估计总价值）**，下方附有约合美元的数值，以及 **Send** 和 **Receive** 按钮。
 
-- **Bitcoin 余额。** 你的 BTC 总量及其美元价值。
-- **可支配 BTC。** 你可以自由用于交易的部分。
-- **不可支配（含资产）。** 附带铭文（inscription）或代币的 coin 中的 BTC，因此不能自由支配。
-- **地址明细。** 你的余额在 Native SegWit、Taproot 和待确认交易之间的分布情况。
-- **Protorune 资产。** Alkanes 及类似代币（Protorunes 是发行这些代币所依据的 Bitcoin 元协议标准）。
-- **铭文资产（Inscription assets）。** BRC20 及其他基于铭文的代币。
+你持有的一切随后会分布在多个标签页中：
+
+| Tab | 显示内容 |
+|---|---|
+| **Tokens** | 你的可替代余额：BTC 以及 Alkanes 代币，例如 frBTC 和 DIESEL |
+| **Positions** | 你持有的仓位，例如 LP 和 FIRE 仓位，而非普通代币 |
+| **NFTs** | 你的非同质化 Alkanes 资产 |
+| **Activity** | 你的交易历史 |
+| **UTXOs** | 构成你余额的各个 coin，以及管理它们的工具 |
+
+第六个标签页 **FUEL** 只有在你的地址符合 FUEL 分配资格时才会出现。如果你没有看到它，说明你不符合资格。
+
+### Tokens
+
+每一行代表一项资产，共有四列：
+
+- **Token。** 名称，Alkanes 代币下方还会显示其 id（例如 `frBTC · 32:0` 或 `DIESEL · 2:0`）。
+- **Balance。** 你持有的数量，下方附有美元价值。
+- **Available。** 你当前可用于支出的部分。任何处于未确认交易中的部分会在下方以 **Mempool** 显示。
+- **Unit price。** 该资产单位的当前价格。
+
+Token 和 Balance 两列支持排序。
 
 ## UTXO 管理
 
@@ -75,7 +91,7 @@ Bitcoin 的运作方式不像银行余额。你的资金是一组被称为 UTXO�
 如果你在用 Taproot 地址存放收藏品，请将持有稀有铭文的 UTXO 冻结，这样就不会不小心把它们当作交易手续费花掉。完整内容参见 [Safety（安全须知）](./safety)。
 :::
 
-## 交易记录
+## Activity
 
 你钱包中的每一笔交易，包括：
 

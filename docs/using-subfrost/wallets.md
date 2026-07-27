@@ -48,16 +48,32 @@ SUBFROST gives you two address types, because different assets and different app
 
 Both appear in the wallet header with copy buttons. Some exchanges and apps accept only one of the two formats, so having both means you can always receive funds.
 
-Your wallet is organized into four tabs.
+## Your Portfolio
 
-## Balances
+The wallet page is titled **Your Portfolio**. A summary card at the top shows your **Est. Total Value** in BTC with the approximate US-dollar equivalent underneath, and the **Send** and **Receive** buttons.
 
-- **Bitcoin balance.** Your total BTC, with its value in USD.
-- **Spendable BTC.** The portion you can freely transact with.
-- **Unspendable (with assets).** BTC sitting in coins that carry inscriptions or tokens, so it is not freely spendable.
-- **Address breakdown.** How your balance splits across Native SegWit, Taproot, and pending transactions.
-- **Protorune assets.** Alkanes and similar tokens (Protorunes are the Bitcoin metaprotocol standard these tokens are issued under).
-- **Inscription assets.** BRC20 and other inscription-based tokens.
+Everything you hold is then split across tabs:
+
+| Tab | What it shows |
+|---|---|
+| **Tokens** | Your fungible balances: BTC and Alkanes tokens such as frBTC and DIESEL |
+| **Positions** | Positions you hold, such as LP and FIRE positions, rather than plain tokens |
+| **NFTs** | Your non-fungible Alkanes assets |
+| **Activity** | Your transaction history |
+| **UTXOs** | The individual coins behind your balance, and the tools to manage them |
+
+A sixth tab, **FUEL**, appears only when your address is eligible for a FUEL allocation. If you do not see it, you are not eligible.
+
+### Tokens
+
+Each row is one asset, with four columns:
+
+- **Token.** The name, and for Alkanes tokens the id underneath (for example `frBTC · 32:0` or `DIESEL · 2:0`).
+- **Balance.** What you hold, with the US-dollar value underneath.
+- **Available.** The part you can spend right now. Anything tied up in an unconfirmed transaction is shown below it as **Mempool**.
+- **Unit price.** The current price of one unit.
+
+Token and Balance are sortable.
 
 ## UTXO management
 
@@ -75,7 +91,7 @@ You can filter your UTXOs by address type (Native SegWit or Taproot) or by asset
 If you are using your Taproot address for collectibles, freeze the UTXOs holding rare inscriptions so you never spend them as transaction fees. See [Safety](./safety) for the fuller picture.
 :::
 
-## Transaction history
+## Activity
 
 Every transaction from your wallet, with:
 
