@@ -26,10 +26,6 @@ There is no premine. Every FIRE that exists was emitted by the protocol, and the
 
 FIRE emission halves every 105,000 blocks, which is half of Bitcoin's own halving interval. Every second FIRE halving therefore lands on a Bitcoin halving.
 
-:::info[One halving interval, or a different first one?]
-This page says the interval is a constant **105,000 blocks**, which is what the FIRE spec states and what the app's own calculations use, in five separate places. A different account has reached us: that the **first** halving is special and that FIRE then falls in sync with Bitcoin's 210,000, which would be a different schedule entirely. The two cannot both be right, and the answer changes every emission figure below. Please settle it against the deployed contract. Related, and probably the same question: the epoch 0 boundary below.
-:::
-
 ## How the vault pays you
 
 The vault accepts **DIESEL / frBTC LP tokens**. It pays out FIRE with a reward accumulator (the standard Synthetix staking model): every block, a fixed amount of FIRE is divided pro-rata across all weighted stake. Your share of a block's emission is your weighted stake divided by the total weighted stake in the vault, so rewards accrue continuously rather than in discrete payouts.
@@ -68,12 +64,6 @@ total = epoch_0_emission x sum(1/2^i) for i = 0..infinity
 ```
 
 The schedule itself is what enforces the cap. Nothing needs to be held back at genesis to make the numbers work, which is why the premine is 0%.
-
-Worth being precise about: a halving series approaches its total without ever landing on it. Supply gets arbitrarily close to 2,100,000 FIRE and is always slightly under it, in the same way Bitcoin's own 21 million is a ceiling rather than a figure that ever gets minted. The cap is a limit, not a milestone.
-
-:::info[Which is right for epoch 0, block 1,050,000 or 1,055,420?]
-Two internal sources disagree. The written schedule says epoch boundaries follow a fixed grid anchored at block 0, which puts the first halving at block **1,050,000** and makes the first epoch shorter than the rest (99,580 blocks instead of 105,000), since FIRE activated at block 950,420 partway through a grid slot. The deployment record instead lists epoch 0 as covering **950,420 to 1,055,420**, which is a full 105,000 blocks and would put the first halving 5,420 blocks later. A note in the app says the value read from the contract itself is 1,049,999, checked a couple of days after that deployment record was written, which favours the first reading. This matters beyond trivia: if the first epoch is short, it emits about 995,800 FIRE rather than 1,050,000, and the series then approaches roughly 2,045,800 rather than 2,100,000. Please confirm which is live, and whether the first epoch is meant to be truncated.
-:::
 
 ## Lock multipliers
 
