@@ -7,7 +7,7 @@ description: Stake liquidity to earn FIRE, or buy FIRE at a discount through bon
 
 # FIRE Vault
 
-**FIRE** is the Alkanes governance and rewards token. It rewards the people who provide liquidity to the [DIESEL / frBTC pool](./pools-liquidity), and it is earned two ways: by **staking** your liquidity, or by **bonding**.
+**FIRE** is the Alkanes governance & rewards token. It rewards the people who provide liquidity to the [DIESEL / frBTC pool](./pools-liquidity), and it is earned two ways: by **staking** your liquidity, or by **bonding**.
 
 There is no premine. Every FIRE that exists was emitted by the protocol, and the only way FIRE leaves circulation is redemption against the treasury.
 
@@ -67,7 +67,7 @@ The schedule itself is what enforces the cap. Nothing needs to be held back at g
 
 ## Lock multipliers
 
-You can begin earning FIRE by locking your LP for a flexible period, earning the base rate. Lock your stake for longer to earn more, up to 1 year for a 3x multiplier. A longer lock applies a higher reward multiplier to the same amount of LP. Locks cannot extend past the current epoch's expiry.
+You can begin earning FIRE by locking your LP for a flexible period, earning the base rate. Lock your stake for longer to earn more (up to 1 year for a 3x multiplier). A longer lock applies a higher reward multiplier to the same amount of LP. Locks cannot extend past the current epoch's expiry.
 
 | Lock period | Blocks | Reward multiplier |
 | --- | --- | --- |
@@ -107,7 +107,7 @@ Once the lock has expired, claiming your rewards does this for you: on a positio
 
 ### Split into wLP
 
-Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token, called **FIRE-PT-0**, carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
+Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token (called **FIRE-PT-0**) carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
 
 ```
 Split(NFT)       -> NFT (FIRE yield only) + wLP (fungible LP claim)

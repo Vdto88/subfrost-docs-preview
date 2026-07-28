@@ -29,7 +29,7 @@ So **as a liquidity provider you earn 0.8% of the volume that trades through you
 
 ## Providing liquidity
 
-1. Click **Liquidity** on the swap page to add positions to a pool.
+1. Click **"Liquidity"** on the swap page to add positions to a pool.
 2. On the **Add** tab, choose the pair you want to provide.
 3. Deposit the two tokens in the pool's ratio. The app fills in the paired amount for you and shows the **Minimum Deposit**.
 4. Confirm and sign. You now hold an LP position and start earning a share of that pool's swap fees.
