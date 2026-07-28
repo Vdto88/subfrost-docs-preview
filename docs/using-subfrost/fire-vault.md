@@ -23,8 +23,11 @@ There is no premine. Every FIRE that exists was emitted by the protocol, and the
 | Halving interval | 105,000 blocks (about 2 years) |
 | Activation block | 950,420 |
 | First halving | Block 1,050,000 |
+| Epoch 0 length | 99,580 blocks (activation to the first halving) |
 
 FIRE emission halves every 105,000 blocks, which is half of Bitcoin's own halving interval. Every second FIRE halving therefore lands on a Bitcoin halving.
+
+Epoch boundaries sit on a fixed grid anchored at block 0, so they do not move to accommodate the activation block. FIRE went live at 950,420, partway through the grid epoch that ends at 1,050,000, which makes epoch 0 shorter than a full interval. Every epoch after it runs the full 105,000 blocks.
 
 ## How the vault pays you
 
@@ -42,26 +45,30 @@ Day and year figures assume Bitcoin's average of 144 blocks per day and 52,500 b
 
 ## The emission schedule
 
-Every 105,000 blocks the per-block rate halves. Epoch boundaries align to a global grid anchored at block 0, not to the activation block, and every second FIRE halving coincides with a Bitcoin halving. The 85 / 15 split between the staking pool and the bonding pool holds in every epoch.
+Every 105,000 blocks the per-block rate halves. Epoch boundaries align to a global grid anchored at block 0, not to the activation block, which is why epoch 0 below is short, and every second FIRE halving coincides with a Bitcoin halving. The 85 / 15 split between the staking pool and the bonding pool holds in every epoch.
 
 | Epoch | Length | Total per day | Cumulative supply at epoch end |
 | --- | --- | --- | --- |
-| 0 | 105,000 blocks | ~1,440 FIRE | 1,050,000 FIRE |
-| 1 | 105,000 blocks | ~720 FIRE | 1,575,000 FIRE |
-| 2 | 105,000 blocks | ~360 FIRE | 1,837,500 FIRE |
-| 3 | 105,000 blocks | ~180 FIRE | 1,968,750 FIRE |
-| ... | ... | ... | 2,100,000 FIRE (cap) |
+| 0 | 99,580 blocks | ~1,440 FIRE | 995,800 FIRE |
+| 1 | 105,000 blocks | ~720 FIRE | 1,520,800 FIRE |
+| 2 | 105,000 blocks | ~360 FIRE | 1,783,300 FIRE |
+| 3 | 105,000 blocks | ~180 FIRE | 1,914,550 FIRE |
+| ... | ... | ... | approaches 2,045,800 FIRE |
+
+The cumulative column is a ceiling on what the schedule releases, not a forecast of circulating supply. Emission accrues to whoever is staked at the time, so any emission in blocks where nothing was staked is simply never awarded, and it is not paid out retroactively later.
 
 ### Why the cap needs no premine
 
 Each epoch emits exactly half of the one before it, so the total emission is an infinite geometric series bounded by the supply cap:
 
 ```
-total = epoch_0_emission x sum(1/2^i) for i = 0..infinity
-      = epoch_0_emission x 2
+total = grid_epoch_emission x sum(1/2^i) for i = 0..infinity
+      = grid_epoch_emission x 2
       = 1,050,000 x 2
       = 2,100,000 FIRE
 ```
+
+That is the bound the contract is written against, and it is the maximum supply listed at the top of this page. Because FIRE activated partway through epoch 0 rather than on a grid boundary, that epoch released 995,800 FIRE instead of a full 1,050,000, and the series converges to about 2,045,800 instead. The cap stays where it is; emission simply approaches a point below it.
 
 The schedule itself is what enforces the cap. Nothing needs to be held back at genesis to make the numbers work, which is why the premine is 0%.
 
