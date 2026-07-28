@@ -41,4 +41,4 @@ DIESEL 不会按需印发。没有水龙头（faucet），也没有任何方式�
 
 - [代币与经济](./overview)：DIESEL 如何与 frBTC 和 FIRE 相互配合。
 - [FIRE Vault](../using-subfrost/fire-vault)：通过提供 DIESEL / frBTC 流动性赚取 FIRE。
-- [Alkanes 协议](../protocol/alkanes)：DIESEL 是一种 Alkanes 代币。
+- [Alkanes 元协议](../protocol/alkanes)：DIESEL 是一种 Alkanes 代币。

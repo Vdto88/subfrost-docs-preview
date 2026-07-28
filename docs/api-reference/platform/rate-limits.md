@@ -193,9 +193,3 @@ If you need higher limits:
 2. **Business**: custom limits, SLA, dedicated support ($90-$120/mo)
 
 Contact [sales@subfrost.io](mailto:sales@subfrost.io) for Business pricing.
-
----
-
-:::info[Confirm current plans, quotas, and pricing]
-This page is the canonical source for the per-plan numbers referenced from the Authentication and Overview pages. Confirm these figures are still current before publishing, and keep this page as the single source of truth rather than repeating the numbers elsewhere.
-:::

@@ -45,7 +45,7 @@ alkanes-cli wallet utxos
 
 ## 部署与调用合约
 
-合约相关操作位于 `alkanes` 命名空间下。合约通过其 `[block, tx]` 形式的 Alkane ID 寻址，而一次调用就是一个 **cellpack**，即以目标 ID 和 opcode 开头的一个列表（参见 [Alkanes 协议](../protocol/alkanes)）。
+合约相关操作位于 `alkanes` 命名空间下。合约通过其 `[block, tx]` 形式的 Alkane ID 寻址，而一次调用就是一个 **cellpack**，即以目标 ID 和 opcode 开头的一个列表（参见 [Alkanes 元协议](../protocol/alkanes)）。
 
 ```bash
 # 执行调用：合约 [2,1]，opcode 1

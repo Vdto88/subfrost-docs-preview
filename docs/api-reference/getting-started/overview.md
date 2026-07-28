@@ -88,9 +88,3 @@ See the [Authentication](./authentication) guide for details.
 - [JSON-RPC Overview](../json-rpc/overview): learn about the RPC interface.
 - [Lua Scripting](../lua/overview): execute custom scripts server-side.
 - [API Platform](../platform/overview): manage API keys and CORS settings.
-
----
-
-:::info[The "L0" wording needs one more voice]
-You told us "Bitcoin-native L0 extension framework" is accurate, while noting you were not sure what the reframe in the main docs was. Here is that context, because it makes this a three-way question rather than a yes/no. In the old docs the "L0" framing travelled together with **ZK fraud proofs**, a claim we could not trace to any source written by the protocol lead. Our review dropped that framing as a package, which is why this page reads neutrally today. That call was ours, not his, and he has not weighed in. So we have two of the three views: yours (accurate, keep it) and ours (dropped, pending). Before we put "L0" back on your word alone, we would like his. If the answer is **"L0 extension" without the ZK claims**, say so and it goes back.
-:::

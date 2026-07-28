@@ -7,7 +7,7 @@ description: Deploy and call EVM-style Solidity contracts on Bitcoin through BRC
 
 # BRC2.0 Integration
 
-[BRC2.0](../protocol/brc20) runs EVM-compatible smart contracts on Bitcoin. If you write Solidity, you can deploy and call contracts here with tooling you already know, and reach Bitcoin-backed frBTC from inside them. This page covers the developer workflow through `alkanes-cli`. For the concept, see [BRC2.0](../protocol/brc20); for the full command list, see the [CLI & SDK Reference](../api-reference/cli-sdk/brc20-prog).
+[BRC2.0 Metaprotocol](../protocol/brc20) runs EVM-compatible smart contracts on Bitcoin. If you write Solidity, you can deploy and call contracts here with tooling you already know, and reach Bitcoin-backed frBTC from inside them. This page covers the developer workflow through `alkanes-cli`. For the concept, see [BRC2.0 Metaprotocol](../protocol/brc20); for the full command list, see the [CLI & SDK Reference](../api-reference/cli-sdk/brc20-prog).
 
 ## The endpoint
 
@@ -100,6 +100,6 @@ brc20-prog get-logs --address 0xYourContract --from-block 840000 --to-block late
 
 ## Where to go next
 
-- [BRC2.0](../protocol/brc20): how the protocol works.
+- [BRC2.0 Metaprotocol](../protocol/brc20): how the protocol works.
 - [CLI & SDK Reference](../api-reference/cli-sdk/brc20-prog): every `brc20-prog` command and flag.
 - [Wrapping frBTC](./wrapping-frbtc): the Alkanes-side wrap flow.

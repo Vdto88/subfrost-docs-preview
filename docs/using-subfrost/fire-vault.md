@@ -105,42 +105,30 @@ Unstake(NFT) -> LP + FIRE
 
 Once the lock has expired, claiming your rewards does this for you: on a position you have not split, a claim after expiry returns the FIRE **and** the LP and closes the position out. You do not need to unstake separately.
 
-### Split into wLP
+### Split into FIRE-PT
 
-Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **wLP** token (called **FIRE-PT-0**) carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
+Split the NFT position into its two halves. The **NFT** keeps the FIRE yield rights. A fungible **FIRE-PT** token (**FIRE-PT-0** in the current epoch) carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.
 
 ```
-Split(NFT)       -> NFT (FIRE yield only) + wLP (fungible LP claim)
-Merge(NFT + wLP) -> NFT (full position restored)
+Split(NFT)           -> NFT (FIRE yield only) + FIRE-PT (fungible LP claim)
+Merge(NFT + FIRE-PT) -> NFT (full position restored)
 ```
 
 This is how you move the LP liquidity out without giving up the FIRE yield stream.
 
-### Redeem expired wLP
+FIRE-PT tokens are fungible regardless of the lock type. This also implies that any FIRE-PT can be recombined with any FIRE NFT that has the corresponding amount. As a result, a bare FIRE NFT represents not only the right to earn FIRE yield, but also the right to unlock the corresponding amount of FIRE-PT before the end of the epoch.
 
-Once the epoch has expired, anyone holding wLP (FIRE-PT-0) can redeem it straight for LP. No NFT required.
+### Redeem expired FIRE-PT
+
+Once the epoch has expired, anyone holding FIRE-PT can redeem it straight for LP. No NFT required.
 
 ```
-RedeemExpired(wLP) -> LP
+RedeemExpired(FIRE-PT) -> LP
 ```
 
 ## Bonding
 
 Bonding is for people who want FIRE **now** instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a **10% discount from market price**, vested over about **7 days** (1,050 blocks). The discount is a setting the protocol can adjust, so treat 10% as the current rate rather than a fixed rule.
-
-The pricing is fully transparent:
-
-```
-oracle_price    = max(LP_locked_6mo_or_more, 1 LP) x 10^8 / annual_FIRE_emission
-
-effective_price = oracle_price x (10000 - discount_bps) / 10000
-
-bond_price      = max(effective_price, floor_price)
-
-FIRE_out        = LP_in x 10^8 / bond_price
-```
-
-The `max(..., 1 LP)` in the oracle price is a bootstrap guard: before anyone has locked LP for six months or more, it keeps the price defined instead of dividing into zero.
 
 Bond LP goes directly to the treasury and stays there. It is not returned, and it permanently backs the redemption floor.
 
@@ -148,9 +136,9 @@ In plain language, a bond is this trade: you give the protocol LP forever, and i
 
 ### The floor guard
 
-Look at the `max()` in `bond_price`. That is the floor guard, and it exists to stop a free round-trip.
+A bond is never priced below the redemption floor. That guard exists to stop a free round-trip.
 
-Once the treasury holds LP and FIRE has been minted, the floor price is real money. Without the guard, you could bond below the floor and immediately redeem for more LP than you put in. With `bond_price = max(effective_price, floor_price)`, bonding can never be cheaper than redemption:
+Once the treasury holds LP and FIRE has been minted, the floor price is real money. Without the guard, you could bond below the floor and immediately redeem for more LP than you put in. Because the bond price can never fall under the floor, bonding can never be cheaper than redemption:
 
 ```
 Bond at floor_price    -> mint X FIRE  (LP goes into treasury)
@@ -185,7 +173,7 @@ Outside of market quotes, FIRE has two distinct "prices," and they answer differ
 | **Oracle** | `locked_LP / annual_emission` | What a 6-month staker earns in a year |
 | **Floor** | `treasury_LP / total_supply` | What a redeemer gets for burning FIRE |
 
-If you see a "discount" quoted anywhere, check which of the two it is discounting from. Oracle and floor answer different questions, and a discount against one is not a discount against the other.
+Neither of these is the price a bond is struck at. The bond discount is measured against the market price. Oracle and floor answer different questions, and a discount against one is not a discount against the other, so if you see a "discount" quoted anywhere, check which price it is measured from.
 
 ## The flywheel
 
@@ -198,7 +186,7 @@ Staking, bonding, and redemption are not three separate features. They feed each
 | Treasury | Keeps every bonded LP permanently | A bigger treasury raises the floor price |
 | Redeemers | Burn FIRE for a proportional slice of treasury LP | The floor guard kicks in, so bonding cheaply gets harder |
 
-Read it as a loop: more long-term stakers raise the oracle, a higher oracle makes bonders pay more LP, more LP raises the floor, and a higher floor both protects FIRE holders and clamps how cheaply the next bonder can buy in. Committed liquidity raises the floor, the floor protects holders, and emission stays metered by genuine long-term commitment.
+Read it as a loop: more long-term stakers raise the oracle, which is the yardstick for what committed liquidity earns; bonders pay LP for FIRE at a discount to market; more LP raises the floor; and a higher floor both protects FIRE holders and clamps how cheaply the next bonder can buy in. Committed liquidity raises the floor, the floor protects holders, and emission stays metered by genuine long-term commitment.
 
 ## Risks
 
@@ -206,13 +194,13 @@ Read it as a loop: more long-term stakers raise the oracle, a higher oracle make
 | --- | --- |
 | **Bootstrap** | Early on there is little locked LP, so the oracle is low and FIRE is very cheap until long-term commitment grows |
 | **Empty treasury at the start** | The floor price begins at 0 and only rises as bonders deposit LP |
-| **Lock illiquidity** | Locked LP cannot be withdrawn before expiry. Split into wLP if you need partial flexibility |
+| **Lock illiquidity** | Locked LP cannot be withdrawn before expiry. Split into FIRE-PT if you need partial flexibility |
 | **Block time variance** | Every duration here assumes Bitcoin's roughly 10-minute average block. Real elapsed time drifts |
 
 ## Tips
 
 - **Match your lock to your conviction.** Longer locks earn proportionally more, but you cannot unwind early.
-- **Use Split if you need the liquidity back.** Keep the FIRE yield on the NFT and trade the wLP.
+- **Use Split if you need the liquidity back.** Keep the FIRE yield on the NFT and trade the FIRE-PT.
 - **Bonding is not staking.** Bonding gives you FIRE upfront and your LP is gone for good. Staking returns your LP plus rewards.
 - **Watch the halving.** Emission halves every 105,000 blocks, so early epochs pay the most.
 - **Treasury growth is floor growth.** The more LP that arrives through bonding, the stronger the redemption floor.

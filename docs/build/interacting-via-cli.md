@@ -49,7 +49,7 @@ See [Wallet Commands](../api-reference/cli-sdk/wallet) for the rest of the names
 
 ## Deploying and calling contracts
 
-Contract operations live under the `alkanes` namespace. A contract is addressed by its `[block, tx]` Alkane ID, and a call is a **cellpack**, a list that begins with the target ID and an opcode (see [Alkanes Protocol](../protocol/alkanes)).
+Contract operations live under the `alkanes` namespace. A contract is addressed by its `[block, tx]` Alkane ID, and a call is a **cellpack**, a list that begins with the target ID and an opcode (see [Alkanes Metaprotocol](../protocol/alkanes)).
 
 ```bash
 # Execute a call: contract [2,1], opcode 1

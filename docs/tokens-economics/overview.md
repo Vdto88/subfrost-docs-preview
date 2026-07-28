@@ -27,10 +27,6 @@ The core of the economy is the **DIESEL / frBTC** liquidity pool:
 
 Because DIESEL's issuance is anchored to Bitcoin's own block production (see [DIESEL](./diesel)), the supply side of the economy is tied to Bitcoin rather than to arbitrary inflation.
 
-:::info[The full economic thesis ("Theory")]
-The project lead asked for a dedicated economic thesis explaining the deeper relationship between the three assets, including the reserve relationship between frBTC and DIESEL and precisely why FIRE exists. The high-level fit above is well sourced, but the exact reserve-ratio mechanics are not written down in any single source. Do not invent them. Confirm the reserve-ratio model with the team, or derive it from the contracts (`kungfuflex/fire`, the genesis alkane), then expand this section.
-:::
-
 ## Live vs. planned
 
 - **Live:** frBTC (wrap/unwrap, swaps), DIESEL (on-chain emission), FIRE (staking and bonds).
@@ -40,4 +36,4 @@ The project lead asked for a dedicated economic thesis explaining the deeper rel
 
 - [DIESEL](./diesel): the native emission.
 - [FIRE Vault](../using-subfrost/fire-vault): earn FIRE.
-- [How SUBFROST Works](../protocol/how-subfrost-works): the mechanism underneath.
+- [frBTC Peg & Custody](../protocol/frbtc-peg-and-custody): the mechanism underneath.

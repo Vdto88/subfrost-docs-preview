@@ -1,11 +1,11 @@
 ---
-title: Alkanes 协议
-sidebar_label: Alkanes 协议
+title: Alkanes 元协议
+sidebar_label: Alkanes 元协议
 sidebar_position: 2
 description: SUBFROST 所构建于其上的比特币智能合约元协议。
 ---
 
-# Alkanes 协议
+# Alkanes 元协议
 
 **Alkanes** 是构建在比特币之上的智能合约元协议。它让开发者可以直接在比特币的基础层上部署和运行可编程合约，不需要侧链，也不需要独立的验证者集合。frBTC、DIESEL 和 FIRE 都是 Alkanes 代币，SUBFROST 的托管逻辑正是通过 Alkanes 索引器来协调的。
 
@@ -71,10 +71,10 @@ Bitcoin  →  Runes  →  Protorunes  →  Alkanes
 
 ## Fuel
 
-合约执行有一个叫做 **fuel** 的计算预算，类似于 gas。一个操作如果耗尽了 fuel 就会失败。视图函数运行在很高的 fuel 上限下，因此只读查询很少会触及这个限制。
+合约执行有一个叫做 **fuel** 的计算预算，类似于以太坊上的 gas。一个操作如果耗尽了 fuel 就会失败。视图函数运行在很高的 fuel 上限下，因此只读查询很少会触及这个限制。
 
 ## 接下来看什么
 
-- [SUBFROST 如何运作](./how-subfrost-works)：托管是如何构建在这之上的。
+- [frBTC 锚定与托管](./frbtc-peg-and-custody)：托管是如何构建在这之上的。
 - [JSON-RPC 参考文档](../api-reference/json-rpc/alkanes)：详细的视图函数说明。
 - [读取 Alkane 元数据](../api-reference/guides/alkane-metadata)：发现任意合约的 ABI。

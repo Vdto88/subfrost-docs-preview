@@ -48,12 +48,12 @@ description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC
 
 ## 这一切运行在什么之上
 
-- **Alkanes。** 这些代币所依托的智能合约协议。Alkanes 让开发者可以直接在 Bitcoin 上运行可编程合约（合约用 Rust 编写并编译为 WebAssembly），继承 Bitcoin 的安全性，而不必依赖另一条独立的链。frBTC、DIESEL 和 FIRE 都是 Alkanes 代币。完整模型见 [Protocol](../protocol/how-subfrost-works) 章节。
+- **Alkanes。** 这些代币所依托的智能合约协议。Alkanes 让开发者可以直接在 Bitcoin 上运行可编程合约（合约用 Rust 编写并编译为 WebAssembly），继承 Bitcoin 的安全性，而不必依赖另一条独立的链。frBTC、DIESEL 和 FIRE 都是 Alkanes 代币。完整模型见 [Protocol](../protocol/alkanes) 章节。
 
 - **Metashrew 索引器。** Bitcoin 区块本身并不会"运行"合约。Metashrew 索引器会读取每个新区块，并执行嵌入在区块中的合约代码（具体来说是在 OP_RETURN 中）。当你看到自己的 Alkanes 余额时，它就来自 Metashrew 索引器。
 
 :::note[更深一层]
-本节刻意保持简单。protostone、cellpack 等术语，以及具体的合约模型，会在 [Protocol](../protocol/how-subfrost-works) 章节中介绍；开发者工具（CLI、SDK、JSON-RPC）则在 [Build on SUBFROST](../build/overview) 和 [API & SDK Reference](../api-reference/getting-started/overview) 中介绍。
+本节刻意保持简单。protostone、cellpack 等术语，以及具体的合约模型，会在 [Protocol](../protocol/alkanes) 章节中介绍；开发者工具（CLI、SDK、JSON-RPC）则在 [Build on SUBFROST](../build/overview) 和 [API & SDK Reference](../api-reference/getting-started/overview) 中介绍。
 :::
 
 ## 今天已经上线的内容
@@ -67,4 +67,4 @@ description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC
 
 - **[5 分钟快速上手](./get-started)：** 如果你还没完成第一笔兑换。
 - **[代币与经济学](../tokens-economics/overview)：** frBTC、DIESEL、FIRE、dxBTC 和 FUEL 的完整故事。
-- **[Protocol](../protocol/how-subfrost-works)：** 托管、签名和 Alkanes 模型的实际运作方式。
+- **[Protocol](../protocol/alkanes)：** 托管、签名和 Alkanes 模型的实际运作方式。

@@ -33,7 +33,7 @@ In one sentence: **SUBFROST is a decentralized custodian for Bitcoin.** It runs 
 When you put Bitcoin into SUBFROST, you receive **frBTC**, a token that is backed 1:1 by your BTC and settled natively on Bitcoin. **The best part? This can happen atomically within the same transaction as other activities.** In this way, for the first time ever, a user can swap native BTC with a Bitcoin token like DIESEL or FIRE, without ever knowing they interacted with the frBTC contract.
 
 - **Minting (wrapping)** your BTC into frBTC is instant.
-- **Unwrapping (redeeming)** frBTC back into native BTC is authorized by the distributed group of signers, not by any single person.
+- **Redeeming (unwrapping)** frBTC back into native BTC is authorized by the distributed group of signers, not by any single person.
 
 With frBTC, you can perform activities with native BTC such as swapping into other Bitcoin assets, providing liquidity into AMMs, lending, and earning yield in other ways, without data ever leaving Bitcoin L1. Data doesn't just settle on the base layer, it never leaves.
 

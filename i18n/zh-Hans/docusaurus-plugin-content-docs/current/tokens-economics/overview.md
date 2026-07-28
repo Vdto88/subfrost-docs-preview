@@ -27,10 +27,6 @@ SUBFROST 经济体系建立在几种相互增强的原生资产之上。本页�
 
 由于 DIESEL 的发行锚定于 Bitcoin 自身的出块过程（参见 [DIESEL](./diesel)），这一经济体系的供给端与 Bitcoin 绑定，而非依赖任意的通胀机制。
 
-:::info[完整的经济论述（"Theory"）]
-项目负责人要求撰写一份专门的经济论述，深入解释这三种资产之间的深层关系，包括 frBTC 与 DIESEL 之间的储备关系（reserve relationship），以及 FIRE 存在的确切原因。上面的高层级概述有充分的来源依据，但确切的储备比率（reserve-ratio）机制尚未在任何单一来源中写明。请勿凭空杜撰。请与团队确认储备比率模型，或从合约（`kungfuflex/fire`、创世 alkane）中推导，然后再扩展本节内容。
-:::
-
 ## 已上线 vs. 规划中
 
 - **已上线：** frBTC（包装/解包、兑换）、DIESEL（链上发行）、FIRE（质押与债券）。
@@ -40,4 +36,4 @@ SUBFROST 经济体系建立在几种相互增强的原生资产之上。本页�
 
 - [DIESEL](./diesel)：原生发行代币。
 - [FIRE Vault](../using-subfrost/fire-vault)：赚取 FIRE。
-- [SUBFROST 的工作原理](../protocol/how-subfrost-works)：底层的运行机制。
+- [frBTC 锚定与托管](../protocol/frbtc-peg-and-custody)：底层的运行机制。

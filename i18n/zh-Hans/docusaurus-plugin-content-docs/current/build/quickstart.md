@@ -113,7 +113,7 @@ wasm-pack build --target web --release
 
 ## 5. 部署
 
-部署一个 Alkane，意味着广播一笔携带 WASM 信封（envelope）和 **cellpack** 的 Bitcoin 交易，cellpack 告诉协议要执行什么操作（背后的模型参见 [Alkanes 协议](../protocol/alkanes)）。
+部署一个 Alkane，意味着广播一笔携带 WASM 信封（envelope）和 **cellpack** 的 Bitcoin 交易，cellpack 告诉协议要执行什么操作（背后的模型参见 [Alkanes 元协议](../protocol/alkanes)）。
 
 ```bash
 alkanes-cli -p signet alkanes execute "[3,0,0]" \
@@ -142,4 +142,4 @@ alkanes-cli -p signet alkanes view "[2,1]" "2"
 
 - [通过 CLI 交互](./interacting-via-cli)：完整的钱包与合约命令集合。
 - [包装 frBTC](./wrapping-frbtc)：将真实的 Bitcoin 支持的价值放入合约。
-- [Alkanes 协议](../protocol/alkanes)：cellpack、opcode 与 view 函数详解。
+- [Alkanes 元协议](../protocol/alkanes)：cellpack、opcode 与 view 函数详解。

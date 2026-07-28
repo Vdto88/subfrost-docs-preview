@@ -1,11 +1,11 @@
 ---
-title: BRC2.0
-sidebar_label: BRC2.0
+title: BRC2.0 元协议
+sidebar_label: BRC2.0 元协议
 sidebar_position: 7
 description: BRC2.0 为比特币带来了兼容 EVM 的智能合约，SUBFROST 的资产可以接入其中。
 ---
 
-# BRC2.0
+# BRC2.0 元协议
 
 **BRC2.0**（也称为 brc20-prog）为比特币带来了**兼容 EVM 的智能合约**。它让开发者可以用以太坊的语言 Solidity 编写合约，并部署它们，使其状态由比特币交易派生而来，不需要单独的链。SUBFROST 把它视为比特币背书价值可以流入的执行环境之一，与 [Alkanes](./alkanes) 并列。
 
@@ -22,15 +22,11 @@ BRC2.0 遵循与 Alkanes 大体相同的模式：状态并非由一条新的区�
 
 一次部署或调用是通过比特币铭文来承载的，采用先提交后揭示（commit-then-reveal）的流程。天真地看，铭文流程容易受到抢跑攻击：监视内存池的人可能会尝试抢先发布一个竞争性的 reveal。BRC2.0 通过预先构建并预先签名交易，并将它们一并广播来防范这一点，因此在任何内容公开之前，reveal 就已经归属于它合法的创建者了。
 
-:::info[发布前确认合约层的签名信息]
-铭文流程已经确定：BRC2.0 使用先提交后揭示（commit-then-reveal）的比特币铭文（一个 taproot 信封，协议标签为 "BIN"，在 `alkanes-rs` 中验证），开发者工作流，包括可选的第三笔激活交易（`--use-activation`），已记录在 [BRC2.0 集成](../build/brc20-integration) 页面中。仍需核对权威来源的是 Solidity 层面的入口点：`wrapAndExecute2` 的签名（该函数已经实现，但其确切参数位于一个非公开的构建 `alkanes-web-sys` 中）、signet 合约地址，以及链 ID（chain-id）取值。在任何页面写明这些内容之前，请对照 frBTC-on-BRC2.0 合约源码进行确认。
-:::
-
 ## BRC2.0 上的 frBTC
 
-frBTC 可以在 BRC2.0 内使用，因此在那里编写的合约可以像持有和转移任何 EVM 代币一样持有和转移比特币背书的价值。这正是让 Solidity 开发者能够在不离开他们已经熟悉的语言和工具链的情况下，构建基于比特币流动性的应用的关键所在。从合约中包装和使用 frBTC 的具体编程细节属于开发者指南的内容。
+frBTC 可以在 BRC2.0 内使用，因此在那里编写的合约可以像持有和转移任何 EVM 代币一样持有和转移比特币背书的价值。这正是让 Solidity 开发者能够在不离开他们已经熟悉的语言和工具链的情况下，构建基于比特币流动性的应用的关键所在。
 
 ## 接下来看什么
 
 - [Alkanes](./alkanes)：SUBFROST 所构建的另一个执行环境。
-- [SUBFROST 如何运作](./how-subfrost-works)：全局概览。
+- [什么是 SUBFROST](../start-here/what-is-subfrost)：全局概览。

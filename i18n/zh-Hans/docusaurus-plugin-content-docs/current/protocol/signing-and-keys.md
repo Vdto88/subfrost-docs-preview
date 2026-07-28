@@ -25,12 +25,9 @@ Schnorr 有三个特性使它成为这里的正确基石：
 
 ## 使用 FROST 和 ROAST 的门限签名
 
-SUBFROST 不会把控制托管的密钥交给任何一方。相反，密钥通过两种门限方案被分散到整个签名者集合中：
+SUBFROST 不会把控制托管的密钥交给任何一方。相反，密钥通过 FROST 与 ROAST 这两种门限方案被分散到整个签名者集合中。你可以在 [frBTC 锚定与托管](./frbtc-peg-and-custody) 中了解它们。
 
-- **FROST**（Flexible Round-Optimized Schnorr Threshold，灵活轮次优化 Schnorr 门限方案）
-- **ROAST**（Robust Asynchronous Schnorr Threshold，稳健异步 Schnorr 门限方案）
-
-两者结合，让一个由 `n` 个签名者组成的群体，只有在其中 `t` 个（门限数量）共同协作时才能生成签名，而任何一个签名者都不会单独持有完整的私钥。
+FROST 与 ROAST 结合起来，让一个由 `n` 个签名者组成的群体，只有在其中 `t` 个（门限数量）共同协作时才能生成签名，而任何一个签名者都不会单独持有完整的私钥。
 
 签名分为两个阶段：
 
@@ -58,11 +55,7 @@ ROAST 正是让这一切在现实世界中变得稳健的部分：即便部分�
 
 在移动端，这一机制在硬件条件允许的情况下由设备的安全硬件来支撑，在 Android 上使用 **StrongBox**，在 iOS 上使用 **Secure Enclave**，因此这把用于保护的密钥可以被绑定到设备本身，永远不会暴露给应用或操作系统。
 
-:::info[发布前确认密钥库的具体细节]
-请确认具体使用的密钥派生函数和当前的磁盘存储格式，以及各平台的硬件支撑方式（Android 上的 StrongBox，iOS 上的 Secure Enclave）。不要重新引入旧的示例：此前的密钥库页面粘贴了一份以太坊 Web3 Secret Storage V3 格式的 JSON（`aes-128-ctr`、`version 3`），而其正文却声称使用的是 AES-256-GCM，两者直接矛盾。
-:::
-
 ## 接下来看什么
 
 - [frBTC 锚定与托管](./frbtc-peg-and-custody)：这套签名机制如何保障 frBTC 背后 BTC 的安全。
-- [SUBFROST 如何运作](./how-subfrost-works)：全局概览。
+- [什么是 SUBFROST](../start-here/what-is-subfrost)：全局概览。

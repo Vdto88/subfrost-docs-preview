@@ -1,11 +1,11 @@
 ---
-title: Alkanes Protocol
-sidebar_label: Alkanes Protocol
+title: Alkanes Metaprotocol
+sidebar_label: Alkanes Metaprotocol
 sidebar_position: 2
 description: The smart-contract metaprotocol on Bitcoin that SUBFROST is built on.
 ---
 
-# Alkanes Protocol
+# Alkanes Metaprotocol
 
 **Alkanes** is a smart-contract metaprotocol on Bitcoin. It lets developers deploy and run programmable contracts directly on Bitcoin's base layer, with no sidechain and no separate validator set. frBTC, DIESEL, and FIRE are all Alkanes tokens, and SUBFROST's custody logic is coordinated through the Alkanes indexer.
 
@@ -71,10 +71,10 @@ These are documented in the [JSON-RPC reference](../api-reference/json-rpc/alkan
 
 ## Fuel
 
-Contract execution has a compute budget called **fuel**, similar to gas. An operation that runs out of fuel fails. View functions run with a high fuel ceiling, so read-only queries rarely hit the limit.
+Contract execution has a compute budget called **fuel**, similar to gas on Ethereum. An operation that runs out of fuel fails. View functions run with a high fuel ceiling, so read-only queries rarely hit the limit.
 
 ## Where to go next
 
-- [How SUBFROST Works](./how-subfrost-works): how custody is built on top of this.
+- [frBTC Peg & Custody](./frbtc-peg-and-custody): how custody is built on top of this.
 - [JSON-RPC reference](../api-reference/json-rpc/alkanes): the view functions in detail.
 - [Reading Alkane Metadata](../api-reference/guides/alkane-metadata): discover any contract's ABI.

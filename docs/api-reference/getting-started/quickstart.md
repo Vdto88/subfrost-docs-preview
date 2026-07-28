@@ -1,6 +1,6 @@
 ---
-title: Quick Start
-sidebar_label: Quick Start
+title: Quickstart
+sidebar_label: Quickstart
 sidebar_position: 2
 description: Make your first SUBFROST API request in a few minutes.
 ---

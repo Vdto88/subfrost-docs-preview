@@ -85,9 +85,3 @@ Manage your subscription:
 - [API Keys](./api-keys): manage your keys
 - [CORS Authentication](./cors): configure browser access
 - [Rate Limits](./rate-limits): understand limits
-
----
-
-:::info[Confirm current plans and pricing]
-Verify that the plan tiers and prices listed above are still accurate, and consider keeping plan pricing in one canonical place instead of repeating it across Overview, API Keys, and Rate Limits.
-:::

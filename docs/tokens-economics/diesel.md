@@ -41,4 +41,4 @@ So your share depends on how many others minted at the same height. This is the 
 
 - [Tokens & Economics](./overview): how DIESEL fits with frBTC and FIRE.
 - [FIRE Vault](../using-subfrost/fire-vault): earn FIRE by providing DIESEL / frBTC liquidity.
-- [Alkanes Protocol](../protocol/alkanes): DIESEL is an Alkanes token.
+- [Alkanes Metaprotocol](../protocol/alkanes): DIESEL is an Alkanes token.

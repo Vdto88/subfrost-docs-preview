@@ -137,9 +137,3 @@ See [Rate Limits](../platform/rate-limits) for the full details on plans and quo
 
 - [API Platform Overview](../platform/overview): manage your account.
 - [JSON-RPC Methods](../json-rpc/overview): start making requests.
-
----
-
-:::info[Confirm the current plans and quotas]
-The original Authentication page listed specific per-plan limits (Free 60/min and 1,000/day, Pro 600/min and 50,000/day, Business unlimited). Those numbers are dashboard-specific and may have changed. Confirm the current plans and quotas, then keep the numbers on the [Rate Limits](../platform/rate-limits) page as the single source rather than duplicating them here.
-:::

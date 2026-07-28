@@ -7,11 +7,11 @@ description: How a peer-to-peer loan settles in one Bitcoin transaction, using a
 
 # Lending Protocol
 
+If you just want to lend or borrow in the app, read [Lending](../using-subfrost/lending) instead. This page is the mechanism underneath it.
+
 SUBFROST lending is a **peer-to-peer, fixed-term, over-collateralized loan market** for Alkanes tokens, settled in a **single Bitcoin transaction** through a pre-signed PSBT escrow. There is no pooled liquidity and no custodian. A lender and a borrower agree on terms off chain, and one transaction atomically creates the loan, delivers the borrowed tokens, and locks the collateral in a freshly cloned loan contract.
 
 Every loan is its own on-chain contract instance, so a loan's entire lifecycle (repayment, collateral release, default) is enforced by code rather than by a counterparty.
-
-If you just want to lend or borrow in the app, read [Lending](../using-subfrost/lending) instead. This page is the mechanism underneath it.
 
 ## Core ideas
 
@@ -280,10 +280,6 @@ Active and historical loans are read **from the chain via the indexer**, not fro
 
 The UI shows an **effective state**. An `ACTIVE` loan past its deadline is displayed as **Defaulted** even before anyone calls `TriggerDefault`, and the borrower's repay action is withdrawn. The on-chain state only flips to `DEFAULTED` once someone triggers it. Time remaining is computed as `deadline − current_tip_height`.
 
-:::info[Which indexer should an integrator use to enumerate loans?]
-The loan portfolio reads through an indexer that exposes `get_factory_children` and `get_keys`, and this page deliberately keeps that generic. The service the lending code reads through is not the one the [Build track](../build/indexing-with-metashrew) documents, and naming two different indexers across the documentation without explaining how they relate would raise more questions than it answers. Confirm which indexer a third-party integrator should use here, and whether it should be named.
-:::
-
 ## Wallets and signing
 
 The hand-built flows (offer creation, take, BTC send) all funnel through one signing entrypoint, so the protocol is wallet-agnostic at the app layer: build PSBT, sign, finalize, broadcast.
@@ -300,10 +296,6 @@ Lending is enabled on a network only when its lending template id is configured,
 
 Bringing lending to a new network requires three things: deploying the template on that chain and setting its slot in config, a per-network order book database, and an indexer that serves `get_factory_children`.
 
-:::info[Confirm the mainnet template id before publishing]
-This page states the mainnet lending template as **`4:47876`**, and says lending is live on mainnet. The previous version of this page labelled the same id as a devnet example, which conflicts with the app's own configuration: the id sits in the mainnet contract set, the code comment describes the template as deployed on mainnet, and mainnet is the only non-development network whose config enables lending. Integrators need this id to enumerate loans, the same way they need the frBTC id. Confirm the value and that it is meant to be public.
-:::
-
 ## Security properties
 
 - **Atomic settlement.** The loan, the loan delivery, and the collateral lock all happen in one transaction. If the clone and init reverts, the refund splitter returns both legs to their owners.
@@ -316,5 +308,5 @@ This page states the mainnet lending template as **`4:47876`**, and says lending
 ## Next steps
 
 - [Lending](../using-subfrost/lending): the user guide for the same feature.
-- [Alkanes Protocol](./alkanes): protostones, cellpacks, and the contract model this builds on.
-- [How SUBFROST Works](./how-subfrost-works): the big picture.
+- [Alkanes Metaprotocol](./alkanes): protostones, cellpacks, and the contract model this builds on.
+- [What is SUBFROST](../start-here/what-is-subfrost): the big picture.

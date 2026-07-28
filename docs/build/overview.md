@@ -1,13 +1,13 @@
 ---
 title: Build on SUBFROST
-sidebar_label: Overview
+sidebar_label: Get Started as a Developer
 sidebar_position: 1
 description: What you can build on SUBFROST and Alkanes, the tools you will use, and where to start.
 ---
 
 # Build on SUBFROST
 
-SUBFROST is built on **Alkanes**, a smart-contract metaprotocol that runs on Bitcoin (see [Alkanes Protocol](../protocol/alkanes)). If you can write a contract or a web app, you can build on it: tokens, AMMs, vaults, and anything that reads or moves Bitcoin-backed value like frBTC.
+SUBFROST is built on **Alkanes**, a smart-contract metaprotocol that runs on Bitcoin (see [Alkanes Metaprotocol](../protocol/alkanes)). If you can write a contract or a web app, you can build on it: tokens, AMMs, vaults, and anything that reads or moves Bitcoin-backed value like frBTC.
 
 This section is the developer track. It gets you from an empty machine to a deployed contract and a working integration.
 
@@ -37,4 +37,4 @@ Alkanes uses a fresh wallet model. Do not reuse a wallet that holds ordinals or 
 ## Where to go next
 
 - [Quickstart](./quickstart): deploy your first contract.
-- [Alkanes Protocol](../protocol/alkanes): the model your contracts run on.
+- [Alkanes Metaprotocol](../protocol/alkanes): the model your contracts run on.

@@ -1,13 +1,13 @@
 ---
 title: 在 SUBFROST 上构建
-sidebar_label: 概览
+sidebar_label: 以开发者身份开始
 sidebar_position: 1
 description: 你可以在 SUBFROST 和 Alkanes 上构建什么，会用到哪些工具，以及从哪里开始。
 ---
 
 # 在 SUBFROST 上构建
 
-SUBFROST 构建于 **Alkanes** 之上，这是一个运行在 Bitcoin 上的智能合约元协议（参见 [Alkanes 协议](../protocol/alkanes)）。只要你会写合约或 Web 应用，就可以在它之上构建：代币、AMM、金库，以及任何读取或转移 Bitcoin 支持的价值（如 frBTC）的东西。
+SUBFROST 构建于 **Alkanes** 之上，这是一个运行在 Bitcoin 上的智能合约元协议（参见 [Alkanes 元协议](../protocol/alkanes)）。只要你会写合约或 Web 应用，就可以在它之上构建：代币、AMM、金库，以及任何读取或转移 Bitcoin 支持的价值（如 frBTC）的东西。
 
 本节是开发者路线，带你从一台空机器走到一个已部署的合约和一个可用的集成。
 
@@ -37,4 +37,4 @@ Alkanes 采用全新的钱包模型。请勿将持有 ordinals 或铭文（inscr
 ## 接下来去哪里
 
 - [快速开始](./quickstart)：部署你的第一个合约。
-- [Alkanes 协议](../protocol/alkanes)：你的合约运行所依托的模型。
+- [Alkanes 元协议](../protocol/alkanes)：你的合约运行所依托的模型。

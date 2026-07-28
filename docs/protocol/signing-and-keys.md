@@ -25,12 +25,9 @@ Because the combined signature is an ordinary Schnorr signature, what lands on B
 
 ## Threshold signing with FROST and ROAST
 
-SUBFROST does not give any one party the key that controls custody. Instead the key is shared across the signer set using two threshold schemes:
+SUBFROST does not give any one party the key that controls custody. Instead the key is shared across the signer set using two threshold schemes, FROST & ROAST. You can read about these in [frBTC Peg & Custody](./frbtc-peg-and-custody).
 
-- **FROST** (Flexible Round-Optimized Schnorr Threshold)
-- **ROAST** (Robust Asynchronous Schnorr Threshold)
-
-Together they let a group of `n` signers produce a signature only when a threshold `t` of them cooperate, without any single signer ever holding the whole private key.
+FROST and ROAST together let a group of `n` signers produce a signature only when a threshold `t` of them cooperate, without any single signer ever holding the whole private key.
 
 Signing happens in two phases:
 
@@ -58,11 +55,7 @@ A keystore never holds secrets in plaintext. When you set it up, you choose a pa
 
 On mobile, this is backed by the device's secure hardware where available, using **StrongBox** on Android and the **Secure Enclave** on iOS, so the protecting key can be bound to the device and never exposed to the app or the operating system.
 
-:::info[Confirm keystore specifics before publishing]
-Confirm the exact key-derivation function and current on-disk format, and the per-platform hardware backing (StrongBox on Android, Secure Enclave on iOS). Do not reintroduce the old example: the previous keystore page pasted an Ethereum Web3 Secret Storage V3 JSON (`aes-128-ctr`, `version 3`) while its prose claimed AES-256-GCM, a direct contradiction.
-:::
-
 ## Where to go next
 
 - [frBTC Peg & Custody](./frbtc-peg-and-custody): how this signing secures the BTC behind frBTC.
-- [How SUBFROST Works](./how-subfrost-works): the big picture.
+- [What is SUBFROST](../start-here/what-is-subfrost): the big picture.

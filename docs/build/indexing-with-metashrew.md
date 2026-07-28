@@ -46,10 +46,6 @@ rockshrew-mono \
 
 To skip the full sync, bootstrap from a **published snapshot**: point `--repo` at a snapshot base URL and the node downloads the state and catches up to the tip in hours. SUBFROST serves snapshots from `https://cdn.subfrost.io/snapshots/`. Business-tier accounts can also pull the raw database directly over [rsync](../api-reference/platform/rsync) instead of `--repo`.
 
-:::info[Confirm the exact snapshot object path]
-The `--repo` snapshot mechanism and the public `cdn.subfrost.io/snapshots/` route are confirmed in source, but the exact snapshot object name (what to point `--repo` at) is not published. Ask the team for the current snapshot path before documenting a copy-paste bootstrap command.
-:::
-
 ## Building your own indexer WASM
 
 metashrew runs any WASM program that implements its host interface, so you can write custom indexing logic, not just run the Alkanes program. A program processes each block and writes key-value state through the runtime, and exposes view functions for reads. The runtime is async, times out long-running requests, and can add new host functions without breaking the interface.

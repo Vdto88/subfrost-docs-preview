@@ -27,10 +27,6 @@ The current release line is metashrew `v9.0.5-rc.13`, running the Alkanes indexe
 
 The runtime is async (wasmtime) and times out long-running requests, and new host functions can be added without changing the host ABI. A newer, unreleased line of work adds Block-STM style parallel block execution to speed up indexing, on the same RocksDB model. Ordering guarantees still hold, but the general "same WASM, same index" property no longer holds automatically under parallel execution, so if you write an indexer that relies on execution order, use serializable semantics.
 
-:::info[Confirm protorunesbyaddress in alkanes v3]
-Confirm with the team whether `protorunesbyaddress` stays a view in alkanes v3, or is dropped in favor of the esplora UTXO API plus per-outpoint lookups.
-:::
-
 ## Methods
 
 ### metashrew_height

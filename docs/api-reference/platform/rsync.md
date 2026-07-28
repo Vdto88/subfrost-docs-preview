@@ -276,9 +276,3 @@ Contact support for custom limits or additional access.
 - All transfers are authenticated: no anonymous access
 - Consider using separate API keys for rsync vs API access
 - Rotate keys periodically, especially after sharing for one-time syncs
-
----
-
-:::info[Should this enterprise feature be in the public merged docs?]
-Database Rsync is a Business-tier feature exposing direct access to raw indexed databases (~500GB-1TB snapshots) via rsync credentials built from the API key. Decide whether it belongs in the public merged docs at all, versus being kept in a restricted, enterprise-only docs section. Confirm placement before publishing.
-:::

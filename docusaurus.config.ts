@@ -111,8 +111,11 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     colorMode: {
+      // Gabe asked for dark-mode colours (#000000 background, #f5f5f5 text) on
+      // 2026-07-28. Those are only meaningful if a reader can reach dark mode,
+      // so the toggle is enabled. Light stays the default.
       defaultMode: 'light',
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     algolia: {
@@ -129,7 +132,22 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: [],
+  plugins: [
+    // The docs root used to be introduction/subfrost-overview, which carried
+    // `slug: /`. Gabe asked for that page to be killed on 2026-07-28, which
+    // left `/` with nothing to serve. Redirecting instead of moving the slug
+    // onto What is SUBFROST keeps every existing relative link working: a slug
+    // change moves the page's route, and the links around the site are
+    // URL-relative, not file-relative.
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {from: '/', to: '/start-here/what-is-subfrost'},
+        ],
+      },
+    ],
+  ],
   
 };
 

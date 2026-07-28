@@ -206,9 +206,3 @@ never inspects the plaintext.
 | Relay | `relay.walletconnect.org` | `wc.subfrost.io` (self-hosted) |
 | Multi-method | yes (JSON-RPC envelope) | yes (typed Plaintext enum) |
 | Push notifications | optional | required (FCM-only on Android) |
-
----
-
-:::info[Should this page link to implementation sources]
-The original page ended with a "See also" section linking directly into implementation repositories. Those links were dropped here because the repositories are not public and the paths expose internal structure. Decide whether to (a) leave the section out, (b) re-add it pointing only at public repositories, or (c) keep it as an internal appendix. The specific paths are recorded in the internal migration note below.
-:::

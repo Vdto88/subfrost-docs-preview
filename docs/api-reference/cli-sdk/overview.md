@@ -169,9 +169,3 @@ See the [Installation](./installation) guide to get started.
 - [Wallet Commands](./wallet): Wallet management
 - [Alkanes Commands](./alkanes): Protocol operations
 - [DataAPI Commands](./dataapi): High-level queries
-
----
-
-:::info[Consolidate the two CLI references]
-This CLI surface was verified against the real binary: `alkanes-cli` in `subfrost/alkanes-rs` (on the `develop` branch, the default `main` does not carry the CLI crates). The alkanes.build docs describe the same tool with an overlapping `cli/*` tree. These two references should be consolidated into one canonical page in the official docs PR; this migrated section is the more complete of the two. Recommendation (pending Vitor sign-off): make this the canonical CLI reference and reduce the alkanes.build one to a pointer.
-:::

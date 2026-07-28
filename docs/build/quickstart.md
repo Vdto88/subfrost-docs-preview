@@ -115,7 +115,7 @@ wasm-pack build --target web --release
 
 ## 5. Deploy
 
-Deploying an Alkane means broadcasting a Bitcoin transaction that carries the WASM as an envelope and a **cellpack** that tells the protocol what to do (see [Alkanes Protocol](../protocol/alkanes) for the model behind this).
+Deploying an Alkane means broadcasting a Bitcoin transaction that carries the WASM as an envelope and a **cellpack** that tells the protocol what to do (see [Alkanes Metaprotocol](../protocol/alkanes) for the model behind this).
 
 ```bash
 alkanes-cli -p signet alkanes execute "[3,0,0]" \
@@ -144,4 +144,4 @@ Read calls are free and do not touch the chain: they run against indexer state. 
 
 - [Interacting via the CLI](./interacting-via-cli): the full set of wallet and contract commands.
 - [Wrapping frBTC](./wrapping-frbtc): put real Bitcoin-backed value into a contract.
-- [Alkanes Protocol](../protocol/alkanes): cellpacks, opcodes, and view functions explained.
+- [Alkanes Metaprotocol](../protocol/alkanes): cellpacks, opcodes, and view functions explained.
