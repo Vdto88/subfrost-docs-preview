@@ -15,7 +15,7 @@ Lending lets you **lend out your tokens to earn interest** or **borrow tokens ag
 | --- | --- |
 | Model | Peer to peer, fixed rate, fixed term |
 | Settlement | A single Bitcoin transaction |
-| Posting an offer | Free, off-chain, no network fee |
+| Posting an offer | Instant, off the order book, a small network fee |
 | Who pays to settle | The taker (the person who accepts an offer) |
 | Protocol fee | 3,000 sats per loan, paid at settlement |
 | Interest | Fixed at creation, computed from APR and duration |
@@ -40,7 +40,7 @@ When you post an offer, your wallet **signs it, but the loan itself is not settl
 - **No waiting for a block** before your offer is usable. It shows up in the order book instantly.
 - **Your funds stay in your wallet.** A posted offer is a pre-signed instruction that, by design, **cannot be broadcast on its own**. It only becomes a real transaction once a taker accepts and adds their side.
 
-This means **only the taker pays to settle**. As a maker, posting, editing and cancelling offers cost nothing.
+This means **only the taker pays to settle**. As a maker, what you pay is the small network fee on the offer itself.
 
 ### Matching settles the loan on chain
 
@@ -166,7 +166,7 @@ Your open offers appear under **My Offers**. From there you can:
 - **Edit** an offer. This re-signs a fresh offer and cancels the old one.
 - **Delete** an offer, removing it from the order book.
 
-Both are free and off chain, just like posting.
+Neither one settles the loan on chain, just like posting.
 
 ## Tips
 

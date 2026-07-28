@@ -66,5 +66,5 @@ description: SUBFROST 的速查表，涵盖 frBTC、DIESEL、FIRE、FUEL、dxBTC
 ## 接下来去哪里
 
 - **[5 分钟快速上手](./get-started)：** 如果你还没完成第一笔兑换。
-- **代币与经济学：** frBTC、DIESEL、FIRE、dxBTC 和 FUEL 的完整故事。
-- **Protocol：** 托管、签名和 Alkanes 模型的实际运作方式。
+- **[代币与经济学](../tokens-economics/overview)：** frBTC、DIESEL、FIRE、dxBTC 和 FUEL 的完整故事。
+- **[Protocol](../protocol/how-subfrost-works)：** 托管、签名和 Alkanes 模型的实际运作方式。

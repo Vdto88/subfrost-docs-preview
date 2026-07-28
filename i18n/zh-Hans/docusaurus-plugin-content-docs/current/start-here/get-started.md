@@ -63,4 +63,4 @@ SUBFROST 目前不索引 `ord`。在使用我们的应用之前，你必须将 O
 ## 接下来去哪里
 
 - **[关键概念](./key-concepts)：** 了解 frBTC、DIESEL、FIRE 及其他内容。
-- 在 **使用 SUBFROST** 指南中探索资金池、FIRE vault 及更多内容。
+- 在 **[使用 SUBFROST](../using-subfrost/wallets)** 指南中探索资金池、FIRE vault 及更多内容。

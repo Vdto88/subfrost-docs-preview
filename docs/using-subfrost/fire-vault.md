@@ -32,11 +32,11 @@ The vault accepts **DIESEL / frBTC LP tokens**. It pays out FIRE with a reward a
 
 Per-block emission in epoch 0:
 
-| Pool | Base units per block | FIRE per block | Per day | Per year |
-| --- | --- | --- | --- | --- |
-| Staking (85%) | 850,000,000 | 8.5 | ~1,224 FIRE | ~446,250 FIRE |
-| Bonding (15%) | 150,000,000 | 1.5 | ~216 FIRE | ~78,750 FIRE |
-| **Total** | **1,000,000,000** | **10** | **~1,440 FIRE** | **~525,000 FIRE** |
+| Pool | FIRE per block | Per day | Per year |
+| --- | --- | --- | --- |
+| Staking (85%) | 8.5 | ~1,224 FIRE | ~446,250 FIRE |
+| Bonding (15%) | 1.5 | ~216 FIRE | ~78,750 FIRE |
+| **Total** | **10** | **~1,440 FIRE** | **~525,000 FIRE** |
 
 Day and year figures assume Bitcoin's average of 144 blocks per day and 52,500 blocks per year.
 
