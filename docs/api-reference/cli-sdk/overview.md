@@ -14,7 +14,7 @@ The `alkanes-cli` command-line tool and `@alkanes/ts-sdk` TypeScript library pro
 `alkanes-cli` is a powerful command-line interface for:
 
 - **Wallet Management**: Create, manage, and sign transactions with HD wallets
-- **Alkanes Protocol**: Deploy contracts, execute transactions, and query balances
+- **Alkanes Metaprotocol**: Deploy contracts, execute transactions, and query balances
 - **AMM & Liquidity**: Initialize pools, execute swaps, and manage liquidity
 - **Bitcoin Operations**: Query blocks, transactions, UTXOs, and fee estimates
 - **Ordinals & Runes**: Query inscriptions, runes, and sat information

@@ -19,7 +19,7 @@ SUBFROST 构建于 **Alkanes** 之上，这是一个运行在 Bitcoin 上的智�
 - **`@alkanes/ts-sdk`**，用于在 Web 应用或后端中以 TypeScript 与链交互。
 - **一个托管的 JSON-RPC 端点**，这样你无需自己运行索引器就能开始上手。请求会发往 `https://mainnet.subfrost.io/v4/jsonrpc`。如果你想自己运行索引器，参见 [用 metashrew 做索引](./indexing-with-metashrew)。
 
-完整的命令与 SDK 参考位于 [API 与 SDK 参考](../api-reference/cli-sdk/overview)。本路线是引导式教程；那一节则是查阅用的速查表。
+完整的命令与 SDK 参考位于 [API 与 SDK 文档](../api-reference/cli-sdk/overview)。本路线是引导式教程；那一节则是查阅用的速查表。
 
 ## 本节内容
 

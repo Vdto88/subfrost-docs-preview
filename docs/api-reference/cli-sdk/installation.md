@@ -269,4 +269,4 @@ Ensure `-p` matches your endpoint network.
 
 - [Wallet Commands](./wallet): Manage wallets and sign transactions
 - [Alkanes Commands](./alkanes): Protocol operations
-- [Quick Start](../getting-started/quickstart): API quick start guide
+- [Quickstart](../getting-started/quickstart): API quickstart guide

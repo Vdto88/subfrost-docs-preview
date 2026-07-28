@@ -5,7 +5,7 @@ sidebar_position: 2
 description: Make your first SUBFROST API request in a few minutes.
 ---
 
-# Quick Start
+# Quickstart
 
 Get started with the SUBFROST API in just a few minutes.
 

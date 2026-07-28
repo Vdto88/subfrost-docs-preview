@@ -84,7 +84,7 @@ See the [Authentication](./authentication) guide for details.
 
 ## Next steps
 
-- [Quick Start](./quickstart): get up and running in minutes.
+- [Quickstart](./quickstart): get up and running in minutes.
 - [JSON-RPC Overview](../json-rpc/overview): learn about the RPC interface.
 - [Lua Scripting](../lua/overview): execute custom scripts server-side.
 - [API Platform](../platform/overview): manage API keys and CORS settings.

@@ -48,12 +48,12 @@ See [Swap](../using-subfrost/swap), [Pools & Liquidity](../using-subfrost/pools-
 
 ## What it all runs on
 
-- **Alkanes.** The smart-contract protocol that these tokens live on. Alkanes lets developers run programmable contracts directly on Bitcoin (contracts are written in Rust and compiled to WebAssembly), inheriting Bitcoin's security instead of relying on a separate chain. frBTC, DIESEL, and FIRE are all Alkanes tokens. See the [Protocol](../protocol/alkanes) section for the full model.
+- **Alkanes.** The smart-contract protocol that these tokens live on. Alkanes lets developers run programmable contracts directly on Bitcoin (contracts are written in Rust and compiled to WebAssembly), inheriting Bitcoin's security instead of relying on a separate chain. frBTC, DIESEL, and FIRE are all Alkanes tokens. See the [Technical Overview](../protocol/alkanes) section for the full model.
 
 - **Metashrew indexer.** Bitcoin blocks do not "run" contracts on their own. An indexer reads each new block and executes the contract code embedded in the block (specifically in the OP_RETURN). When you see your Alkanes balances, it comes from the Metashrew indexer.
 
 :::note[One level deeper]
-This section keeps things simple on purpose. Terms like protostone, cellpack, and the exact contract model are covered in the [Protocol](../protocol/alkanes) section, and the developer tooling (CLI, SDK, JSON-RPC) is in [Build on SUBFROST](../build/overview) and the [API & SDK Reference](../api-reference/getting-started/overview).
+This section keeps things simple on purpose. Terms like protostone, cellpack, and the exact contract model are covered in the [Technical Overview](../protocol/alkanes) section, and the developer tooling (CLI, SDK, JSON-RPC) is in [Build on SUBFROST](../build/overview) and the [API & SDK Docs](../api-reference/getting-started/overview).
 :::
 
 ## What is live today
@@ -67,4 +67,4 @@ Being honest about status matters. A quick snapshot:
 
 - **[Get Started in 5 Minutes](./get-started):** if you have not made your first swap yet.
 - **[Tokens & Economics](../tokens-economics/overview):** the full story on frBTC, DIESEL, FIRE, dxBTC, and FUEL.
-- **[Protocol](../protocol/alkanes):** how the custody, signing, and Alkanes model actually work.
+- **[Technical Overview](../protocol/alkanes):** how the custody, signing, and Alkanes model actually work.
