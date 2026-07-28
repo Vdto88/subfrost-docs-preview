@@ -36,7 +36,7 @@ So **as a liquidity provider you earn 0.8% of the volume that trades through you
 
 ## Removing liquidity
 
-1. Click **Liquidity** on the swap page and switch to the **Remove** tab.
+1. Click **"Liquidity"** on the swap page and switch to the **Remove** tab.
 2. Choose the **LP position** you want to remove.
 3. Set the **Amount to Remove**. The app shows the **Minimum Received** for each of the two tokens, quoted against current reserves.
 4. Confirm and sign. Your share of the pool, plus the fees it accrued, returns to your wallet.
