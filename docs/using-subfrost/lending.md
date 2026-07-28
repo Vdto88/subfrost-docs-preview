@@ -15,7 +15,7 @@ Lending lets you **lend out your tokens to earn interest** or **borrow tokens ag
 | --- | --- |
 | Model | Peer to peer, fixed rate, fixed term |
 | Settlement | A single Bitcoin transaction |
-| Posting an offer | Instant, off the order book, a small network fee |
+| Posting an offer | Instant, a small network fee, not settled on chain |
 | Who pays to settle | The taker (the person who accepts an offer) |
 | Protocol fee | 3,000 sats per loan, paid at settlement |
 | Interest | Fixed at creation, computed from APR and duration |
@@ -123,10 +123,10 @@ Borrowers face the mirror image: the more collateral you post, the more you have
 
 1. Open the **Lend / Borrow** page and pick the token you want to **lend** and the token you will accept as **collateral**.
 2. Switch the form to **Lend**.
-3. Enter the amount to lend, the collateral you require, the **APR**, and the **duration** in blocks. The form fills in the minimum collateral for you.
+3. Enter the amount to lend, the collateral you require, the **APR**, and the **duration** in blocks.
 4. Click **Lend** and approve the signature in your wallet.
 
-Your offer is now live in the order book. No fee, no broadcast.
+Your offer is now live in the order book. Nothing settles on chain until a taker accepts it.
 
 ## How to borrow
 
