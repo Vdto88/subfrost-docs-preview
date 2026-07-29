@@ -53,21 +53,3 @@ description: Short definitions for the terms used across the SUBFROST documentat
 *   **WASM:** WebAssembly. A binary instruction format for a stack-based virtual machine, used for both contracts and the indexer.
 *   **`wasip2`:** A standardized interface for running WebAssembly modules across systems.
 
-## Networking
-
-*   **`subp2p`:** The foundational peer-to-peer networking layer of the SUBFROST ecosystem, built on libp2p.
-*   **`subrelay`:** A component of the networking stack acting as a rendezvous point, traffic relay, and name registrar for `subp2p`.
-*   **`subproxy`:** A bridge between the `subp2p` network and the traditional internet.
-*   **`subtun`:** A secure, peer-to-peer VPN over the `subp2p` network.
-*   **Gossipsub:** A publish/subscribe protocol where peers subscribe to topics and receive messages published to them.
-*   **noise:** The protocol `subp2p` uses for its encrypted handshake between peers.
-*   **Microservices:** Small, independent services that communicate over the secure `subp2p` network.
-*   **Kademlia DHT:** A distributed hash table used to discover peers on the public internet.
-*   **mDNS:** Multicast DNS. Lets peers discover each other on a local network without a central server.
-*   **NAT traversal:** Techniques that let peers behind firewalls and NATs connect to each other.
-*   **AutoNAT:** A protocol that lets a peer discover its own public IP address.
-*   **Hole punching (DCUtR):** A technique that lets two peers behind NATs establish a direct connection with a relay's help.
-*   **Circuit relay:** Forwarding traffic through a relay peer when a direct connection cannot be established.
-*   **TUN device:** A virtual network interface that receives packets from a user-space program rather than physical hardware.
-*   **SOCKS5:** A proxy protocol for routing traffic through a proxy server.
-*   **Reverse proxy:** A proxy server that retrieves resources on behalf of a client from one or more servers.

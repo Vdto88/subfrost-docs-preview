@@ -144,6 +144,16 @@ const config: Config = {
       {
         redirects: [
           {from: '/', to: '/start-here/what-is-subfrost'},
+          // The SUBFROST Networking section was removed on 2026-07-29 at
+          // flex's request. All six pages were live and served 200, so they
+          // are redirected rather than left to 404. There is no equivalent
+          // page to land on, so they point at the docs root.
+          {from: '/subfrost-networking/introduction-to-subp2p', to: '/start-here/what-is-subfrost'},
+          {from: '/subfrost-networking/subrelay', to: '/start-here/what-is-subfrost'},
+          {from: '/subfrost-networking/subproxy', to: '/start-here/what-is-subfrost'},
+          {from: '/subfrost-networking/subtun', to: '/start-here/what-is-subfrost'},
+          {from: '/subfrost-networking/gossipsub-and-encrypted-communication', to: '/start-here/what-is-subfrost'},
+          {from: '/subfrost-networking/building-microservices-on-subp2p', to: '/start-here/what-is-subfrost'},
         ],
       },
     ],

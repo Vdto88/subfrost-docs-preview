@@ -23,10 +23,6 @@
     "message": "在 SUBFROST 上构建",
     "description": "The label for category 'Build on SUBFROST' in sidebar 'docs'"
   },
-  "sidebar.docs.category.SUBFROST Networking": {
-    "message": "SUBFROST 网络",
-    "description": "The label for category 'SUBFROST Networking' in sidebar 'docs'"
-  },
   "sidebar.docs.category.API & SDK Docs": {
     "message": "API 与 SDK 文档",
     "description": "The label for category 'API & SDK Docs' in sidebar 'docs'"
