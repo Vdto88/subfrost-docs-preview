@@ -154,6 +154,10 @@ const config: Config = {
           {from: '/subfrost-networking/subtun', to: '/start-here/what-is-subfrost'},
           {from: '/subfrost-networking/gossipsub-and-encrypted-communication', to: '/start-here/what-is-subfrost'},
           {from: '/subfrost-networking/building-microservices-on-subp2p', to: '/start-here/what-is-subfrost'},
+          // The frBTC roadmap page was merged INTO the frBTC overview on
+          // 2026-07-29 at Gabe's request. Its content now lives under the
+          // "frBTC is live on Alkanes and BRC2.0" paragraph there.
+          {from: '/tokens/frBTC-roadmap', to: '/tokens/frBTC-overview'},
         ],
       },
     ],
