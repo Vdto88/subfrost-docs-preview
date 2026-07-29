@@ -180,7 +180,7 @@ Outside of market quotes, FIRE has two distinct "prices," and they answer differ
 | **Oracle** | `locked_LP / annual_emission` | What a 6-month staker earns in a year |
 | **Floor** | `treasury_LP / total_supply` | What a redeemer gets for burning FIRE |
 
-Neither of these is the price a bond is struck at. The bond discount is measured against the market price. Oracle and floor answer different questions, and a discount against one is not a discount against the other, so if you see a "discount" quoted anywhere, check which price it is measured from.
+Neither of these is the price a bond is set at. The bond discount is measured against the market price of FIRE.
 
 ## The flywheel
 
