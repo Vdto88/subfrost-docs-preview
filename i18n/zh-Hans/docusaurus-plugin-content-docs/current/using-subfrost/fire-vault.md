@@ -173,14 +173,18 @@ floor_price = total_treasury_LP / total_FIRE_supply
 
 ## 两种参考价格
 
-除了市场报价之外，FIRE 还有两种不同的「价格」，它们回答的是不同的问题。
+除了 FIRE 的市场成交价之外，还有另外两个数字，它们回答的是不同的问题。
 
-| 价格 | 公式 | 含义 |
+| 价格 | 来源 | 含义 |
 | --- | --- | --- |
-| **预言机价格（Oracle）** | `locked_LP / annual_emission` | 一个 6 个月质押者一年能赚到多少 |
+| **预言机价格（Oracle）** | 一个链上价格喂价 | 协议为债券定价时所读取的参考值 |
 | **地板价（Floor）** | `treasury_LP / total_supply` | 一个赎回者销毁 FIRE 能换回多少 |
 
-这两者都不是债券定价所依据的价格。债券折扣是相对于 FIRE 的市场价格衡量的。
+债券折扣是相对于 FIRE 的**市场价格**衡量的，而不是相对于地板价。
+
+:::info[预言机价格不再取决于质押了多少 LP]
+它过去是这样的：参考值由锁仓 LP 除以年度发行量推导而来，因此质押量越大，这个数字就越高。这条链路已经不存在了。预言机现在是一个被推送上链的喂价，而目前**由单一签名者推送它的值**——设计意图是让它在多个签名者之间联邦化，但这一步尚未完成。在那之前，请把它视为一个受信任的输入。
+:::
 
 ## 飞轮效应
 
@@ -189,7 +193,7 @@ floor_price = total_treasury_LP / total_FIRE_supply
 <figure class="fire-flywheel">
 <svg viewBox="0 0 760 430" role="img" aria-labelledby="fire-flywheel-title fire-flywheel-desc" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto">
   <title id="fire-flywheel-title">FIRE 飞轮</title>
-  <desc id="fire-flywheel-desc">一个由四个环节构成的闭环。质押者锁仓 DIESEL / frBTC LP，锁得越久，预言机价格越高；预言机价格衡量长期承诺流动性的收益；债券认购者以相对市场价格的折扣支付 LP 换取 FIRE；国库永久保留这些 LP，从而推高地板价，而更高的地板价既保护持有者，也使低价认购债券变得更难。</desc>
+  <desc id="fire-flywheel-desc">一个由四个环节构成的闭环。质押者锁仓 DIESEL / frBTC LP，锁仓的 LP 分享每个区块发行量中 85% 的份额；剩下的 15% 则用于支撑债券池；债券认购者以相对市场价格的折扣支付 LP 换取 FIRE；国库永久保留这些 LP，从而推高地板价，而更高的地板价既保护持有者，也让承诺流动性变得更安全。</desc>
   <defs>
     <marker id="fire-flywheel-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0 1 L9 5 L0 9 z" fill="#EC4521"/>
@@ -204,13 +208,13 @@ floor_price = total_treasury_LP / total_FIRE_supply
   </g>
   <g fill="currentColor" text-anchor="middle" font-size="13.5" font-weight="600">
     <text x="380" y="38">质押者锁仓 DIESEL / frBTC LP</text>
-    <text x="623" y="210">预言机价格上升</text>
+    <text x="623" y="210">每个区块发行 FIRE</text>
     <text x="380" y="382">债券认购者支付 LP 换取 FIRE</text>
     <text x="137" y="210">国库永久保留这些 LP</text>
   </g>
   <g fill="currentColor" text-anchor="middle" font-size="11.5" opacity="0.75">
     <text x="380" y="57">锁得越久，获得的 FIRE 越多</text>
-    <text x="623" y="229">locked_LP / annual_emission</text>
+    <text x="623" y="229">85% 归质押，15% 归债券</text>
     <text x="380" y="401">以相对市场价格的折扣</text>
     <text x="137" y="229">地板价随之上升</text>
   </g>
@@ -222,32 +226,32 @@ floor_price = total_treasury_LP / total_FIRE_supply
     <path d="M134 182 Q 150 70 246 54"/>
   </g>
   <g fill="#EC4521" text-anchor="middle" font-size="11.5" font-weight="500">
-    <text x="664" y="128">长期锁仓推高它</text>
-    <text x="656" y="332">衡量 LP 的收益</text>
+    <text x="664" y="128">锁仓 LP 分享 85%</text>
+    <text x="656" y="332">15% 支撑债券</text>
     <text x="104" y="332">LP 永不流出</text>
     <text x="106" y="124">地板价保护持有者</text>
   </g>
   <g text-anchor="middle" fill="currentColor">
     <text x="380" y="208" font-size="30" font-weight="700" letter-spacing="1">FIRE</text>
-    <text x="380" y="232" font-size="11.5" opacity="0.7">发行量由真实的长期承诺调节</text>
+    <text x="380" y="232" font-size="11.5" opacity="0.7">发行量固定，地板价只升不降</text>
   </g>
 </svg>
 </figure>
 
 | 角色 | 行为 | 引发的结果 |
 | --- | --- | --- |
-| LP 提供者 | 质押 DIESEL / frBTC LP，锁仓越久获得的 FIRE 越多 | 长期锁仓会推高预言机价格 |
+| LP 提供者 | 质押 DIESEL / frBTC LP，锁仓越久获得的 FIRE 越多 | 锁得越久，在这 85% 中分到的份额就越大 |
 | 债券认购者 | 支付 LP，以相对于市场价格的折扣换取 FIRE | 债券认购越多，国库充实得越快 |
 | 国库 | 永久保留每一笔债券认购存入的 LP | 国库规模越大，地板价就越高 |
 | 赎回者 | 销毁 FIRE，按比例换取国库中的 LP | 地板价保护机制随之生效，使低价认购债券变得更难 |
 
-可以把它理解为一个循环：更多长期质押者推高预言机价格，也就是衡量长期承诺流动性收益的标尺；认购者支付 LP，以相对于市场价格的折扣换取 FIRE；更多的 LP 推高地板价；而更高的地板价既保护了 FIRE 持有者，也限制了下一个认购者能以多低的价格买入。长期承诺的流动性推高地板价，地板价保护持有者，而发行量则始终由真实的长期承诺来调节。
+可以把它理解为一个循环：锁仓的 LP 分享每个区块发行量中 85% 的份额，而剩下的 15% 正是债券所支付的来源；认购者交出 LP，以相对于市场价格的折扣换取 FIRE；这些 LP 永远不会离开国库，因此地板价随之上升；而更高的地板价既保护了 FIRE 持有者，也让承诺流动性变得更安全，循环由此回到顶端。发行量本身由发行时间表固定。这个循环真正推动的是**地板价**，而且只朝一个方向。
 
 ## 风险
 
 | 风险 | 对你意味着什么 |
 | --- | --- |
-| **启动期（Bootstrap）** | 早期锁仓的 LP 很少，因此预言机价格偏低，FIRE 会非常便宜，直到长期承诺增长起来 |
+| **目前仍是受信任的预言机** | 债券所依据的参考值由单一签名者推送上链。让它在多个签名者之间联邦化是设计意图，但这一步尚未完成 |
 | **国库初始为空** | 地板价从 0 开始，只有当认购者存入 LP 后才会上升 |
 | **锁仓流动性受限** | 锁仓的 LP 在到期前无法取出。如果需要部分灵活性，可以拆分为 FIRE-PT |
 | **区块时间存在波动** | 这里的所有时长都假设 Bitcoin 平均约 10 分钟一个区块，实际经过的时间会有偏差 |

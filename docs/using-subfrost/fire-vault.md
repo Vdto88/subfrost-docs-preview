@@ -173,14 +173,18 @@ This is a hard floor, and it scales with the treasury. Every bond deposits LP th
 
 ## The two reference prices
 
-Outside of market quotes, FIRE has two distinct "prices," and they answer different questions.
+Alongside what FIRE trades at, two other numbers answer different questions.
 
-| Price | Formula | What it means |
+| Price | Where it comes from | What it means |
 | --- | --- | --- |
-| **Oracle** | `locked_LP / annual_emission` | What a 6-month staker earns in a year |
+| **Oracle** | An on-chain price feed | The reference the protocol reads when it prices a bond |
 | **Floor** | `treasury_LP / total_supply` | What a redeemer gets for burning FIRE |
 
-Neither of these is the price a bond is set at. The bond discount is measured against the market price of FIRE.
+The bond discount is measured against the **market price** of FIRE, not against the floor.
+
+:::info[The oracle no longer depends on how much LP is staked]
+It used to: the reference was derived from locked LP over annual emission, so a larger stake moved the number. That link is gone. The oracle is now a posted feed, and today **a single signer posts its value** — the design is for that to federate across signers, which has not happened yet. Treat it as a trusted input until it does.
+:::
 
 ## The flywheel
 
@@ -189,7 +193,7 @@ Staking, bonding, and redemption are not three separate features. They feed each
 <figure class="fire-flywheel">
 <svg viewBox="0 0 760 430" role="img" aria-labelledby="fire-flywheel-title fire-flywheel-desc" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto">
   <title id="fire-flywheel-title">The FIRE flywheel</title>
-  <desc id="fire-flywheel-desc">A closed loop of four steps. Stakers lock DIESEL/frBTC LP, and longer locks raise the oracle price. The oracle sets what committed liquidity earns. Bonders pay LP for FIRE at a discount to the market price. The treasury keeps that LP permanently, which raises the floor price, and a higher floor both protects holders and makes cheap bonding harder.</desc>
+  <desc id="fire-flywheel-desc">A closed loop of four steps. Stakers lock DIESEL/frBTC LP, and locked LP earns the 85 percent share of each block's emission. The remaining 15 percent funds the bonding pool. Bonders pay LP for FIRE at a discount to the market price. The treasury keeps that LP permanently, which raises the floor price, and a higher floor protects holders and makes committing liquidity safer.</desc>
   <defs>
     <marker id="fire-flywheel-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0 1 L9 5 L0 9 z" fill="#EC4521"/>
@@ -204,13 +208,13 @@ Staking, bonding, and redemption are not three separate features. They feed each
   </g>
   <g fill="currentColor" text-anchor="middle" font-size="13.5" font-weight="600">
     <text x="380" y="38">Stakers lock DIESEL / frBTC LP</text>
-    <text x="623" y="210">The oracle price rises</text>
+    <text x="623" y="210">FIRE is emitted each block</text>
     <text x="380" y="382">Bonders pay LP for FIRE</text>
     <text x="137" y="210">The treasury keeps that LP</text>
   </g>
   <g fill="currentColor" text-anchor="middle" font-size="11.5" opacity="0.75">
     <text x="380" y="57">the longer the lock, the more FIRE</text>
-    <text x="623" y="229">locked_LP / annual_emission</text>
+    <text x="623" y="229">85% to staking, 15% to bonds</text>
     <text x="380" y="401">at a discount to the market price</text>
     <text x="137" y="229">so the floor price rises</text>
   </g>
@@ -222,32 +226,32 @@ Staking, bonding, and redemption are not three separate features. They feed each
     <path d="M134 182 Q 150 70 246 54"/>
   </g>
   <g fill="#EC4521" text-anchor="middle" font-size="11.5" font-weight="500">
-    <text x="664" y="128">long locks raise it</text>
-    <text x="656" y="332">sets what LP earns</text>
+    <text x="664" y="128">locked LP earns 85%</text>
+    <text x="656" y="332">the 15% funds bonds</text>
     <text x="104" y="332">the LP never leaves</text>
     <text x="106" y="124">the floor protects</text>
   </g>
   <g text-anchor="middle" fill="currentColor">
     <text x="380" y="208" font-size="30" font-weight="700" letter-spacing="1">FIRE</text>
-    <text x="380" y="232" font-size="11.5" opacity="0.7">emission metered by real commitment</text>
+    <text x="380" y="232" font-size="11.5" opacity="0.7">fixed emission, a floor that only rises</text>
   </g>
 </svg>
 </figure>
 
 | Who | Does | Which causes |
 | --- | --- | --- |
-| LP providers | Stake DIESEL / frBTC LP, locking longer for more FIRE | Long locks raise the oracle price |
+| LP providers | Stake DIESEL / frBTC LP, locking longer for more FIRE | A longer lock takes a larger share of the 85% |
 | Bonders | Pay LP for FIRE at a discount from market price | More bonding fills the treasury faster |
 | Treasury | Keeps every bonded LP permanently | A bigger treasury raises the floor price |
 | Redeemers | Burn FIRE for a proportional slice of treasury LP | The floor guard kicks in, so bonding cheaply gets harder |
 
-Read it as a loop: more long-term stakers raise the oracle, which is the yardstick for what committed liquidity earns; bonders pay LP for FIRE at a discount to market; more LP raises the floor; and a higher floor both protects FIRE holders and clamps how cheaply the next bonder can buy in. Committed liquidity raises the floor, the floor protects holders, and emission stays metered by genuine long-term commitment.
+Read it as a loop: locked LP earns the 85% share of each block's emission, and the remaining 15% is what bonds are paid out of; bonders hand over LP for FIRE at a discount to the market price; that LP never leaves the treasury, so the floor rises; and a higher floor both protects FIRE holders and makes committing liquidity safer, which brings the loop back to the top. The emission itself is fixed by the schedule. What the loop moves is the **floor**, in one direction only.
 
 ## Risks
 
 | Risk | What it means for you |
 | --- | --- |
-| **Bootstrap** | Early on there is little locked LP, so the oracle is low and FIRE is very cheap until long-term commitment grows |
+| **A trusted oracle, for now** | The bond reference is posted on chain by a single signer. Federating that across signers is the intent, but it has not happened yet |
 | **Empty treasury at the start** | The floor price begins at 0 and only rises as bonders deposit LP |
 | **Lock illiquidity** | Locked LP cannot be withdrawn before expiry. Split into FIRE-PT if you need partial flexibility |
 | **Block time variance** | Every duration here assumes Bitcoin's roughly 10-minute average block. Real elapsed time drifts |
