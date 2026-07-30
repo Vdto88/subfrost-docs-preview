@@ -186,6 +186,54 @@ Neither of these is the price a bond is set at. The bond discount is measured ag
 
 Staking, bonding, and redemption are not three separate features. They feed each other in a closed loop.
 
+<figure class="fire-flywheel">
+<svg viewBox="0 0 760 430" role="img" aria-labelledby="fire-flywheel-title fire-flywheel-desc" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto">
+  <title id="fire-flywheel-title">The FIRE flywheel</title>
+  <desc id="fire-flywheel-desc">A closed loop of four steps. Stakers lock DIESEL/frBTC LP, and longer locks raise the oracle price. The oracle sets what committed liquidity earns. Bonders pay LP for FIRE at a discount to the market price. The treasury keeps that LP permanently, which raises the floor price, and a higher floor both protects holders and makes cheap bonding harder.</desc>
+  <defs>
+    <marker id="fire-flywheel-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#EC4521"/>
+    </marker>
+  </defs>
+  <!-- the four stages, drawn clockwise from the top -->
+  <g fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.4">
+    <rect x="250" y="14" width="260" height="58" rx="8"/>
+    <rect x="498" y="186" width="250" height="58" rx="8"/>
+    <rect x="230" y="358" width="300" height="58" rx="8"/>
+    <rect x="12" y="186" width="250" height="58" rx="8"/>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="13.5" font-weight="600">
+    <text x="380" y="38">Stakers lock DIESEL / frBTC LP</text>
+    <text x="623" y="210">The oracle price rises</text>
+    <text x="380" y="382">Bonders pay LP for FIRE</text>
+    <text x="137" y="210">The treasury keeps that LP</text>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="11.5" opacity="0.75">
+    <text x="380" y="57">the longer the lock, the more FIRE</text>
+    <text x="623" y="229">locked_LP / annual_emission</text>
+    <text x="380" y="401">at a discount to the market price</text>
+    <text x="137" y="229">so the floor price rises</text>
+  </g>
+  <!-- the loop itself: each arrow is the consequence, not just a connector -->
+  <g fill="none" stroke="#EC4521" stroke-width="1.75" marker-end="url(#fire-flywheel-arrow)">
+    <path d="M508 66 Q 592 74 614 180"/>
+    <path d="M622 248 Q 614 344 538 378"/>
+    <path d="M228 388 Q 150 380 137 250"/>
+    <path d="M134 182 Q 150 70 246 54"/>
+  </g>
+  <g fill="#EC4521" text-anchor="middle" font-size="11.5" font-weight="500">
+    <text x="664" y="128">long locks raise it</text>
+    <text x="656" y="332">sets what LP earns</text>
+    <text x="104" y="332">the LP never leaves</text>
+    <text x="106" y="124">the floor protects</text>
+  </g>
+  <g text-anchor="middle" fill="currentColor">
+    <text x="380" y="208" font-size="30" font-weight="700" letter-spacing="1">FIRE</text>
+    <text x="380" y="232" font-size="11.5" opacity="0.7">emission metered by real commitment</text>
+  </g>
+</svg>
+</figure>
+
 | Who | Does | Which causes |
 | --- | --- | --- |
 | LP providers | Stake DIESEL / frBTC LP, locking longer for more FIRE | Long locks raise the oracle price |

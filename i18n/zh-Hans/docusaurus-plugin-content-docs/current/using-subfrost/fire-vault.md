@@ -186,6 +186,54 @@ floor_price = total_treasury_LP / total_FIRE_supply
 
 质押、债券认购与赎回并非三个各自独立的功能，它们在一个闭环中相互驱动。
 
+<figure class="fire-flywheel">
+<svg viewBox="0 0 760 430" role="img" aria-labelledby="fire-flywheel-title fire-flywheel-desc" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto">
+  <title id="fire-flywheel-title">FIRE 飞轮</title>
+  <desc id="fire-flywheel-desc">一个由四个环节构成的闭环。质押者锁仓 DIESEL / frBTC LP，锁得越久，预言机价格越高；预言机价格衡量长期承诺流动性的收益；债券认购者以相对市场价格的折扣支付 LP 换取 FIRE；国库永久保留这些 LP，从而推高地板价，而更高的地板价既保护持有者，也使低价认购债券变得更难。</desc>
+  <defs>
+    <marker id="fire-flywheel-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#EC4521"/>
+    </marker>
+  </defs>
+  <!-- 四个环节，自顶部起顺时针 -->
+  <g fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.4">
+    <rect x="250" y="14" width="260" height="58" rx="8"/>
+    <rect x="498" y="186" width="250" height="58" rx="8"/>
+    <rect x="230" y="358" width="300" height="58" rx="8"/>
+    <rect x="12" y="186" width="250" height="58" rx="8"/>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="13.5" font-weight="600">
+    <text x="380" y="38">质押者锁仓 DIESEL / frBTC LP</text>
+    <text x="623" y="210">预言机价格上升</text>
+    <text x="380" y="382">债券认购者支付 LP 换取 FIRE</text>
+    <text x="137" y="210">国库永久保留这些 LP</text>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="11.5" opacity="0.75">
+    <text x="380" y="57">锁得越久，获得的 FIRE 越多</text>
+    <text x="623" y="229">locked_LP / annual_emission</text>
+    <text x="380" y="401">以相对市场价格的折扣</text>
+    <text x="137" y="229">地板价随之上升</text>
+  </g>
+  <!-- 闭环本身：每个箭头都是「引发的结果」，不只是连线 -->
+  <g fill="none" stroke="#EC4521" stroke-width="1.75" marker-end="url(#fire-flywheel-arrow)">
+    <path d="M508 66 Q 592 74 614 180"/>
+    <path d="M622 248 Q 614 344 538 378"/>
+    <path d="M228 388 Q 150 380 137 250"/>
+    <path d="M134 182 Q 150 70 246 54"/>
+  </g>
+  <g fill="#EC4521" text-anchor="middle" font-size="11.5" font-weight="500">
+    <text x="664" y="128">长期锁仓推高它</text>
+    <text x="656" y="332">衡量 LP 的收益</text>
+    <text x="104" y="332">LP 永不流出</text>
+    <text x="106" y="124">地板价保护持有者</text>
+  </g>
+  <g text-anchor="middle" fill="currentColor">
+    <text x="380" y="208" font-size="30" font-weight="700" letter-spacing="1">FIRE</text>
+    <text x="380" y="232" font-size="11.5" opacity="0.7">发行量由真实的长期承诺调节</text>
+  </g>
+</svg>
+</figure>
+
 | 角色 | 行为 | 引发的结果 |
 | --- | --- | --- |
 | LP 提供者 | 质押 DIESEL / frBTC LP，锁仓越久获得的 FIRE 越多 | 长期锁仓会推高预言机价格 |
