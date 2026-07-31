@@ -18,6 +18,7 @@ Because the value is agreed by a threshold of the group and posted on-chain, con
 ## Where it is used
 
 - **FIRE bonds.** The bond price is anchored to an oracle-reported reference, with a floor tied to the protocol treasury, so bonds cannot be sold below the value backing them.
+- **Perpetual futures (unreleased).** Details will be released when ready.
 
 ## Where to go next
 
