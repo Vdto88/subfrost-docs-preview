@@ -183,7 +183,7 @@ Alongside what FIRE trades at, two other numbers answer different questions.
 The bond discount is measured against the **market price** of FIRE, not against the floor.
 
 :::info[The oracle no longer depends on how much LP is staked]
-It used to: the reference was derived from locked LP over annual emission, so a larger stake moved the number. That link is gone. The oracle is now a posted feed, and today **a single signer posts its value** — the design is for that to federate across signers, which has not happened yet. Treat it as a trusted input until it does.
+It used to: the reference was derived from locked LP over annual emission, so a larger stake moved the number. That link is gone. The oracle is now a posted feed.
 :::
 
 ## The flywheel
