@@ -158,6 +158,41 @@ const config: Config = {
           // 2026-07-29 at Gabe's request. Its content now lives under the
           // "frBTC is live on Alkanes and BRC2.0" paragraph there.
           {from: '/tokens/frBTC-roadmap', to: '/tokens/frBTC-overview'},
+
+          // Everything below is the retirement of the legacy tree. Each of
+          // these fourteen routes serves 200 on docs.subfrost.io TODAY
+          // (measured 2026-07-31, following the nginx trailing-slash 301), and
+          // none of them survives the restructure, so without these entries
+          // shipping this branch converts fourteen live pages into 404s. They
+          // are the pages linked from X posts and picked up by search, which is
+          // exactly the traffic that never comes back from a 404.
+
+          // The app section moved wholesale: subfrost-app/* -> using-subfrost/*.
+          {from: '/subfrost-app/fire-vault', to: '/using-subfrost/fire-vault'},
+          {from: '/subfrost-app/futures', to: '/using-subfrost/futures'},
+          {from: '/subfrost-app/lending', to: '/using-subfrost/lending'},
+          {from: '/subfrost-app/swap', to: '/using-subfrost/swap'},
+          {from: '/subfrost-app/wallet', to: '/using-subfrost/wallets'},
+          // "DeFi Vaults on Bitcoin" was the automated-yield page; the FIRE
+          // Vault is the only vault that actually exists, so it lands there
+          // rather than on a section index.
+          {from: '/subfrost-app/vaults', to: '/using-subfrost/fire-vault'},
+          // Both overview pages were feature tours of an app that was "in
+          // development". Get Started is the page that now does that job.
+          {from: '/subfrost-app/overview', to: '/start-here/get-started'},
+          {from: '/introduction/subfrost-app-overview', to: '/start-here/get-started'},
+          // Technical Overview was the conceptual tour of FROST, Alkanes and
+          // the p2p layer. Key Concepts replaced it.
+          {from: '/introduction/technical-overview', to: '/start-here/key-concepts'},
+          // This one was a stub that pointed at api.subfrost.io/docs. The API
+          // reference is now a first-class section in this site.
+          {from: '/introduction/subfrost-api-docs', to: '/api-reference/getting-started/overview'},
+          // PoS described signers staking FUEL and frBTC to sign for the peg.
+          {from: '/key-components/proof-of-stake', to: '/protocol/signing-and-keys'},
+          // The three CLI reference pages collapsed into the CLI/SDK section.
+          {from: '/reference/subfrost-cli-reference', to: '/api-reference/cli-sdk/overview'},
+          {from: '/reference/subfrost-node-cli-reference', to: '/api-reference/cli-sdk/overview'},
+          {from: '/reference/subrail-cli-reference', to: '/api-reference/cli-sdk/overview'},
         ],
       },
     ],
