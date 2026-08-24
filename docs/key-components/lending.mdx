@@ -26,8 +26,10 @@ enforced by code, not by a counterparty.
 
 ## Core ideas
 
-- **Off-chain order book, on-chain settlement.** Makers publish *signed but un-broadcast* offers to
-  a database. Nothing touches the chain until a taker accepts — at which point a single settlement
+- **Off-chain order book, on-chain settlement.** Makers publish offers to a database. Posting
+  **broadcasts a small "prep" transaction** (which carves the exact loan/collateral amount out of the
+  maker's funding, so the leftover balance stays spendable), but the **settlement PSBT stays
+  un-broadcast**. Nothing settles until a taker accepts — at which point a single settlement
   transaction is assembled and broadcast.
 - **One transaction = one loan.** The settlement tx clones the loan-contract template, initializes it
   with the agreed terms, hands the loan token to the borrower, and locks the collateral — atomically.

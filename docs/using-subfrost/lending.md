@@ -37,6 +37,7 @@ Whoever publishes the offer is the **maker**. Whoever accepts it is the **taker*
 When you post an offer, your wallet **signs it, but the loan itself is not settled on the Bitcoin network**. So:
 
 - You pay a **small network fee** to post, and nothing more.
+- **Posting does not tie up the rest of your balance.** The small transaction you broadcast at post time sets aside exactly the loan or collateral amount and hands the remainder back to you as normal change. Even if all your tokens sat on a single UTXO, the leftover is immediately spendable.
 - **No waiting for a block** before your offer is usable. It shows up in the order book instantly.
 - **Your funds stay in your wallet.** A posted offer is a pre-signed instruction that, by design, **cannot be broadcast on its own**. It only becomes a real transaction once a taker accepts and adds their side.
 
@@ -102,6 +103,8 @@ An offer is created at or under its collateral's maximum LTV, but prices keep mo
 
 This applies only to **open offers that nobody has taken yet**. An **active loan is never touched**: once a loan exists, its terms are fixed and enforced exactly as agreed. See below.
 
+Prices are not the only reason an open offer can disappear. Posting sets aside a specific piece of your funds for the offer, and nothing stops you from spending it in another transaction afterwards. If you do, the offer can never settle, so it is removed from the order book rather than left for a taker to trip on.
+
 :::info[When prices are unavailable, the limits stand down]
 The LTV check needs a USD price for both tokens. If either one has no price the app can resolve, the check cannot be applied, and the app will let you set any values while warning you that you are on your own. Take that warning seriously: it means nothing is checking your collateral for you.
 :::
@@ -163,8 +166,8 @@ You can always see your loans and their status (**Active Loans**, **Closed Loans
 
 Your open offers appear under **My Offers**. From there you can:
 
-- **Edit** an offer. This re-signs a fresh offer and cancels the old one.
-- **Delete** an offer, removing it from the order book.
+- **Edit** an offer. This re-signs a fresh offer, sets the funds aside again in a new small transaction (the same small network fee as posting), and cancels the old one.
+- **Delete** an offer, removing it from the order book. Deleting is off-chain and free.
 
 Neither one settles the loan on chain, just like posting.
 
