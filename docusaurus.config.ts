@@ -29,16 +29,11 @@ const config: Config = {
   onBrokenLinks: 'warn',
 
   markdown: {
-    // Mirrors subfrost-docs: without this the ```mermaid fences render as
-    // syntax-highlighted source instead of diagrams.
-    mermaid: true,
     format: 'detect',
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
   },
-  themes: ['@docusaurus/theme-mermaid'],
-
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -76,10 +71,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    mermaid: {
-      theme: {light: 'neutral', dark: 'dark'},
-    },
-
     // Replace with your project's social card
     image: '/Logo.png',
     metadata: [
