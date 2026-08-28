@@ -29,8 +29,6 @@ Two things worth reading before you confirm:
 - **Read the amount you receive, at the size you actually intend to trade.** Once you enter an amount, the rate on the screen is derived from that quote, so it already carries your size and the fee. A rate you read at one size does not carry over to a larger one.
 - **Check the minimum received.** That is your floor if the price moves between signing and confirmation, and it is what your slippage tolerance sets.
 
-Both apply to every pool. They matter more here because a BTC/USD trade is usually the largest one somebody makes.
-
 ## A different kind of pool
 
 Most SUBFROST pools are standard constant-product AMMs. This one is a **CryptoSwap pool** (the Curve V2 design), which changes two things you can feel.
@@ -56,7 +54,7 @@ Your position is represented by an **LP token**, which is the pool contract itse
 The pool is on Bitcoin, but you can fund it from an Ethereum wallet and take value back the same way.
 
 - **In:** deposit USDC or USDT through the frUSD bridge and receive frUSD on Bitcoin. You can ask for part of the deposit to arrive as native BTC instead, so one deposit lands you on both sides.
-- **Out:** burn frUSD back to USDC on Ethereum, optionally taking part of it as ETH so a fresh address has gas to move with.
+- **Out:** burn frUSD back to USDC or USDT on Ethereum, optionally taking part of it as ETH so a fresh address has gas to move with.
 
 Both directions charge a flat fee plus a small percentage, and there is a minimum size, so one larger trip costs less than several small ones. [frUSD Overview](../tokens/frUSD-overview) has the current numbers and walks both directions step by step.
 
