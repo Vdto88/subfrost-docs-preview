@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">FIRE Vault | SUBFROST</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/Logo.png"><meta data-rh="true" name="twitter:image" content="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/Logo.png"><meta data-rh="true" property="og:url" content="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="bitcoin, staking, yield, defi, alkanes, metaprotocol, amm, frost, subfrost"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIRE Vault | SUBFROST"><meta data-rh="true" name="description" content="质押流动性以赚取 FIRE，或通过债券以折扣价购买 FIRE。"><meta data-rh="true" property="og:description" content="质押流动性以赚取 FIRE，或通过债券以折扣价购买 FIRE。"><link data-rh="true" rel="canonical" href="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://828A36RRFA-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" async="true" src="https://www.googletagmanager.com/gtag/js?id=G-2NV4F5YNHJ"></script><script data-rh="true">function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2NV4F5YNHJ")</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIRE Vault","item":"https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="SUBFROST" href="/subfrost-docs-preview/zh-Hans/opensearch.xml"><link rel="stylesheet" href="/subfrost-docs-preview/zh-Hans/assets/css/styles.0cd50c74.css">
-<script src="/subfrost-docs-preview/zh-Hans/assets/js/runtime~main.46dc4e4f.js" defer="defer"></script>
+<script src="/subfrost-docs-preview/zh-Hans/assets/js/runtime~main.9f2e4e97.js" defer="defer"></script>
 <script src="/subfrost-docs-preview/zh-Hans/assets/js/main.efcb24df.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -407,15 +407,11 @@
 
 
 
-
-
-
-
-<table><thead><tr><th>操作</th><th>链上发生了什么</th></tr></thead><tbody><tr><td><strong>自己保留</strong></td><td>你持有代币，由你投票</td></tr><tr><td><strong>发送出去</strong></td><td>收到它的人用你的权重投票</td></tr><tr><td><strong>委托给自己</strong></td><td>头寸在同一笔交易中向你铸造一枚<strong>新的</strong>投票代币，并作废旧的那一枚</td></tr><tr><td><strong>取消</strong></td><td>头寸清除其委托。旧代币原封不动地留在持有者的钱包里，只是不再计票</td></tr></tbody></table>
+<table><thead><tr><th>操作</th><th>链上发生了什么</th></tr></thead><tbody><tr><td><strong>自己保留</strong></td><td>你持有代币，由你投票</td></tr><tr><td><strong>发送出去</strong></td><td>收到它的人用你的权重投票</td></tr><tr><td><strong>委托给自己</strong></td><td>头寸在同一笔交易中向你铸造一枚<strong>新的</strong>投票代币，并作废旧的那一枚</td></tr></tbody></table>
 <p>铸造替代代币会作废先前的那一枚，<strong>无论它在哪里</strong>。持有它的人并没有被拿走任何东西：代币仍在他们的钱包里，只是从那一刻起读数为零。</p>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>两种代币都是持票人资产</div><div class="admonitionContent_BuS1"><p>谁持有头寸（<strong>cFIRE-POS</strong>），谁就能退出它，所以发送头寸等于发送这笔存款。发送投票代币只发送投票权。<strong>除非你真的想把自己的 FIRE 送走，否则绝不要发送 cFIRE-POS NFT。</strong> 唯一用来传递的 NFT 是 <strong>cFIRE-DELEGATE</strong>。</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="退出-cfire-金库">退出 cFIRE 金库<a href="#退出-cfire-金库" class="hash-link" aria-label="退出 cFIRE 金库的直接链接" title="退出 cFIRE 金库的直接链接" translate="no">​</a></h3>
-<p>销毁头寸，取回你的 FIRE，扣除 <strong>10%</strong>：</p>
+<p>退出 cFIRE 金库会销毁你的 <strong>cFIRE-POS</strong> NFT，换回属于你的 FIRE（本金 + 回流），扣除 <strong>10%</strong>：</p>
 
 
 
@@ -443,7 +439,6 @@
 
 <table><thead><tr><th>去向</th><th>比例</th></tr></thead><tbody><tr><td>留在池子里，归所有仍在其中的人</td><td>8%</td></tr><tr><td>FIRE 被销毁</td><td>1%</td></tr><tr><td>进入协议国库</td><td>1%</td></tr><tr><td><strong>合计</strong></td><td><strong>10%</strong></td></tr></tbody></table>
 <p>头寸会被销毁，不会作为凭据保留，任何为它投票的代币也将不再计票。</p>
-<p>这个 10% 是合约层面的不变量，而不是一个展示用的数字。除非金库自身的抽成加上包装合约的两条 1% 分支恰好等于 10%，否则工厂合约会拒绝绑定该金库，因此这个拆分不可能与本页所述产生偏差。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="相关合约">相关合约<a href="#相关合约" class="hash-link" aria-label="相关合约的直接链接" title="相关合约的直接链接" translate="no">​</a></h3>
 
 
@@ -502,15 +497,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<table><thead><tr><th>风险</th><th>对你意味着什么</th></tr></thead><tbody><tr><td><strong>目前仍是受信任的预言机</strong></td><td>债券所依据的参考值由单一签名者推送上链。让它在多个签名者之间联邦化是设计意图，但这一步尚未完成</td></tr><tr><td><strong>国库初始为空</strong></td><td>地板价从 0 开始，只有当认购者存入 LP 后才会上升</td></tr><tr><td><strong>锁仓流动性受限</strong></td><td>锁仓的 LP 在到期前无法取出。如果需要部分灵活性，可以拆分为 FIRE-PT</td></tr><tr><td><strong>区块时间存在波动</strong></td><td>这里的所有时长都假设 Bitcoin 平均约 10 分钟一个区块，实际经过的时间会有偏差</td></tr><tr><td><strong>cFIRE 金库本身不产生收益</strong></td><td>它持有一个普通代币，不做任何耕作。唯一能推高汇率的，是别人离开并支付抽成</td></tr><tr><td><strong>投票代币是持票人资产</strong></td><td>发错地址，投票权就没了。铸造替代代币是唯一的补救方式，而且要花一笔交易</td></tr><tr><td><strong>cFIRE 的投票尚未计入</strong></td><td>治理目前不读取这些代币。现在铸造是为它开始读取时做好准备</td></tr></tbody></table>
+<table><thead><tr><th>风险</th><th>对你意味着什么</th></tr></thead><tbody><tr><td><strong>目前仍是受信任的预言机</strong></td><td>债券所依据的参考值由一个 2/3 签名者集合推送上链。让它在更多签名者之间联邦化是设计意图，但这一步尚未完成</td></tr><tr><td><strong>锁仓流动性受限</strong></td><td>锁仓的 LP 在到期前无法取出。如果需要部分灵活性，可以拆分为 FIRE-PT</td></tr><tr><td><strong>区块时间存在波动</strong></td><td>这里的所有时长都假设 Bitcoin 平均约 10 分钟一个区块，实际经过的时间会有偏差</td></tr><tr><td><strong>cFIRE 金库本身不产生收益</strong></td><td>它持有的是普通的 FIRE 代币，不做任何耕作。唯一能推高汇率的，是别人离开并支付抽成</td></tr><tr><td><strong>投票代币是持票人资产</strong></td><td>发错地址，投票权就没了。铸造替代代币是唯一的补救方式，而且要花一笔交易</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="小贴士">小贴士<a href="#小贴士" class="hash-link" aria-label="小贴士的直接链接" title="小贴士的直接链接" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>让锁仓期匹配你的信心。</strong> 锁仓越久按比例赚得越多，但你无法提前解除。</li>
@@ -519,8 +506,7 @@
 <li class=""><strong>留意减半。</strong> 发行量每 105,000 个区块减半一次，因此早期纪元的收益最高。</li>
 <li class=""><strong>国库增长即地板价增长。</strong> 通过债券认购流入的 LP 越多，赎回地板价就越牢固。</li>
 <li class=""><strong>不要混淆这两个金库。</strong> 上面的 FIRE 金库接收 DIESEL / frBTC LP；cFIRE 金库接收 FIRE 本身，它的收益完全来自其他人的退出抽成。</li>
-<li class=""><strong>如果你打算投票，就通过头寸存入。</strong> 普通存入收益相同，但在治理中读数为零，而这个差别在退出时要多付两个百分点。</li>
-<li class=""><strong>要发送的是投票代币，绝不是头寸。</strong> 头寸就是那笔存款。</li>
+<li class=""><strong>要发送的是投票代币（cFIRE-DELEGATE），绝不是头寸（cFIRE-POS）。</strong> 头寸就是那笔存款。</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下一步">下一步<a href="#下一步" class="hash-link" aria-label="下一步的直接链接" title="下一步的直接链接" translate="no">​</a></h2>
 <ul>

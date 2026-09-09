@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">FIRE Vault | SUBFROST</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" name="twitter:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" property="og:url" content="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"><meta data-rh="true" property="og:locale" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="bitcoin, staking, yield, defi, alkanes, metaprotocol, amm, frost, subfrost"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIRE Vault | SUBFROST"><meta data-rh="true" name="description" content="Stake liquidity to earn FIRE, or buy FIRE at a discount through bonds."><meta data-rh="true" property="og:description" content="Stake liquidity to earn FIRE, or buy FIRE at a discount through bonds."><link data-rh="true" rel="canonical" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://828A36RRFA-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" async="true" src="https://www.googletagmanager.com/gtag/js?id=G-2NV4F5YNHJ"></script><script data-rh="true">function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2NV4F5YNHJ")</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIRE Vault","item":"https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="SUBFROST" href="/subfrost-docs-preview/opensearch.xml"><link rel="stylesheet" href="/subfrost-docs-preview/assets/css/styles.b2916c10.css">
-<script src="/subfrost-docs-preview/assets/js/runtime~main.088b2d68.js" defer="defer"></script>
+<script src="/subfrost-docs-preview/assets/js/runtime~main.96b3ed4f.js" defer="defer"></script>
 <script src="/subfrost-docs-preview/assets/js/main.19a53d4b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -407,15 +407,11 @@
 
 
 
-
-
-
-
-<table><thead><tr><th>Action</th><th>What happens on chain</th></tr></thead><tbody><tr><td><strong>Keep it</strong></td><td>You hold the token and you vote</td></tr><tr><td><strong>Send it</strong></td><td>Whoever receives it votes with your weight</td></tr><tr><td><strong>Delegate to yourself</strong></td><td>The position mints a <strong>new</strong> vote token to you and cancels the old one in the same transaction</td></tr><tr><td><strong>Cancel</strong></td><td>The position clears its delegate. The old token is untouched in its holder&#x27;s wallet and simply stops counting</td></tr></tbody></table>
+<table><thead><tr><th>Action</th><th>What happens on chain</th></tr></thead><tbody><tr><td><strong>Keep it</strong></td><td>You hold the token and you vote</td></tr><tr><td><strong>Send it</strong></td><td>Whoever receives it votes with your weight</td></tr><tr><td><strong>Delegate to yourself</strong></td><td>The position mints a <strong>new</strong> vote token to you and cancels the old one in the same transaction</td></tr></tbody></table>
 <p>Minting a replacement cancels the previous token <strong>wherever it is</strong>. Nothing is taken from the person holding it: their token stays in their wallet and reports zero from that moment.</p>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Both tokens are bearer assets</div><div class="admonitionContent_BuS1"><p>Whoever holds the position (<strong>cFIRE-POS</strong>) can exit it, so sending the position sends the deposit. Sending the vote token sends only the vote. <strong>NEVER SEND THE cFIRE-POS NFT UNLESS YOU MEAN TO SEND YOUR FIRE AWAY.</strong> The only NFT meant to travel is <strong>cFIRE-DELEGATE</strong>.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="leaving-the-cfire-vault">Leaving the cFIRE vault<a href="#leaving-the-cfire-vault" class="hash-link" aria-label="Direct link to Leaving the cFIRE vault" title="Direct link to Leaving the cFIRE vault" translate="no">​</a></h3>
-<p>Burn the position and take your FIRE back, minus <strong>10%</strong>:</p>
+<p>Exiting the cFIRE vault burns your <strong>cFIRE-POS</strong> NFT in return for your allocated FIRE (deposit + drip), minus <strong>10%</strong>:</p>
 
 
 
@@ -443,7 +439,6 @@
 
 <table><thead><tr><th>Where it goes</th><th>Share</th></tr></thead><tbody><tr><td>Stays in the pot, for everyone still in</td><td>8%</td></tr><tr><td>FIRE is burned</td><td>1%</td></tr><tr><td>To the protocol treasury</td><td>1%</td></tr><tr><td><strong>Total</strong></td><td><strong>10%</strong></td></tr></tbody></table>
 <p>The position is destroyed, not kept as a receipt, and any token voting for it stops counting.</p>
-<p>That 10% is a contract invariant rather than a display number. The factory refuses to bind a vault unless the vault&#x27;s own tithe plus the wrapper&#x27;s two 1% legs comes to exactly 10%, so the split cannot drift from what this page says.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-contracts">The contracts<a href="#the-contracts" class="hash-link" aria-label="Direct link to The contracts" title="Direct link to The contracts" translate="no">​</a></h3>
 
 
@@ -502,15 +497,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Risk</th><th>What it means for you</th></tr></thead><tbody><tr><td><strong>A trusted oracle, for now</strong></td><td>The bond reference is posted on chain by a single signer. Federating that across signers is the intent, but it has not happened yet</td></tr><tr><td><strong>Empty treasury at the start</strong></td><td>The floor price begins at 0 and only rises as bonders deposit LP</td></tr><tr><td><strong>Lock illiquidity</strong></td><td>Locked LP cannot be withdrawn before expiry. Split into FIRE-PT if you need partial flexibility</td></tr><tr><td><strong>Block time variance</strong></td><td>Every duration here assumes Bitcoin&#x27;s roughly 10-minute average block. Real elapsed time drifts</td></tr><tr><td><strong>The cFIRE vault pays nothing on its own</strong></td><td>It holds a plain token and farms nothing. The only thing that raises the rate is somebody else leaving and paying the tithe</td></tr><tr><td><strong>The vote token is a bearer asset</strong></td><td>Send it to the wrong address and the vote is gone. Minting a replacement is the only recovery, and it costs a transaction</td></tr><tr><td><strong>The cFIRE vote is not counted yet</strong></td><td>Governance does not read these tokens today. Minting one now sets it up for when it does</td></tr></tbody></table>
+<table><thead><tr><th>Risk</th><th>What it means for you</th></tr></thead><tbody><tr><td><strong>A trusted oracle, for now</strong></td><td>The bond reference is posted on chain by a 2/3 signer set. Federating that across more signers is the intent, but it has not happened yet</td></tr><tr><td><strong>Lock illiquidity</strong></td><td>Locked LP cannot be withdrawn before expiry. Split into FIRE-PT if you need partial flexibility</td></tr><tr><td><strong>Block time variance</strong></td><td>Every duration here assumes Bitcoin&#x27;s roughly 10-minute average block. Real elapsed time drifts</td></tr><tr><td><strong>The cFIRE vault pays nothing on its own</strong></td><td>It holds a plain FIRE token and farms nothing. The only thing that raises the rate is somebody else leaving and paying the tithe</td></tr><tr><td><strong>The vote token is a bearer asset</strong></td><td>Send it to the wrong address and the vote is gone. Minting a replacement is the only recovery, and it costs a transaction</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips">Tips<a href="#tips" class="hash-link" aria-label="Direct link to Tips" title="Direct link to Tips" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Match your lock to your conviction.</strong> Longer locks earn proportionally more, but you cannot unwind early.</li>
@@ -519,8 +506,7 @@
 <li class=""><strong>Watch the halving.</strong> Emission halves every 105,000 blocks, so early epochs pay the most.</li>
 <li class=""><strong>Treasury growth is floor growth.</strong> The more LP that arrives through bonding, the stronger the redemption floor.</li>
 <li class=""><strong>Do not confuse the two vaults.</strong> The FIRE vault above takes DIESEL / frBTC LP. The cFIRE vault takes FIRE itself, and its yield is entirely other people&#x27;s exit tithes.</li>
-<li class=""><strong>Deposit through a position if you intend to vote.</strong> A plain deposit earns the same and reads as zero in governance, and the difference costs two points on the way out.</li>
-<li class=""><strong>Send the vote token, never the position.</strong> The position is the deposit.</li>
+<li class=""><strong>Send the vote token (cFIRE-DELEGATE), never the position (cFIRE-POS).</strong> The position is the deposit.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h2>
 <ul>
