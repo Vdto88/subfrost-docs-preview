@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en-US" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-using-subfrost/fire-vault" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">FIRE Vault | SUBFROST</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" name="twitter:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" property="og:url" content="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"><meta data-rh="true" property="og:locale" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="bitcoin, staking, yield, defi, alkanes, metaprotocol, amm, frost, subfrost"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIRE Vault | SUBFROST"><meta data-rh="true" name="description" content="Stake liquidity to earn FIRE, or buy FIRE at a discount through bonds."><meta data-rh="true" property="og:description" content="Stake liquidity to earn FIRE, or buy FIRE at a discount through bonds."><link data-rh="true" rel="canonical" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/fire-vault" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://828A36RRFA-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" async="true" src="https://www.googletagmanager.com/gtag/js?id=G-2NV4F5YNHJ"></script><script data-rh="true">function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2NV4F5YNHJ")</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIRE Vault","item":"https://vdto88.github.io/subfrost-docs-preview/using-subfrost/fire-vault"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="SUBFROST" href="/subfrost-docs-preview/opensearch.xml"><link rel="stylesheet" href="/subfrost-docs-preview/assets/css/styles.b2916c10.css">
+<script src="/subfrost-docs-preview/assets/js/runtime~main.c02548c4.js" defer="defer"></script>
+<script src="/subfrost-docs-preview/assets/js/main.19a53d4b.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/subfrost-docs-preview/img/logotype_dark.svg"><div class="gradient-background"></div><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://subfrost.io/" target="_blank" rel="noopener noreferrer" aria-label="SUBFROST" class="navbar__brand"><img src="/subfrost-docs-preview/img/logotype_dark.svg" alt="SUBFROST" class="navbar__logo"></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><button type="button" style="display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:#EC4521;background:none;border:none;cursor:pointer;padding:4px;line-height:1" aria-label="Switch to dark theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><button type="button" style="display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:#A7C6DC;background:none;border:none;cursor:pointer;padding:4px;line-height:1" aria-label="Switch to Chinese">文</button><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/subfrost-docs-preview/start-here/what-is-subfrost"><span title="Start Here" class="categoryLinkLabel_W154">Start Here</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/what-is-subfrost"><span title="What is SUBFROST" class="linkLabel_WmDU">What is SUBFROST</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/get-started"><span title="Get Started in 5 Minutes" class="linkLabel_WmDU">Get Started in 5 Minutes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/key-concepts"><span title="Key Concepts" class="linkLabel_WmDU">Key Concepts</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/subfrost-docs-preview/using-subfrost/wallets"><span title="Using SUBFROST" class="categoryLinkLabel_W154">Using SUBFROST</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/wallets"><span title="Wallets" class="linkLabel_WmDU">Wallets</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/wrap-unwrap-frbtc"><span title="Wrap &amp; Unwrap BTC" class="linkLabel_WmDU">Wrap &amp; Unwrap BTC</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/swap"><span title="Swap" class="linkLabel_WmDU">Swap</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/pools-liquidity"><span title="Pools &amp; Liquidity" class="linkLabel_WmDU">Pools &amp; Liquidity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/btcusd-pool"><span title="BTCUSD Pool" class="linkLabel_WmDU">BTCUSD Pool</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/subfrost-docs-preview/using-subfrost/fire-vault"><span title="FIRE Vault" class="linkLabel_WmDU">FIRE Vault</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/safety"><span title="Safety" class="linkLabel_WmDU">Safety</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/lending"><span title="Lending" class="linkLabel_WmDU">Lending</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/futures"><span title="Futures" class="linkLabel_WmDU">Futures</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/tokens-economics/overview"><span title="Tokens &amp; Economics" class="categoryLinkLabel_W154">Tokens &amp; Economics</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/key-components/alkanes"><span title="Key Components" class="categoryLinkLabel_W154">Key Components</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/protocol/alkanes"><span title="Technical Overview" class="categoryLinkLabel_W154">Technical Overview</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/build/overview"><span title="Build on SUBFROST" class="categoryLinkLabel_W154">Build on SUBFROST</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/developer-guide/alkanes-integration"><span title="Developer Guide" class="categoryLinkLabel_W154">Developer Guide</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/api-reference/getting-started/overview"><span title="API &amp; SDK Docs" class="categoryLinkLabel_W154">API &amp; SDK Docs</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/reference/glossary"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><span class="breadcrumbs__link">Using SUBFROST</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">FIRE Vault</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>FIRE Vault</h1></header>
+<p><strong>FIRE</strong> is the Alkanes governance &amp; rewards token. It rewards the people who provide liquidity to the <a class="" href="/subfrost-docs-preview/using-subfrost/pools-liquidity">DIESEL / frBTC pool</a>, and it is earned two ways: by <strong>staking</strong> your liquidity, or by <strong>bonding</strong>.</p>
+<p>There is no premine. Every FIRE that exists was emitted by the protocol, and the only way FIRE leaves circulation is redemption against the treasury.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fire-at-a-glance">FIRE at a glance<a href="#fire-at-a-glance" class="hash-link" aria-label="Direct link to FIRE at a glance" title="Direct link to FIRE at a glance" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Maximum supply</td><td>2,100,000 FIRE</td></tr><tr><td>Decimals</td><td>8 (same as Bitcoin)</td></tr><tr><td>Premine</td><td>0%</td></tr><tr><td>Staking pool</td><td>85% (1,785,000 FIRE)</td></tr><tr><td>Bonding pool</td><td>15% (315,000 FIRE)</td></tr><tr><td>Halving interval</td><td>105,000 blocks (about 2 years)</td></tr><tr><td>Activation block</td><td>950,420</td></tr><tr><td>First halving</td><td>Block 1,050,000</td></tr><tr><td>Epoch 0 length</td><td>99,580 blocks (activation to the first halving)</td></tr></tbody></table>
+<p>FIRE emission halves every 105,000 blocks, which is half of Bitcoin&#x27;s own halving interval. Every second FIRE halving therefore lands on a Bitcoin halving.</p>
+<p>Epoch boundaries sit on a fixed grid anchored at block 0, so they do not move to accommodate the activation block. FIRE went live at 950,420, partway through the grid epoch that ends at 1,050,000, which makes epoch 0 shorter than a full interval. Every epoch after it runs the full 105,000 blocks.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-the-vault-pays-you">How the vault pays you<a href="#how-the-vault-pays-you" class="hash-link" aria-label="Direct link to How the vault pays you" title="Direct link to How the vault pays you" translate="no">​</a></h2>
+<p>The vault accepts <strong>DIESEL / frBTC LP tokens</strong>. It pays out FIRE with a reward accumulator (the standard Synthetix staking model): every block, a fixed amount of FIRE is divided pro-rata across all weighted stake. Your share of a block&#x27;s emission is your weighted stake divided by the total weighted stake in the vault, so rewards accrue continuously rather than in discrete payouts.</p>
+<p>Per-block emission in epoch 0:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Pool</th><th>FIRE per block</th><th>Per day</th><th>Per year</th></tr></thead><tbody><tr><td>Staking (85%)</td><td>8.5</td><td>~1,224 FIRE</td><td>~446,250 FIRE</td></tr><tr><td>Bonding (15%)</td><td>1.5</td><td>~216 FIRE</td><td>~78,750 FIRE</td></tr><tr><td><strong>Total</strong></td><td><strong>10</strong></td><td><strong>~1,440 FIRE</strong></td><td><strong>~525,000 FIRE</strong></td></tr></tbody></table>
+<p>Day and year figures assume Bitcoin&#x27;s average of 144 blocks per day and 52,500 blocks per year.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-emission-schedule">The emission schedule<a href="#the-emission-schedule" class="hash-link" aria-label="Direct link to The emission schedule" title="Direct link to The emission schedule" translate="no">​</a></h2>
+<p>Every 105,000 blocks the per-block rate halves. Epoch boundaries align to a global grid anchored at block 0, not to the activation block, which is why epoch 0 below is short, and every second FIRE halving coincides with a Bitcoin halving. The 85 / 15 split between the staking pool and the bonding pool holds in every epoch.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Epoch</th><th>Length</th><th>Total per day</th><th>Cumulative supply at epoch end</th></tr></thead><tbody><tr><td>0</td><td>99,580 blocks</td><td>~1,440 FIRE</td><td>995,800 FIRE</td></tr><tr><td>1</td><td>105,000 blocks</td><td>~720 FIRE</td><td>1,520,800 FIRE</td></tr><tr><td>2</td><td>105,000 blocks</td><td>~360 FIRE</td><td>1,783,300 FIRE</td></tr><tr><td>3</td><td>105,000 blocks</td><td>~180 FIRE</td><td>1,914,550 FIRE</td></tr><tr><td>...</td><td>...</td><td>...</td><td>approaches 2,045,800 FIRE</td></tr></tbody></table>
+<p>The cumulative column is a ceiling on what the schedule releases, not a forecast of circulating supply. Emission accrues to whoever is staked at the time, so any emission in blocks where nothing was staked is simply never awarded, and it is not paid out retroactively later.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-the-cap-needs-no-premine">Why the cap needs no premine<a href="#why-the-cap-needs-no-premine" class="hash-link" aria-label="Direct link to Why the cap needs no premine" title="Direct link to Why the cap needs no premine" translate="no">​</a></h3>
+<p>Each epoch emits exactly half of the one before it, so the total emission is an infinite geometric series bounded by the supply cap:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">total = grid_epoch_emission x sum(1/2^i) for i = 0..infinity</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      = grid_epoch_emission x 2</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      = 1,050,000 x 2</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      = 2,100,000 FIRE</span><br></span></code></pre></div></div>
+<p>That is the bound the contract is written against, and it is the maximum supply listed at the top of this page. Because FIRE activated partway through epoch 0 rather than on a grid boundary, that epoch released 995,800 FIRE instead of a full 1,050,000, and the series converges to about 2,045,800 instead. The cap stays where it is; emission simply approaches a point below it.</p>
+<p>The schedule itself is what enforces the cap. Nothing needs to be held back at genesis to make the numbers work, which is why the premine is 0%.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lock-multipliers">Lock multipliers<a href="#lock-multipliers" class="hash-link" aria-label="Direct link to Lock multipliers" title="Direct link to Lock multipliers" translate="no">​</a></h2>
+<p>You can begin earning FIRE by locking your LP for a flexible period, earning the base rate. Lock your stake for longer to earn more (up to 1 year for a 3x multiplier). A longer lock applies a higher reward multiplier to the same amount of LP. Locks cannot extend past the current epoch&#x27;s expiry.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lock period</th><th>Blocks</th><th>Reward multiplier</th></tr></thead><tbody><tr><td>No lock</td><td>0</td><td>1.0x</td></tr><tr><td>1 week</td><td>1,050</td><td>1.25x</td></tr><tr><td>1 month</td><td>4,375</td><td>1.5x</td></tr><tr><td>3 months</td><td>13,125</td><td>2.0x</td></tr><tr><td>6 months</td><td>26,250</td><td>2.5x</td></tr><tr><td>1 year</td><td>52,500</td><td>3.0x</td></tr></tbody></table>
+<p>The longer you commit, the larger your share of the staking emissions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="staking-your-lp">Staking your LP<a href="#staking-your-lp" class="hash-link" aria-label="Direct link to Staking your LP" title="Direct link to Staking your LP" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Get DIESEL / frBTC LP.</strong> Provide liquidity to the <a class="" href="/subfrost-docs-preview/using-subfrost/pools-liquidity">DIESEL / frBTC pool</a> first. The vault accepts that LP token and nothing else.</li>
+<li class=""><strong>Choose a lock duration.</strong> Anything from no lock to one year. A higher multiplier earns proportionally more FIRE for the same LP, but your position is locked until expiry.</li>
+<li class=""><strong>Stake and receive an NFT position.</strong> The NFT carries two things at once: your <strong>FIRE yield rights</strong> (the emissions you can claim) and your <strong>LP claim</strong> (the liquidity you get back at expiry).</li>
+<li class=""><strong>Earn every block.</strong> Rewards accrue per block. Claim or compound whenever you want.</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Stake(LP, lock, amount) -&gt; NFT position (FIRE yield + LP claim)</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-your-lp-back">Getting your LP back<a href="#getting-your-lp-back" class="hash-link" aria-label="Direct link to Getting your LP back" title="Direct link to Getting your LP back" translate="no">​</a></h2>
+<p>There are three exit paths, depending on how much flexibility you want.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="unstake">Unstake<a href="#unstake" class="hash-link" aria-label="Direct link to Unstake" title="Direct link to Unstake" translate="no">​</a></h3>
+<p>Wait for the lock to expire, then unstake the NFT. You get your LP back plus all accrued FIRE.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Unstake(NFT) -&gt; LP + FIRE</span><br></span></code></pre></div></div>
+<p>Once the lock has expired, claiming your rewards does this for you: on a position you have not split, a claim after expiry returns the FIRE <strong>and</strong> the LP and closes the position out. You do not need to unstake separately.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split-into-fire-pt">Split into FIRE-PT<a href="#split-into-fire-pt" class="hash-link" aria-label="Direct link to Split into FIRE-PT" title="Direct link to Split into FIRE-PT" translate="no">​</a></h3>
+<p>Split the NFT position into its two halves. The <strong>NFT</strong> keeps the FIRE yield rights. A fungible <strong>FIRE-PT</strong> token (<strong>FIRE-PT-0</strong> in the current epoch) carries the LP claim, and you can transfer or sell it on its own. Merging puts the position back together.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Split(NFT)           -&gt; NFT (FIRE yield only) + FIRE-PT (fungible LP claim)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Merge(NFT + FIRE-PT) -&gt; NFT (full position restored)</span><br></span></code></pre></div></div>
+<p>This is how you move the LP liquidity out without giving up the FIRE yield stream.</p>
+<p>FIRE-PT tokens are fungible regardless of the lock type. This also implies that any FIRE-PT can be recombined with any FIRE NFT that has the corresponding amount. As a result, a bare FIRE NFT represents not only the right to earn FIRE yield, but also the right to unlock the corresponding amount of FIRE-PT before the end of the epoch.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="redeem-expired-fire-pt">Redeem expired FIRE-PT<a href="#redeem-expired-fire-pt" class="hash-link" aria-label="Direct link to Redeem expired FIRE-PT" title="Direct link to Redeem expired FIRE-PT" translate="no">​</a></h3>
+<p>Once the epoch has expired, anyone holding FIRE-PT can redeem it straight for LP. No NFT required.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">RedeemExpired(FIRE-PT) -&gt; LP</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonding">Bonding<a href="#bonding" class="hash-link" aria-label="Direct link to Bonding" title="Direct link to Bonding" translate="no">​</a></h2>
+<p>Bonding is for people who want FIRE <strong>now</strong> instead of earning it over time. You hand the protocol LP tokens permanently, and you get FIRE at a <strong>10% discount from market price</strong>, vested over about <strong>14 days</strong> (2,100 blocks). The discount is a setting the protocol can adjust, so treat 10% as the current rate rather than a fixed rule.</p>
+<p>Bond LP goes directly to the treasury and stays there. It is not returned, and it permanently backs the redemption floor.</p>
+<p>In plain language, a bond is this trade: you give the protocol LP forever, and in exchange you get FIRE at a 10% discount from market price, vested over 14 days.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-floor-guard">The floor guard<a href="#the-floor-guard" class="hash-link" aria-label="Direct link to The floor guard" title="Direct link to The floor guard" translate="no">​</a></h3>
+<p>A bond is never priced below the redemption floor. That guard exists to stop a free round-trip.</p>
+<p>Once the treasury holds LP and FIRE has been minted, the floor price is real money. Without the guard, you could bond below the floor and immediately redeem for more LP than you put in. Because the bond price can never fall under the floor, bonding can never be cheaper than redemption:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Bond at floor_price    -&gt; mint X FIRE  (LP goes into treasury)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Redeem X FIRE at floor -&gt; burn for LP  (LP comes out of treasury)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                       = same LP back  (zero net change)</span><br></span></code></pre></div></div>
+<p>A bonder who redeems immediately nets zero. The 14-day vest means a bonder is betting on price appreciation, not extracting value from the protocol.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonding-capacity-builds-up-over-time">Bonding capacity builds up over time<a href="#bonding-capacity-builds-up-over-time" class="hash-link" aria-label="Direct link to Bonding capacity builds up over time" title="Direct link to Bonding capacity builds up over time" translate="no">​</a></h3>
+<p>Bonding is metered rather than unlimited. Capacity accrues block by block from the moment the contract goes live, so shortly after launch there is little of it and a large bond may not fit. If a bond is rejected for capacity, it is not broken: wait and try again, or bond a smaller amount.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="redemption-and-the-price-floor">Redemption and the price floor<a href="#redemption-and-the-price-floor" class="hash-link" aria-label="Direct link to Redemption and the price floor" title="Direct link to Redemption and the price floor" translate="no">​</a></h2>
+<p>Any FIRE holder can burn FIRE for a proportional share of the treasury&#x27;s LP backing:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">floor_price = total_treasury_LP / total_FIRE_supply</span><br></span></code></pre></div></div>
+<p><strong>Redeeming charges a 1% fee</strong>, which is not paid to anyone: it stays in the treasury. So you receive about 99% of your proportional share, and the LP you leave behind raises the floor slightly for everyone still holding FIRE.</p>
+<p>This is a hard floor, and it scales with the treasury. Every bond deposits LP that never leaves, so the floor only moves in one direction over time as bonding activity grows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-two-reference-prices">The two reference prices<a href="#the-two-reference-prices" class="hash-link" aria-label="Direct link to The two reference prices" title="Direct link to The two reference prices" translate="no">​</a></h2>
+<p>Alongside what FIRE trades at, two other numbers answer different questions.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Price</th><th>Where it comes from</th><th>What it means</th></tr></thead><tbody><tr><td><strong>Oracle</strong></td><td>An on-chain price feed</td><td>The reference the protocol reads when it prices a bond</td></tr><tr><td><strong>Floor</strong></td><td><code>treasury_LP / total_supply</code></td><td>What a redeemer gets for burning FIRE</td></tr></tbody></table>
+<p>The bond discount is measured against the <strong>market price</strong> of FIRE, not against the floor.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>The oracle no longer depends on how much LP is staked</div><div class="admonitionContent_BuS1"><p>It used to: the reference was derived from locked LP over annual emission, so a larger stake moved the number. That link is gone. The oracle is now a posted feed.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-flywheel">The flywheel<a href="#the-flywheel" class="hash-link" aria-label="Direct link to The flywheel" title="Direct link to The flywheel" translate="no">​</a></h2>
+<p>Staking, bonding, and redemption are not three separate features. They feed each other in a closed loop.</p>
+<figure class="fire-flywheel">
+<svg viewBox="0 0 760 430" role="img" aria-labelledby="fire-flywheel-title fire-flywheel-desc" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto">
+  <title id="fire-flywheel-title">The FIRE flywheel</title>
+  <desc id="fire-flywheel-desc">A closed loop of four steps. Stakers lock DIESEL/frBTC LP, and locked LP earns the 85 percent share of each block&#x27;s emission. The remaining 15 percent funds the bonding pool. Bonders pay LP for FIRE at a discount to the market price. The treasury keeps that LP permanently, which raises the floor price, and a higher floor protects holders and makes committing liquidity safer.</desc>
+  <defs>
+    <marker id="fire-flywheel-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#EC4521"></path>
+    </marker>
+  </defs>
+  <!-- -->
+  <g fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.4">
+    <rect x="250" y="14" width="260" height="58" rx="8"></rect>
+    <rect x="498" y="186" width="250" height="58" rx="8"></rect>
+    <rect x="230" y="358" width="300" height="58" rx="8"></rect>
+    <rect x="12" y="186" width="250" height="58" rx="8"></rect>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="13.5" font-weight="600">
+    <text x="380" y="38">Stakers lock DIESEL / frBTC LP</text>
+    <text x="623" y="210">FIRE is emitted each block</text>
+    <text x="380" y="382">Bonders pay LP for FIRE</text>
+    <text x="137" y="210">The treasury keeps that LP</text>
+  </g>
+  <g fill="currentColor" text-anchor="middle" font-size="11.5" opacity="0.75">
+    <text x="380" y="57">the longer the lock, the more FIRE</text>
+    <text x="623" y="229">85% to staking, 15% to bonds</text>
+    <text x="380" y="401">at a discount to the market price</text>
+    <text x="137" y="229">so the floor price rises</text>
+  </g>
+  <!-- -->
+  <g fill="none" stroke="#EC4521" stroke-width="1.75" marker-end="url(#fire-flywheel-arrow)">
+    <path d="M508 66 Q 592 74 614 180"></path>
+    <path d="M622 248 Q 614 344 538 378"></path>
+    <path d="M228 388 Q 150 380 137 250"></path>
+    <path d="M134 182 Q 150 70 246 54"></path>
+  </g>
+  <g fill="#EC4521" text-anchor="middle" font-size="11.5" font-weight="500">
+    <text x="664" y="128">locked LP earns 85%</text>
+    <text x="656" y="332">the 15% funds bonds</text>
+    <text x="104" y="332">the LP never leaves</text>
+    <text x="106" y="124">the floor protects</text>
+  </g>
+  <g text-anchor="middle" fill="currentColor">
+    <text x="380" y="208" font-size="30" font-weight="700" letter-spacing="1">FIRE</text>
+    <text x="380" y="232" font-size="11.5" opacity="0.7">fixed emission, a floor that only rises</text>
+  </g>
+</svg>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Who</th><th>Does</th><th>Which causes</th></tr></thead><tbody><tr><td>LP providers</td><td>Stake DIESEL / frBTC LP, locking longer for more FIRE</td><td>A longer lock takes a larger share of the 85%</td></tr><tr><td>Bonders</td><td>Pay LP for FIRE at a discount from market price</td><td>More bonding fills the treasury faster</td></tr><tr><td>Treasury</td><td>Keeps every bonded LP permanently</td><td>A bigger treasury raises the floor price</td></tr><tr><td>Redeemers</td><td>Burn FIRE for a proportional slice of treasury LP</td><td>The floor guard kicks in, so bonding cheaply gets harder</td></tr></tbody></table>
+<p>Read it as a loop: locked LP earns the 85% share of each block&#x27;s emission, and the remaining 15% is what bonds are paid out of; bonders hand over LP for FIRE at a discount to the market price; that LP never leaves the treasury, so the floor rises; and a higher floor both protects FIRE holders and makes committing liquidity safer, which brings the loop back to the top. The emission itself is fixed by the schedule. What the loop moves is the <strong>floor</strong>, in one direction only.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="staking-fire-itself-the-cfire-vault">Staking FIRE itself: the cFIRE vault<a href="#staking-fire-itself-the-cfire-vault" class="hash-link" aria-label="Direct link to Staking FIRE itself: the cFIRE vault" title="Direct link to Staking FIRE itself: the cFIRE vault" translate="no">​</a></h2>
+<p>Everything above is about earning FIRE by staking <strong>LP</strong>. The <strong>cFIRE vault</strong> is a different vault, and it takes <strong>FIRE</strong> itself.</p>
+<p>It is worth being blunt about where the yield comes from, because it is unlike anything else on this page: <strong>the cFIRE vault has no intrinsic yield.</strong> It holds a plain token and nothing farms with it. Between exits it is exactly zero-sum. What it pays is what leavers leave behind.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-the-pot-works">How the pot works<a href="#how-the-pot-works" class="hash-link" aria-label="Direct link to How the pot works" title="Direct link to How the pot works" translate="no">​</a></h3>
+<p>Deposit FIRE and you receive <strong>cFIRE</strong> at the current rate. Exit and you leave an <strong>8% tithe</strong> in a pot. That pot does not go to the protocol: it drips back into the exchange rate once per Bitcoin day, over roughly a year, for everyone still in the vault.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Underlying</td><td>FIRE</td></tr><tr><td>Exit tithe (plain deposit)</td><td>8% (800 bps)</td></tr><tr><td>Drip interval</td><td>144 blocks (about one Bitcoin day)</td></tr><tr><td>Release periods</td><td>365</td></tr><tr><td>Decimals</td><td>8, inherited from FIRE</td></tr></tbody></table>
+<p>So the rate only moves in one direction, and it moves because somebody left. Staying longer than the people around you is the whole of the strategy.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-problem-cfire-solves-and-the-position-that-solves-it">The problem cFIRE solves, and the position that solves it<a href="#the-problem-cfire-solves-and-the-position-that-solves-it" class="hash-link" aria-label="Direct link to The problem cFIRE solves, and the position that solves it" title="Direct link to The problem cFIRE solves, and the position that solves it" translate="no">​</a></h3>
+<p>Voting power is read <strong>by address</strong>. FIRE sitting in the vault is not at your address, so after a plain deposit you read as <strong>zero</strong> in governance. You are choosing between the yield and the vote.</p>
+<p>Depositing through a <strong>position</strong> is how you take both.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Plain deposit</th><th>Deposit through a position</th></tr></thead><tbody><tr><td>What you hold</td><td>cFIRE at your address</td><td>A <code>cFIRE-POS</code> NFT, plus a vote token</td></tr><tr><td>Earns</td><td>The vault rate</td><td>The same vault rate</td></tr><tr><td>Counts in governance</td><td>No</td><td>Yes, through the vote token</td></tr><tr><td>Costs to leave</td><td>8%</td><td>10%</td></tr></tbody></table>
+<p>The position earns exactly what a plain deposit earns. The two points are what the vote costs.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-you-get-and-what-each-piece-does">What you get, and what each piece does<a href="#what-you-get-and-what-each-piece-does" class="hash-link" aria-label="Direct link to What you get, and what each piece does" title="Direct link to What you get, and what each piece does" translate="no">​</a></h3>
+<p>One deposit through the wrapper produces two things:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Deposit(FIRE) -&gt; cFIRE-POS-{n}            the position: holds the vault shares</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">              -&gt; cFIRE-DELEGATE-{n}-{m}   the vote: transferable, carries the weight</span><br></span></code></pre></div></div>
+<p>The <strong>position</strong> holds the shares. It earns whatever the vault earns, and on its own it votes nothing. The <strong>vote token</strong> carries the position&#x27;s weight and is an ordinary transferable token.</p>
+<p>A single contract does both in one call, reading the position out of the mint, so the vote cannot be left behind.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="your-weight">Your weight<a href="#your-weight" class="hash-link" aria-label="Direct link to Your weight" title="Direct link to Your weight" translate="no">​</a></h3>
+<p>Your weight is what your position is worth <strong>in FIRE</strong>, so a position and a plain FIRE balance of the same value weigh the same.</p>
+<p>It is measured <strong>before</strong> the exit fee: a position that would pay out 90 FIRE weighs 100. And it rises on its own as the pot drips back into the rate, without you touching anything.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="delegating-is-a-transfer">Delegating is a transfer<a href="#delegating-is-a-transfer" class="hash-link" aria-label="Direct link to Delegating is a transfer" title="Direct link to Delegating is a transfer" translate="no">​</a></h3>
+<p>There is no registry and no signature scheme behind delegation. The vote token is a <strong>bearer</strong> asset, and whoever holds it votes with it. So delegating is an ordinary send.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>What happens on chain</th></tr></thead><tbody><tr><td><strong>Keep it</strong></td><td>You hold the token and you vote</td></tr><tr><td><strong>Send it</strong></td><td>Whoever receives it votes with your weight</td></tr><tr><td><strong>Delegate to yourself</strong></td><td>The position mints a <strong>new</strong> vote token to you and cancels the old one in the same transaction</td></tr><tr><td><strong>Cancel</strong></td><td>The position clears its delegate. The old token is untouched in its holder&#x27;s wallet and simply stops counting</td></tr></tbody></table>
+<p>Minting a replacement cancels the previous token <strong>wherever it is</strong>. Nothing is taken from the person holding it: their token stays in their wallet and reports zero from that moment.</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Both tokens are bearer assets</div><div class="admonitionContent_BuS1"><p>Whoever holds the <strong>position</strong> can exit it, so sending the position sends the deposit. Sending the <strong>vote token</strong> sends only the vote. They are not the same thing, and only one of them is meant to travel.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="leaving">Leaving<a href="#leaving" class="hash-link" aria-label="Direct link to Leaving" title="Direct link to Leaving" translate="no">​</a></h3>
+<p>Burn the position and take your FIRE back, minus <strong>10%</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Where it goes</th><th>Share</th></tr></thead><tbody><tr><td>Stays in the pot, for everyone still in</td><td>8%</td></tr><tr><td>Burned</td><td>1%</td></tr><tr><td>To the protocol treasury</td><td>1%</td></tr><tr><td><strong>Total</strong></td><td><strong>10%</strong></td></tr></tbody></table>
+<p>The position is destroyed, not kept as a receipt, and any token voting for it stops counting.</p>
+<p>That 10% is a contract invariant rather than a display number. The factory refuses to bind a vault unless the vault&#x27;s own tithe plus the wrapper&#x27;s two 1% legs comes to exactly 10%, so the split cannot drift from what this page says.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-contracts">The contracts<a href="#the-contracts" class="hash-link" aria-label="Direct link to The contracts" title="Direct link to The contracts" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Piece</th><th>Alkane</th></tr></thead><tbody><tr><td>Vault</td><td><code>4:877</code></td></tr><tr><td>Position factory</td><td><code>4:876</code></td></tr><tr><td>Deposit-and-mint contract</td><td><code>4:878</code></td></tr><tr><td>Treasury</td><td><code>4:868</code></td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Governance does not read these tokens yet</div><div class="admonitionContent_BuS1"><p>Minting a vote token now sets it up. It starts counting when the tally is changed to read them. Everything else on this page, including the yield and the exit, works today.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="risks">Risks<a href="#risks" class="hash-link" aria-label="Direct link to Risks" title="Direct link to Risks" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Risk</th><th>What it means for you</th></tr></thead><tbody><tr><td><strong>A trusted oracle, for now</strong></td><td>The bond reference is posted on chain by a single signer. Federating that across signers is the intent, but it has not happened yet</td></tr><tr><td><strong>Empty treasury at the start</strong></td><td>The floor price begins at 0 and only rises as bonders deposit LP</td></tr><tr><td><strong>Lock illiquidity</strong></td><td>Locked LP cannot be withdrawn before expiry. Split into FIRE-PT if you need partial flexibility</td></tr><tr><td><strong>Block time variance</strong></td><td>Every duration here assumes Bitcoin&#x27;s roughly 10-minute average block. Real elapsed time drifts</td></tr><tr><td><strong>The cFIRE vault pays nothing on its own</strong></td><td>It holds a plain token and farms nothing. The only thing that raises the rate is somebody else leaving and paying the tithe</td></tr><tr><td><strong>The vote token is a bearer asset</strong></td><td>Send it to the wrong address and the vote is gone. Minting a replacement is the only recovery, and it costs a transaction</td></tr><tr><td><strong>The cFIRE vote is not counted yet</strong></td><td>Governance does not read these tokens today. Minting one now sets it up for when it does</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips">Tips<a href="#tips" class="hash-link" aria-label="Direct link to Tips" title="Direct link to Tips" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Match your lock to your conviction.</strong> Longer locks earn proportionally more, but you cannot unwind early.</li>
+<li class=""><strong>Use Split if you need the liquidity back.</strong> Keep the FIRE yield on the NFT and trade the FIRE-PT.</li>
+<li class=""><strong>Bonding is not staking.</strong> Bonding gives you FIRE upfront and your LP is gone for good. Staking returns your LP plus rewards.</li>
+<li class=""><strong>Watch the halving.</strong> Emission halves every 105,000 blocks, so early epochs pay the most.</li>
+<li class=""><strong>Treasury growth is floor growth.</strong> The more LP that arrives through bonding, the stronger the redemption floor.</li>
+<li class=""><strong>Do not confuse the two vaults.</strong> The FIRE vault above takes DIESEL / frBTC LP. The cFIRE vault takes FIRE itself, and its yield is entirely other people&#x27;s exit tithes.</li>
+<li class=""><strong>Deposit through a position if you intend to vote.</strong> A plain deposit earns the same and reads as zero in governance, and the difference costs two points on the way out.</li>
+<li class=""><strong>Send the vote token, never the position.</strong> The position is the deposit.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/subfrost-docs-preview/using-subfrost/pools-liquidity">Pools &amp; Liquidity</a>: get the DIESEL / frBTC liquidity you stake here.</li>
+<li class=""><a class="" href="/subfrost-docs-preview/start-here/key-concepts">Tokens &amp; Economics</a>: where FIRE fits with frBTC and DIESEL.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/subfrost-docs-preview/using-subfrost/btcusd-pool"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">BTCUSD Pool</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/subfrost-docs-preview/using-subfrost/safety"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Safety</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#fire-at-a-glance" class="table-of-contents__link toc-highlight">FIRE at a glance</a></li><li><a href="#how-the-vault-pays-you" class="table-of-contents__link toc-highlight">How the vault pays you</a></li><li><a href="#the-emission-schedule" class="table-of-contents__link toc-highlight">The emission schedule</a><ul><li><a href="#why-the-cap-needs-no-premine" class="table-of-contents__link toc-highlight">Why the cap needs no premine</a></li></ul></li><li><a href="#lock-multipliers" class="table-of-contents__link toc-highlight">Lock multipliers</a></li><li><a href="#staking-your-lp" class="table-of-contents__link toc-highlight">Staking your LP</a></li><li><a href="#getting-your-lp-back" class="table-of-contents__link toc-highlight">Getting your LP back</a><ul><li><a href="#unstake" class="table-of-contents__link toc-highlight">Unstake</a></li><li><a href="#split-into-fire-pt" class="table-of-contents__link toc-highlight">Split into FIRE-PT</a></li><li><a href="#redeem-expired-fire-pt" class="table-of-contents__link toc-highlight">Redeem expired FIRE-PT</a></li></ul></li><li><a href="#bonding" class="table-of-contents__link toc-highlight">Bonding</a><ul><li><a href="#the-floor-guard" class="table-of-contents__link toc-highlight">The floor guard</a></li><li><a href="#bonding-capacity-builds-up-over-time" class="table-of-contents__link toc-highlight">Bonding capacity builds up over time</a></li></ul></li><li><a href="#redemption-and-the-price-floor" class="table-of-contents__link toc-highlight">Redemption and the price floor</a></li><li><a href="#the-two-reference-prices" class="table-of-contents__link toc-highlight">The two reference prices</a></li><li><a href="#the-flywheel" class="table-of-contents__link toc-highlight">The flywheel</a></li><li><a href="#staking-fire-itself-the-cfire-vault" class="table-of-contents__link toc-highlight">Staking FIRE itself: the cFIRE vault</a><ul><li><a href="#how-the-pot-works" class="table-of-contents__link toc-highlight">How the pot works</a></li><li><a href="#the-problem-cfire-solves-and-the-position-that-solves-it" class="table-of-contents__link toc-highlight">The problem cFIRE solves, and the position that solves it</a></li><li><a href="#what-you-get-and-what-each-piece-does" class="table-of-contents__link toc-highlight">What you get, and what each piece does</a></li><li><a href="#your-weight" class="table-of-contents__link toc-highlight">Your weight</a></li><li><a href="#delegating-is-a-transfer" class="table-of-contents__link toc-highlight">Delegating is a transfer</a></li><li><a href="#leaving" class="table-of-contents__link toc-highlight">Leaving</a></li><li><a href="#the-contracts" class="table-of-contents__link toc-highlight">The contracts</a></li></ul></li><li><a href="#risks" class="table-of-contents__link toc-highlight">Risks</a></li><li><a href="#tips" class="table-of-contents__link toc-highlight">Tips</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Subzero Research Inc.</div></div></div></footer><div class="social-icons-fixed"><a href="https://x.com/gabe_subfrost/" target="_blank" rel="noopener noreferrer" class="header-x-link" aria-label="X (Twitter)"></a><a href="https://github.com/subfrost/" target="_blank" rel="noopener noreferrer" class="header-github-link" aria-label="GitHub"></a></div></div>
+</body>
+</html>

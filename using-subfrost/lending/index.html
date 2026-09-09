@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-US" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-using-subfrost/lending" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Lending | SUBFROST</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" name="twitter:image" content="https://vdto88.github.io/subfrost-docs-preview/Logo.png"><meta data-rh="true" property="og:url" content="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/lending"><meta data-rh="true" property="og:locale" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="bitcoin, staking, yield, defi, alkanes, metaprotocol, amm, frost, subfrost"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Lending | SUBFROST"><meta data-rh="true" name="description" content="Lend your tokens to earn interest, or borrow against collateral, settled peer-to-peer on Bitcoin L1."><meta data-rh="true" property="og:description" content="Lend your tokens to earn interest, or borrow against collateral, settled peer-to-peer on Bitcoin L1."><link data-rh="true" rel="canonical" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/lending"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/lending" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/zh-Hans/using-subfrost/lending" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://vdto88.github.io/subfrost-docs-preview/using-subfrost/lending" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://828A36RRFA-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" async="true" src="https://www.googletagmanager.com/gtag/js?id=G-2NV4F5YNHJ"></script><script data-rh="true">function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2NV4F5YNHJ")</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Lending","item":"https://vdto88.github.io/subfrost-docs-preview/using-subfrost/lending"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="SUBFROST" href="/subfrost-docs-preview/opensearch.xml"><link rel="stylesheet" href="/subfrost-docs-preview/assets/css/styles.b2916c10.css">
+<script src="/subfrost-docs-preview/assets/js/runtime~main.c02548c4.js" defer="defer"></script>
+<script src="/subfrost-docs-preview/assets/js/main.19a53d4b.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/subfrost-docs-preview/img/logotype_dark.svg"><div class="gradient-background"></div><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://subfrost.io/" target="_blank" rel="noopener noreferrer" aria-label="SUBFROST" class="navbar__brand"><img src="/subfrost-docs-preview/img/logotype_dark.svg" alt="SUBFROST" class="navbar__logo"></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><button type="button" style="display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:#EC4521;background:none;border:none;cursor:pointer;padding:4px;line-height:1" aria-label="Switch to dark theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><button type="button" style="display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:#A7C6DC;background:none;border:none;cursor:pointer;padding:4px;line-height:1" aria-label="Switch to Chinese">文</button><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/subfrost-docs-preview/start-here/what-is-subfrost"><span title="Start Here" class="categoryLinkLabel_W154">Start Here</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/what-is-subfrost"><span title="What is SUBFROST" class="linkLabel_WmDU">What is SUBFROST</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/get-started"><span title="Get Started in 5 Minutes" class="linkLabel_WmDU">Get Started in 5 Minutes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/start-here/key-concepts"><span title="Key Concepts" class="linkLabel_WmDU">Key Concepts</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/subfrost-docs-preview/using-subfrost/wallets"><span title="Using SUBFROST" class="categoryLinkLabel_W154">Using SUBFROST</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/wallets"><span title="Wallets" class="linkLabel_WmDU">Wallets</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/wrap-unwrap-frbtc"><span title="Wrap &amp; Unwrap BTC" class="linkLabel_WmDU">Wrap &amp; Unwrap BTC</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/swap"><span title="Swap" class="linkLabel_WmDU">Swap</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/pools-liquidity"><span title="Pools &amp; Liquidity" class="linkLabel_WmDU">Pools &amp; Liquidity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/btcusd-pool"><span title="BTCUSD Pool" class="linkLabel_WmDU">BTCUSD Pool</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/fire-vault"><span title="FIRE Vault" class="linkLabel_WmDU">FIRE Vault</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/safety"><span title="Safety" class="linkLabel_WmDU">Safety</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/subfrost-docs-preview/using-subfrost/lending"><span title="Lending" class="linkLabel_WmDU">Lending</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/subfrost-docs-preview/using-subfrost/futures"><span title="Futures" class="linkLabel_WmDU">Futures</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/tokens-economics/overview"><span title="Tokens &amp; Economics" class="categoryLinkLabel_W154">Tokens &amp; Economics</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/key-components/alkanes"><span title="Key Components" class="categoryLinkLabel_W154">Key Components</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/protocol/alkanes"><span title="Technical Overview" class="categoryLinkLabel_W154">Technical Overview</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/build/overview"><span title="Build on SUBFROST" class="categoryLinkLabel_W154">Build on SUBFROST</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/developer-guide/alkanes-integration"><span title="Developer Guide" class="categoryLinkLabel_W154">Developer Guide</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/api-reference/getting-started/overview"><span title="API &amp; SDK Docs" class="categoryLinkLabel_W154">API &amp; SDK Docs</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/subfrost-docs-preview/reference/glossary"><span title="Reference" class="categoryLinkLabel_W154">Reference</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><span class="breadcrumbs__link">Using SUBFROST</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Lending</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Lending</h1></header>
+<p>Lending lets you <strong>lend out your tokens to earn interest</strong> or <strong>borrow tokens against collateral</strong>, directly on Bitcoin L1. It is peer-to-peer: you set your own terms and match with another user. There are no pools, no middlemen, and your funds stay in your wallet until a match happens.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lending-at-a-glance">Lending at a glance<a href="#lending-at-a-glance" class="hash-link" aria-label="Direct link to Lending at a glance" title="Direct link to Lending at a glance" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Model</td><td>Peer to peer, fixed rate, fixed term</td></tr><tr><td>Settlement</td><td>A single Bitcoin transaction</td></tr><tr><td>Posting an offer</td><td>Instant, a small network fee, not settled on chain</td></tr><tr><td>Who pays to settle</td><td>The taker (the person who accepts an offer)</td></tr><tr><td>Protocol fee</td><td>3,000 sats per loan, paid at settlement</td></tr><tr><td>Interest</td><td>Fixed at creation, computed from APR and duration</td></tr><tr><td>Term</td><td>Measured in blocks</td></tr><tr><td>Liquidation</td><td>None. No margin calls on an active loan</td></tr><tr><td>Custody</td><td>None. There is no custodian and no admin key</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works" translate="no">​</a></h2>
+<p>Lending has two sides, and you can be either one:</p>
+<ul>
+<li class=""><strong>Lenders</strong> post a <strong>loan offer</strong>: &quot;I will lend X token at this rate, if you put up Y collateral.&quot;</li>
+<li class=""><strong>Borrowers</strong> post a <strong>loan request</strong>: &quot;I want to borrow X token and I will put up Y collateral.&quot;</li>
+</ul>
+<p>Whoever publishes the offer is the <strong>maker</strong>. Whoever accepts it is the <strong>taker</strong>. When someone takes the other side of your offer, the loan is created on chain in one transaction and becomes active immediately.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="posting-an-offer-is-instant">Posting an offer is instant<a href="#posting-an-offer-is-instant" class="hash-link" aria-label="Direct link to Posting an offer is instant" title="Direct link to Posting an offer is instant" translate="no">​</a></h3>
+<p>When you post an offer, your wallet <strong>signs it, but the loan itself is not settled on the Bitcoin network</strong>. So:</p>
+<ul>
+<li class="">You pay a <strong>small network fee</strong> to post, and nothing more.</li>
+<li class=""><strong>Posting does not tie up the rest of your balance.</strong> The small transaction you broadcast at post time sets aside exactly the loan or collateral amount and hands the remainder back to you as normal change. Even if all your tokens sat on a single UTXO, the leftover is immediately spendable.</li>
+<li class=""><strong>No waiting for a block</strong> before your offer is usable. It shows up in the order book instantly.</li>
+<li class=""><strong>Your funds stay in your wallet.</strong> A posted offer is a pre-signed instruction that, by design, <strong>cannot be broadcast on its own</strong>. It only becomes a real transaction once a taker accepts and adds their side.</li>
+</ul>
+<p>This means <strong>only the taker pays to settle</strong>. As a maker, what you pay is the small network fee on the offer itself.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="matching-settles-the-loan-on-chain">Matching settles the loan on chain<a href="#matching-settles-the-loan-on-chain" class="hash-link" aria-label="Direct link to Matching settles the loan on chain" title="Direct link to Matching settles the loan on chain" translate="no">​</a></h3>
+<p>When a taker accepts your offer, a single Bitcoin transaction is broadcast that:</p>
+<ol>
+<li class="">Hands the borrowed token to the borrower,</li>
+<li class="">Locks the borrower&#x27;s collateral, and</li>
+<li class="">Creates the loan.</li>
+</ol>
+<p>Once that transaction confirms, the loan is <strong>active</strong> and the clock starts on its term. If any part of it fails, both sides get their tokens back in the same transaction. You cannot end up half-lent.</p>
+<p>For the mechanics of how a pre-signed offer stays inert until a taker funds it, see <a class="" href="/subfrost-docs-preview/protocol/lending">Lending Protocol</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-a-loan-costs">What a loan costs<a href="#what-a-loan-costs" class="hash-link" aria-label="Direct link to What a loan costs" title="Direct link to What a loan costs" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Cost</th><th>Who pays</th><th>When</th></tr></thead><tbody><tr><td>Protocol fee, 3,000 sats</td><td>The taker</td><td>At settlement, built into the transaction</td></tr><tr><td>Bitcoin network fee</td><td>Taker (settlement), maker (offer post)</td><td>At settlement, varies with the fee rate the taker chooses</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-interest-you-will-pay">The interest you will pay<a href="#the-interest-you-will-pay" class="hash-link" aria-label="Direct link to The interest you will pay" title="Direct link to The interest you will pay" translate="no">​</a></h2>
+<p>Interest is <strong>fixed at creation</strong>, not accrued over time. You know the exact repayment before you agree to anything:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">interest  = loan amount × APR × (duration in blocks / 52,560)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">repayment = loan amount + interest</span><br></span></code></pre></div></div>
+<p>The <code>52,560</code> is the number of Bitcoin blocks in a year (144 per day × 365).</p>
+<p><strong>Example.</strong> Borrow 1 DIESEL at 12.5% APR for 1,008 blocks (about a week):</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">interest  = 1 × 0.125 × (1,008 / 52,560) = 0.00239726 DIESEL</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">repayment = 1.00239726 DIESEL</span><br></span></code></pre></div></div>
+<p>Because the number comes straight from the terms, both sides can compute it up front, and it never changes.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="collateral-limits">Collateral limits<a href="#collateral-limits" class="hash-link" aria-label="Direct link to Collateral limits" title="Direct link to Collateral limits" translate="no">​</a></h2>
+<p>Every loan is over-collateralized: the collateral must be worth more than what is owed. The app enforces a <strong>maximum loan-to-value (LTV)</strong> per collateral token, measured in USD:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Collateral</th><th>Maximum LTV</th><th>Minimum collateral, relative to what is owed</th></tr></thead><tbody><tr><td>frBTC</td><td>80%</td><td>about 125%</td></tr><tr><td>DIESEL</td><td>50%</td><td>about 200%</td></tr><tr><td>Any other token</td><td>30%</td><td>about 333%</td></tr></tbody></table>
+<p>Two things about how this is applied:</p>
+<ul>
+<li class=""><strong>It is measured against the repayment, not the amount borrowed.</strong> Principal plus interest is what has to be covered. Raising the APR or the duration raises the repayment, which raises the collateral required.</li>
+<li class=""><strong>More collateral than the minimum is always fine. Less is rejected.</strong> The app will not let you post an offer below the minimum, and the check runs again when the offer is submitted.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="your-open-offer-can-be-removed-if-prices-move">Your open offer can be removed if prices move<a href="#your-open-offer-can-be-removed-if-prices-move" class="hash-link" aria-label="Direct link to Your open offer can be removed if prices move" title="Direct link to Your open offer can be removed if prices move" translate="no">​</a></h3>
+<p>An offer is created at or under its collateral&#x27;s maximum LTV, but prices keep moving after you post. If the collateral on an open offer falls far enough to be worth <strong>less than what is owed on it</strong>, the offer is <strong>removed from the order book</strong>.</p>
+<p>This applies only to <strong>open offers that nobody has taken yet</strong>. An <strong>active loan is never touched</strong>: once a loan exists, its terms are fixed and enforced exactly as agreed. See below.</p>
+<p>Prices are not the only reason an open offer can disappear. Posting sets aside a specific piece of your funds for the offer, and nothing stops you from spending it in another transaction afterwards. If you do, the offer can never settle, so it is removed from the order book rather than left for a taker to trip on.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>When prices are unavailable, the limits stand down</div><div class="admonitionContent_BuS1"><p>The LTV check needs a USD price for both tokens. If either one has no price the app can resolve, the check cannot be applied, and the app will let you set any values while warning you that you are on your own. Take that warning seriously: it means nothing is checking your collateral for you.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="choosing-your-collateral">Choosing your collateral<a href="#choosing-your-collateral" class="hash-link" aria-label="Direct link to Choosing your collateral" title="Direct link to Choosing your collateral" translate="no">​</a></h2>
+<p>Collateral terms are <strong>fixed when the loan is created</strong> and <strong>enforced exactly as agreed</strong>. Beyond the collateral minimum above, there are <strong>no margin calls and no automatic liquidations</strong>. That has an important consequence:</p>
+<blockquote>
+<p><strong>If you are lending, you must be comfortable receiving <em>exactly</em> the agreed collateral, even if its price moves so much that it is worth less than the loan you made.</strong> If a borrower defaults and the collateral has dropped in value, claiming it is your only recourse. The protocol will not top you up.</p>
+</blockquote>
+<p>The LTV ceiling limits your downside, it does not remove it. It is checked when the offer is created, against prices at that moment, and once the loan is active nothing re-checks it. So ask for the level where you would be <strong>genuinely fine</strong> ending up with that collateral instead of being repaid:</p>
+<ul>
+<li class=""><strong>Higher collateral</strong> protects you better if prices move against you, but it makes your offer <strong>less attractive</strong>, and a borrower may never take it.</li>
+<li class=""><strong>Lower collateral</strong> is easier to fill and friendlier to borrowers, but leaves you <strong>more exposed</strong> if the collateral&#x27;s value falls.</li>
+</ul>
+<p>Borrowers face the mirror image: the more collateral you post, the more you have at risk if you cannot repay, but offers asking for less collateral may be scarce.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-lend">How to lend<a href="#how-to-lend" class="hash-link" aria-label="Direct link to How to lend" title="Direct link to How to lend" translate="no">​</a></h2>
+<ol>
+<li class="">Open the <strong>Lend / Borrow</strong> page and pick the token you want to <strong>lend</strong> and the token you will accept as <strong>collateral</strong>.</li>
+<li class="">Switch the form to <strong>Lend</strong>.</li>
+<li class="">Enter the amount to lend, the collateral you require, the <strong>APR</strong>, and the <strong>duration</strong> in blocks.</li>
+<li class="">Click <strong>Lend</strong> and approve the signature in your wallet.</li>
+</ol>
+<p>Your offer is now live in the order book. Nothing settles on chain until a taker accepts it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-borrow">How to borrow<a href="#how-to-borrow" class="hash-link" aria-label="Direct link to How to borrow" title="Direct link to How to borrow" translate="no">​</a></h2>
+<ol>
+<li class="">Pick the token you want to <strong>borrow</strong> and the token you will post as <strong>collateral</strong>.</li>
+<li class="">Browse the order book for an offer you like (sorted by APY), <strong>or</strong> switch the form to <strong>Borrow</strong> and post your own loan request.</li>
+<li class="">To take an existing offer, click <strong>Borrow</strong>. You will see a summary: what you provide, what you receive, the APY, the total repayment, and the deadline.</li>
+<li class="">Confirm and pay the network fee to settle.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-life-of-a-loan">The life of a loan<a href="#the-life-of-a-loan" class="hash-link" aria-label="Direct link to The life of a loan" title="Direct link to The life of a loan" translate="no">​</a></h2>
+<p>Once a loan is active, here is what can happen.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="it-gets-repaid-the-normal-path">It gets repaid, the normal path<a href="#it-gets-repaid-the-normal-path" class="hash-link" aria-label="Direct link to It gets repaid, the normal path" title="Direct link to It gets repaid, the normal path" translate="no">​</a></h3>
+<ul>
+<li class="">The borrower repays the <strong>principal plus interest</strong> before the deadline. One click (<strong>Repay &amp; reclaim</strong>) repays the loan and returns their collateral in the same transaction.</li>
+<li class="">The lender then <strong>claims the repayment</strong>.</li>
+<li class="">The loan is fully closed. Both sides got what they expected.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="it-defaults-the-borrower-did-not-repay-in-time">It defaults, the borrower did not repay in time<a href="#it-defaults-the-borrower-did-not-repay-in-time" class="hash-link" aria-label="Direct link to It defaults, the borrower did not repay in time" title="Direct link to It defaults, the borrower did not repay in time" translate="no">​</a></h3>
+<ul>
+<li class="">If the deadline passes without repayment, the loan is <strong>defaulted</strong>.</li>
+<li class="">The lender can <strong>claim the collateral</strong>. One click does the default and the claim together.</li>
+<li class="">The borrower keeps the tokens they borrowed but <strong>forfeits the collateral</strong>.</li>
+</ul>
+<p>A loan cannot be repaid after it defaults. Once the deadline passes, the lender&#x27;s path is to claim the collateral.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>The app shows a loan as defaulted the moment its deadline passes</div><div class="admonitionContent_BuS1"><p>On chain, a loan only becomes <code>DEFAULTED</code> when someone actually triggers it. The app is stricter: it shows an overdue loan as <strong>Defaulted</strong> as soon as the deadline is behind the current block, and withdraws the borrower&#x27;s repay button.</p></div></div>
+<p>You can always see your loans and their status (<strong>Active Loans</strong>, <strong>Closed Loans</strong>, and your open <strong>My Offers</strong>) at the bottom of the Lending page.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="managing-your-offers">Managing your offers<a href="#managing-your-offers" class="hash-link" aria-label="Direct link to Managing your offers" title="Direct link to Managing your offers" translate="no">​</a></h2>
+<p>Your open offers appear under <strong>My Offers</strong>. From there you can:</p>
+<ul>
+<li class=""><strong>Edit</strong> an offer. This re-signs a fresh offer, sets the funds aside again in a new small transaction (the same small network fee as posting), and cancels the old one.</li>
+<li class=""><strong>Delete</strong> an offer, removing it from the order book. Deleting is off-chain and free.</li>
+</ul>
+<p>Neither one settles the loan on chain, just like posting.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips">Tips<a href="#tips" class="hash-link" aria-label="Direct link to Tips" title="Direct link to Tips" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Start small</strong> to get a feel for the flow before posting larger offers.</li>
+<li class=""><strong>Think about default before you lend.</strong> Price the collateral and the rate for the scenario where you are repaid in collateral, not in the token you lent.</li>
+<li class=""><strong>Right-size your collateral ask.</strong> Too high and nobody takes it, too low and you carry more risk. The collateral minimum is a floor, not a recommendation.</li>
+<li class=""><strong>Watch the deadline</strong> if you are borrowing. There is no grace period, and after it passes you cannot repay.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/subfrost-docs-preview/protocol/lending">Lending Protocol</a>: the contract, the escrow, and the settlement mechanics.</li>
+<li class=""><a class="" href="/subfrost-docs-preview/using-subfrost/swap">Swap</a>: trade between Bitcoin assets against a shared liquidity pool.</li>
+<li class=""><a class="" href="/subfrost-docs-preview/using-subfrost/wallets">Wallets</a>: set up the wallet you will sign with.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/subfrost-docs-preview/using-subfrost/safety"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Safety</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/subfrost-docs-preview/using-subfrost/futures"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Futures</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#lending-at-a-glance" class="table-of-contents__link toc-highlight">Lending at a glance</a></li><li><a href="#how-it-works" class="table-of-contents__link toc-highlight">How it works</a><ul><li><a href="#posting-an-offer-is-instant" class="table-of-contents__link toc-highlight">Posting an offer is instant</a></li><li><a href="#matching-settles-the-loan-on-chain" class="table-of-contents__link toc-highlight">Matching settles the loan on chain</a></li></ul></li><li><a href="#what-a-loan-costs" class="table-of-contents__link toc-highlight">What a loan costs</a></li><li><a href="#the-interest-you-will-pay" class="table-of-contents__link toc-highlight">The interest you will pay</a></li><li><a href="#collateral-limits" class="table-of-contents__link toc-highlight">Collateral limits</a><ul><li><a href="#your-open-offer-can-be-removed-if-prices-move" class="table-of-contents__link toc-highlight">Your open offer can be removed if prices move</a></li></ul></li><li><a href="#choosing-your-collateral" class="table-of-contents__link toc-highlight">Choosing your collateral</a></li><li><a href="#how-to-lend" class="table-of-contents__link toc-highlight">How to lend</a></li><li><a href="#how-to-borrow" class="table-of-contents__link toc-highlight">How to borrow</a></li><li><a href="#the-life-of-a-loan" class="table-of-contents__link toc-highlight">The life of a loan</a><ul><li><a href="#it-gets-repaid-the-normal-path" class="table-of-contents__link toc-highlight">It gets repaid, the normal path</a></li><li><a href="#it-defaults-the-borrower-did-not-repay-in-time" class="table-of-contents__link toc-highlight">It defaults, the borrower did not repay in time</a></li></ul></li><li><a href="#managing-your-offers" class="table-of-contents__link toc-highlight">Managing your offers</a></li><li><a href="#tips" class="table-of-contents__link toc-highlight">Tips</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Subzero Research Inc.</div></div></div></footer><div class="social-icons-fixed"><a href="https://x.com/gabe_subfrost/" target="_blank" rel="noopener noreferrer" class="header-x-link" aria-label="X (Twitter)"></a><a href="https://github.com/subfrost/" target="_blank" rel="noopener noreferrer" class="header-github-link" aria-label="GitHub"></a></div></div>
+</body>
+</html>
