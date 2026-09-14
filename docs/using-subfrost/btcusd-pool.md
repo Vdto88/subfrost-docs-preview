@@ -58,9 +58,9 @@ The pool is on Bitcoin, but you can fund it from an Ethereum wallet and take val
 
 Both directions charge a flat fee plus a small percentage, and there is a minimum size, so one larger trip costs less than several small ones. [frUSD Overview](../tokens/frUSD-overview) has the current numbers.
 
-:::note Asking for a lot of BTC? You may get frUSD instead
+:::note Asking for a lot of BTC for USDT or USDC? You may get frUSD instead
 
-If the BTC part of your deposit is more than 10% of the pool's frUSD, the whole deposit arrives as frUSD instead. Nothing is lost and the deposit still goes through. To get BTC, ask for a smaller BTC part, or bridge first and swap afterwards.
+If the BTC you want to swap for exceeds 10% of the pool's frUSD, the whole deposit arrives as frUSD instead. Nothing is lost and the deposit still goes through. To get BTC, ask for a smaller BTC part, or bridge first and swap afterwards.
 
 :::
 
