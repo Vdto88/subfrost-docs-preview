@@ -30,18 +30,25 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+## Adding a page to the navigation
+
+The sidebar is defined manually in [`sidebars.ts`](./sidebars.ts) (autogeneration is
+disabled). Creating a new `.mdx` file under `docs/` is **not** enough — it will be
+reachable by direct URL but won't appear in the sidebar until you add its doc ID
+(the path under `docs/` without the `.mdx` extension, e.g. `subfrost-app/lending`)
+to the appropriate category in `sidebars.ts`.
+
 ## Deployment
 
-Using SSH:
+Deployment is **automatic**. Do **not** run `yarn deploy` — that command targets a
+`gh-pages` branch this project doesn't use, and will fail.
 
-```bash
-USE_SSH=true yarn deploy
-```
+Pushing to `master` triggers the `deploy` GitHub Actions workflow, which builds the
+static site (`npm run build`) and publishes it to **Cloudflare Pages** (project
+`subfrost-docs`, custom domain `docs.subfrost.io`). The site is served directly from
+Cloudflare's edge — there is no container, no cluster, and no origin server.
 
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Pipeline config: [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)
+- The build+publish takes ~1–2 minutes; the edge updates globally as soon as it completes.
+- Auth is via two repo secrets: `CLOUDFLARE_API_TOKEN` (scoped to Cloudflare Pages: Edit)
+  and `CLOUDFLARE_ACCOUNT_ID`.
