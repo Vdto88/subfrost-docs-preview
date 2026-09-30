@@ -130,7 +130,7 @@ When the run finishes, the verdict appears on the alkane's explorer page (`https
 POST https://explorer.subfrost.io/api/v1/{key}/attest
 ```
 
-**Admin only.** Directly record a bytecode → verified-source mapping **without** a sandbox rebuild. This exists for results proven outside the verifier's own sandbox that it cannot reproduce itself, for example a build proven on a host the verifier does not run. It needs an admin key issued by the SUBFROST team because it bypasses the diff check. `alkanes-cli upload` (without `--verify`) is the ergonomic way to call it: it sends the full BuildInfo as the `manifest`.
+**Admin only.** Directly record a bytecode-to-verified-source mapping **without** a sandbox rebuild. This exists for results proven outside the verifier's own sandbox that it cannot reproduce itself, for example a build proven on a host the verifier does not run. It needs an admin key issued by the SUBFROST team because it bypasses the diff check. `alkanes-cli upload` (without `--verify`) is the ergonomic way to call it: it sends the full BuildInfo as the `manifest`.
 
 The attestation is keyed by the bytecode's sha256, so it applies to every alkane that shares that bytecode (for example, every clone of a template).
 
